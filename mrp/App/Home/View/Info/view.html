@@ -1,0 +1,22 @@
+<div class="bjui-pageContent">
+        <div class="pageFormContent" data-layout-h="0">
+          <table class="table table-bordered table-striped table-hover">
+           <tbody>
+		   <tr><td><label for='id_input' class='control-label x85'>ID:</label>{$Rs.id}</td><td><label for='juname_input' class='control-label x85'>接收人:</label>{$Rs.juname}</td></tr>
+<tr><td><label for='title_input' class='control-label x85'>通知标题:</label>{$Rs.title}</td><td><label for='jzrq_input' class='control-label x85'>截止日期:</label>{$Rs.jzrq}</td></tr>
+<tr><td><label for='uname_input' class='control-label x85'>发布人:</label>{$Rs.uname}</td><td><label for='addtime_input' class='control-label x85'>发布时间:</label>{$Rs.addtime}</td></tr>
+<tr><td><label for='uuname_input' class='control-label x85'>最后回复:</label>{$Rs.uuname}</td><td><label for='updatetime_input' class='control-label x85'>回复时间:</label>{$Rs.updatetime}</td></tr>
+<tr><td colspan=2><label for='value_input' class='control-label x85'>详情:</label><div style='display: inline-block; vertical-align: middle;'><textarea name='value'   data-toggle='kindeditor' data-minheight='150' data-items='fontname, fontsize, |, forecolor, hilitecolor, bold, italic, underline, removeformat, |, justifyleft, justifycenter, justifyright, insertorderedlist, insertunorderedlist, |, emoticons, image, link'>{$Rs.value}</textarea></div></td></tr></tr>
+<tr><td colspan=2><label for='attid_input' class='control-label x85'>上传附件:</label>
+			<php>$attlist=M('files')->where('attid='.$Rs['attid'])->select();</php>	
+	         <foreach name='attlist' item='vf'>{$vf['uid']|truename=###}:<a href='__ROOT__/{$vf['folder']}{$vf['filename']}' target=_blank>{$vf['filedesc']}</A>&nbsp;&nbsp;{$vf['addtime']}<Br/><label  class='control-label x85'></label></foreach></td></tr></tr>
+<tr><td colspan=2><label for='hui_input' class='control-label x85'>回复:</label><textarea name='hui'  cols='65' rows='5' >{$Rs.hui}</textarea></td></tr>
+           </tbody>
+          </table>
+        </div>
+		<div class="bjui-footBar">
+        <ul>
+            <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+        </ul>
+    </div>
+</div>

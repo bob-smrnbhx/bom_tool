@@ -1,0 +1,22 @@
+<div class="bjui-pageContent">
+    <form action="__URL__/edit/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+		<input type="hidden" name="id" value="{$id}">
+        <div class="pageFormContent" data-layout-h="0">
+          <table class="table table-condensed table-hover" width="100%">
+           <tbody>
+			<tr><td><label for='type_input' class='control-label x85'>汇报类型:</label><select name='type'  data-toggle='selectpicker' ><volist name='Think.config.REPORT_TYPE' id='type'><option value='{$type}' <if condition=" $type EQ $Rs['type'] " >selected</if> >{$type}</option></volist></td><td><label for='title_input' class='control-label x85'>标题:</label><input type='text' id='title' name='title' data-rule='required;' size='20'   value='{$Rs.title}'  ></td></tr>
+
+<tr><td><label for='juid_input' class='control-label x85'>汇报给:</label><input type='text' id='juid' name='juid'  size='20' data-toggle='lookup' data-url='__MODULE__/public/user/navTabId/{:CONTROLLER_NAME}'  value='{$Rs.juid}'  ></td><td><label for='juname_input' class='control-label x85'>汇报给:</label><input type='text' id='juname' name='juname'  size='20' data-toggle='lookup' data-url='__MODULE__/public/user/navTabId/{:CONTROLLER_NAME}'  value='{$Rs.juname}'  ></td></tr>
+
+<tr><td colspan=2><label for='value_input' class='control-label x85'>汇报详情:</label><div style='display: inline-block; vertical-align: middle;'><textarea name='value'   data-toggle='kindeditor' data-minheight='150' data-items='fontname, fontsize, |, forecolor, hilitecolor, bold, italic, underline, removeformat, |, justifyleft, justifycenter, justifyright, insertorderedlist, insertunorderedlist, |, emoticons, image, link'>{$Rs.value}</textarea></div></td></tr></tr>
+<tr><td colspan=2><label for='attid_input' class='control-label x85'>上传附件:</label><div style='display: inline-block; vertical-align: middle;'><IFRAME   src='__MODULE__/Public/attfile/attid/{$attid}/'  frameBorder=0 width='100%' height='30' scrolling=no ></IFRAME><input type='hidden' id='attid' name='attid'  value='{$attid}'  ></div></td></tr>
+           </tbody>
+          </table>
+        </div>
+        <div class="bjui-footBar">
+            <ul>
+                <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+                <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+            </ul>
+        </div>
+    </f

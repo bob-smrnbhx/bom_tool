@@ -1,0 +1,127 @@
+
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch"  action="__SELF__" method="post">
+	
+	<input type="hidden" name="pageSize" value="{$numPerPage}">
+    <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+	 
+        <div class="bjui-searchBar">
+             <button type="submit"  class="btn-default" data-icon="arrow-down" style="width:100px;height:30px" onclick = "update(this)">更新</button>
+        </div>
+
+</form>
+    
+</div>
+
+<div class="bjui-pageContent">
+	<form id="baseDataForm"  action="__CONTROLLER__/updateTbls" data-toggle="validate"   method="post" >
+     <table data-toggle="tablefixed" data-width="50%" data-layout-h="0" data-nowrap="true">
+        <thead>
+            <tr>
+	            <th width='10%' >ID</th>
+	            <th >数据</th>
+	            <th ><input type="checkbox" id="toggleAll" onclick='toggleAllItems(this)' >&nbsp;&nbsp;全选</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>物料信息</td>
+			<td><input type="checkbox" id="ptp" name="chk[]" value="ptp" onclick='toggleSelectAll(this)' ></td>
+         </tr> 
+          <tr>
+             <td>2</td>
+             <td>BOM信息</td>
+			 <td><input type="checkbox" id="bom"  name ="chk[]" value="bom" onclick='toggleSelectAll(this)' ></td>
+         </tr> 
+          <tr>
+            <td>3</td>
+            <td>产线信息</td>
+			<td><input type="checkbox" id="lnd" name ="chk[]" value ="lnd" onclick='toggleSelectAll(this)' ></td>
+         </tr> 
+<!--           <tr> -->
+<!--             <td>4</td> -->
+<!--             <td>库存信息</td> -->
+<!-- 			<td><input type="checkbox" id="in" name = "chk[]" value ="in" onclick='toggleSelectAll(this)' ></td>	 -->
+<!--          </tr>  -->
+          <tr>
+            <td>4</td>
+            <td>供应商信息</td>
+			<td><input type="checkbox" id="vd"  name = "chk[]" value ="vd" onclick='toggleSelectAll(this)' ></td>
+         </tr> 
+          <tr>
+            <td>5</td>
+            <td>客户信息</td>
+			<td><input type="checkbox" id="cm" name = "chk[]" value ="cm" onclick='toggleSelectAll(this)' ></td>
+         </tr> 
+          <tr>
+            <td>6</td>
+            <td>采购订单</td>
+			<td><input type="checkbox" id="pod" name = "chk[]" value ="pod" onclick='toggleSelectAll(this)' ></td>
+         </tr> 
+          <tr>
+            <td>7</td>
+            <td>销售订单日程</td>
+			<td><input type="checkbox" id="sod" name = "chk[]" value ="sod" onclick='toggleSelectAll(this)' ></td>
+         </tr> 
+          <tr>
+            <td>8</td>
+            <td>供应商日历</td>
+			<td><input type="checkbox" id="cal" name = "chk[]" value ="cal" onclick='toggleSelectAll(this)' ></td>
+         </tr> 
+         <!-- <tr>
+            <td>9</td>
+            <td>生产计划</td>
+			<td><input type="checkbox" id="rps" name = "chk[]" value ="rps" onclick='toggleSelectAll(this)' ></td>
+         </tr> 
+         <tr>
+            <td>10</td>
+            <td>在途订单量</td>
+			<td><input type="checkbox" id="pog" name = "chk[]" value ="pog" onclick='toggleSelectAll(this)' ></td>
+         </tr>
+          --> 
+       </tbody>
+       
+    </table>
+    </form>
+
+
+</div>
+ <script type="text/javascript">
+
+function update(obj) {
+	var flag = false;
+	var a = document.getElementsByName('chk[]');
+	for(var i = 0 ;i<a.length;i++){
+		if (a[i].checked){
+			flag = true;
+		}	
+	} 
+	if(flag==false){
+		alert("未选择要同步的基础数据！");
+		return;
+	}
+	$("#baseDataForm").submit();
+}
+
+function toggleAllItems (oSelectAllCheck) {
+	var container = $(oSelectAllCheck).closest(".bjui-pageContent");
+	if ($(oSelectAllCheck).prop("checked")) {
+		$("input:checkbox[name=chk[]]", container).prop("checked", true);
+	} else {
+		$("input:checkbox[name=chk[]]", container).prop("checked", false);
+	} 
+}
+
+function toggleSelectAll (oSingleCheck) {
+	var container = $(oSingleCheck).closest(".bjui-pageContent");
+	if ($('input:checkbox[name=chk[]]:not(:checked)', container).length != 0) {
+		$("#toggleAll", container).prop("checked", false);
+	} else {
+		$("#toggleAll", container).prop("checked", true);
+	}
+}
+
+</script>

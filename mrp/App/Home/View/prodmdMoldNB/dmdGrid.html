@@ -1,0 +1,418 @@
+ 
+ <!-- <script src="/dev/Public/BJUI/js/jquery-1.7.2.min.js"></script>     -->
+ 
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch" action="__SELF__" method="get">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">             
+    <input type="hidden" name="pageCurrent" value="{$pageCurrent}">       
+    <input type="hidden" name="orderField" value="{$_REQUEST['orderField']}">         
+    <input type="hidden" name="orderDirection" value="{$_REQUEST['orderDirection']}"> 
+	
+
+
+        <div class="bjui-searchBar">
+           <label for='f'>产线：</label>
+           <select id='f' name='line'  data-toggle="selectpicker" onchange='selectProj(this)'>
+           	  <option value='M00001'  <eq name='Think.request.proj' value='M00001'>selected</eq>>M00001</option>
+           </select>
+           <button type='submit' class="btn-default" data-icon="undo">刷新</button>
+            
+            
+ 
+			
+			<span style="float:right;margin-right:20px;"><button type='button' class="btn-default" data-icon="save" id='saveDmds'   onclick="saveMoldPlanAmount(this)"  >保存</button></span>
+			<!-- <span style="float:right;margin-right:20px;"><a href="__MODULE__/proplan/showRpsUpload/site/6000/linesAllowed/M60001" class="btn btn-blue" data-toggle="dialog" data-id="showuploadrps" data-title="导入生产计划"  data-icon="arrow-up">导出</a></span> -->
+		<span style="float:right;margin-right:20px;"><a href="__CONTROLLER__/exportBalanceExcel/site/1000" class="btn btn-blue" data-toggle="doexport"   data-icon="arrow-up" title="导出平衡表excel文件">平衡表导出</a></span>  
+		</div> 
+</form>
+</div>
+
+
+
+<div class="bjui-pageContent">
+<form id="plansForm"  action="__CONTROLLER__/updatePlans"    data-toggle="validate" method="post"  >   <!--建议使用validate表单，因为ajaxform表单 实测总是不自动弹出响应对话框 -->
+	<table id="tabledit1" style="white-space: nowrap;"  data-toggle="tablefixed"   data-nowrap="true"   class="table table-bordered table-hover table-striped table-top" >
+        <thead>
+            <tr style="display:none;">
+	            <th width="10" height="30"></th>
+	            <th width="50"></th> 
+	            <th width="70"></th>
+				<th width="90"></th>
+				<th width="150"></th>
+				<th width="55"></th>
+				<th width="70"></th>
+				<!-- <th width="80"></th> -->
+				<th width="50"></th>
+				<th width="65"></td>
+				<volist id="date" name="dates">
+				<th title="{$date}" width='60'>{$date|substr=5}</th>
+				</volist>
+			</tr>
+			
+			<tr>
+            	<th width='10'></th>
+        		<th colspan='8'  style='text-align: center'>总需求量</hd>
+				<volist id="date" name="dates">
+				<th title="{$date}"   date="{$date}" class='total_dmd_qty'  >{$totalDmds[$date]}</th>
+				</volist>
+        	</tr>
+            <tr>
+            	<th  ></th>
+        		<th colspan='8' style='text-align: center'>总生产数</th>
+				<volist id="date" name="dates">
+				<th title="{$date}"  date="{$date}" class='sum_day_plan_qty' style="color:blue;" >{$totalProds[$date]}</th>
+				</volist>
+        	</tr>
+
+        	<!-- <tr>
+            	<th  ></th>
+        		<th colspan='6' style='text-align: center'>最大产能</th>
+				<volist id="date" name="dates">
+				<th title="{$date}"  date="{$date}" class='total_day_cap_qty'  >{$capacities[$date]}</th>
+				</volist>
+        	</tr>
+        	 -->
+            <!-- <tr>
+            	<th  ></th>
+        		<th colspan='6' style='text-align: center'>剩余产能</th>
+				<volist id="date" name="dates">
+				<th title="{$date}" date="{$date}" class='left_day_cap_qty'  >{$unusedCapacities[$date]}</th>
+				</volist>
+        	</tr> 
+        	 -->
+        	 
+        	<tr>
+	            <th></th>
+	            <th></th> 
+	            <th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<!-- <th width="80"></th> -->
+				<th></th>
+				<th></td>
+				<volist id="date" name="dates">
+				<th title="{$date}" width='60'>{$fmdates[$date]}</th>
+				</volist>
+			</tr>
+        	 
+            <tr>
+            <th width="10" height="30"></th>
+ 
+            <th title="状态">状态</th> 
+            <th title="计划员"   data-order-field='ptp_buyer'>计划员</th>
+			<th title="物料号"   data-order-field='ptp_part'>零件</th>
+			<th title="物料描述 "   data-order-field='ptp_desc1'>产品名称</th>
+			<th title="班产"  >班产</th>
+			<th title="机台"  data-order-field='mold_mach'>机台</th>
+			<!-- <th title="最小包装量">最小包装量</th> -->
+			<th>类型</th>
+			<td>初始库存</td>
+			<volist id="date" name="dates">
+			<th title="{$date}" >{$date|substr=5}</th>
+			</volist>
+			</tr>
+            
+        </thead>
+        <tbody>
+
+        
+        
+        <foreach item="partInfo" key='part' name="partsInfo">
+            <tr class='dmd' pid='{$part}'>
+	            <td  ></td>
+	            <td rowspan="3">{$partInfo["isMrp"]?"未保存":"已保存"}</td>
+	            <td rowspan="3">{$partInfo.buyer}</td>
+				<td rowspan="3">{$part}</td>
+				<td rowspan="3">{$partInfo.desc1}</td>
+				<td rowspan="3" class="mach_cap">{$machCaps[$partInfo["planMach"]][$part]}</td>
+				<td rowspan="3">
+					<if condition="count($partInfo['allowedMachines']) == 1">
+						<span>{$partInfo['allowedMachines'][0]}</span>
+						<input type='hidden' name="mach#{$partInfo['part']}#{$partInfo['line']}#{$partInfo['site']}" value="{$partInfo['allowedMachines'][0]}" />
+					<else />
+						<select name="mach#{$partInfo['part']}#{$partInfo['line']}#{$partInfo['site']}" onchange="toggleMachineCap(this)" style='width: 100%;'>
+							<option value='' cap=''></option>
+							<foreach item="allowedMachine" name='partInfo.allowedMachines'>
+							<option value="{$allowedMachine}" cap="{$machCaps[$allowedMachine]}"  <if condition='$partInfo["planMach"] eq $allowedMachine'>selected</if>>{$allowedMachine}</option>
+							</foreach>
+						</select>
+					</if>
+
+				<!-- {$partInfo.planMach} -->
+				</td>
+				<!-- <td rowspan="3" class="ord_min">{$partInfo.ordMin}</td> -->
+				<td><strong>需求</strong></td>
+				<td rowspan="3"><span class="org_stock_qty">{$partInfo['stocks'][$orgDate]}</span></td>
+				<volist id="date" name="dates">
+				<td date='{$date}'> <span class='dmd_qty' >{$partInfo['dmds'][$date]}</span>
+				</td>
+					 			
+				</volist>
+
+            </tr>
+            <tr class='plan' pid='{$part}' readonly>
+	            <td  ></td>
+				<td><strong>计划</strong></td>
+				<volist id="date" name="dates">
+				<td date='{$date}' <if condition="$isWorkdayDateMap[$date]">class="workday"  </if>  ondblclick='dispMoldPlanQtyFields(this)' date='{$date}'  org-qty="{$partInfo['prods'][$date]}"    >
+					<span class='rps_qty'>{$partInfo['prods'][$date]}</span>
+				    <input style='width: 100%;'  type='text' class='rps_qty'   name="rps#{$part}#{$partInfo['line']}#{$partInfo['site']}#{$date}#{$dateTypeMap[$date]}" value="{$partInfo['prods'][$date]}" valuebf="{$partInfo['prods'][$date]}"  onchange="calculateMoldAmount(this)"     />  
+				</td>
+				</volist>
+            </tr>
+            
+            <tr class='stock' pid='{$part}' readonly>
+	            <td  ></td>
+				<td><strong>库存</strong></td>
+				<volist id="date" name="dates">
+				<td date='{$date}'  <if condition="$partInfo['stocks'][$date] lt 0">class='invalidStock'</if>  >
+					<span class='stock_qty'>{$partInfo['stocks'][$date]}</span>
+				</td>
+				</volist>
+            </tr>
+ 
+            <tr><td></td></tr>
+        </foreach>
+
+        </tbody>
+    </table>
+
+</form>    	
+
+    <div class="bjui-footBar">
+
+    </div>
+ 
+</div>
+<style>
+#plansForm tr.plan input {
+	display: none;
+}
+#plansForm tr.plan_input input.rps_qty{
+	display: inline-block;
+}
+#plansForm tr.plan_input span.rps_qty{
+	display: none;
+}
+#plansForm .fchanged .rps_qty {
+	color: red;
+}
+#plansForm .invalidStock {
+	background-color: red;
+}
+#plansForm .overCap {
+	background-color: purple;
+	color: white;
+}
+
+#plansForm th.periodShift {
+	background-color: green;
+	color: black;
+}
+#plansForm th.dblShift {
+	background-color: blue;
+	color: white;
+}
+ 
+#plansForm .workday {
+	background: #FFF68F;
+}
+
+</style>
+<script type='text/javascript'>
+$(document).ready(function() {
+	// ensure all the event handlers would just be bound once due to th B-jui's duplicate html snippet reloading feature.	
+/* 	if ($(document).data("prpLoaded")) {
+		return;
+	}
+	$(document).data("prpLoaded" , true); */
+	
+	$(document).dblclick(function(event) {
+		if ($(event.target).closest("tr.plan").length == 0) {
+			hideAllMoldPlanQtyFields();
+		}
+	});
+	//calculateAccumulativeDayPlans();
+	
+ 
+});
+
+function selectProj (obj)
+{
+ 
+	$(obj).closest("#pagerForm").submit();
+}
+
+function dispMoldPlanQtyFields (planTd) 
+{
+	var plansForm = $(planTd).closest("#plansForm"); 
+	if (!$(planTd).hasClass('plan_input')) {
+		$("tr.plan", plansForm).removeClass("plan_input");
+		$(planTd).closest("tr").addClass("plan_input");
+		$("input:text", planTd).focus();
+	}
+}
+
+function hideAllMoldPlanQtyFields()
+{
+	$("tr.plan").removeClass("plan_input");
+}
+
+function calculateMoldAmount (planField) 
+{
+	var plansForm = $(planField).closest("#plansForm");
+	var saveBtn = plansForm.closest(".bjui-pageContent").siblings(".bjui-pageHeader").find("#savePlan");
+	
+	var pid = $(planField).closest("tr").attr("pid");
+	var curDate = $(planField).closest("td").attr("date");
+	
+	var ordMin = Number($("tr[pid='" + pid + "'] .ord_min", plansForm).text());
+	if (isNaN(ordMin)) {
+		ordMin = 1;
+	}
+ 
+	
+	var cap = Number($("tr[pid='" + pid +"'] .mach_cap ", plansForm).text());
+	if (isNaN(cap)) {
+		alert("请先选择机台");
+		return false;
+	}
+	
+	var orgStockQty = Number($("tr[pid='" + pid +"'] .org_stock_qty", plansForm).text());
+	isNaN(orgStockQty) && (orgStockQty = 0);	
+
+ 	
+	// check if order qty is valid.
+	var val = $.trim($(planField).val());
+	var curPlanQty;
+	if (val.charAt(0) == '*') {
+		// if qty value starts with '*', treat following part as quantity multiply
+		var mult = val.slice(1);
+		curPlanQty = Number(mult) * ordMin;
+	} else {
+		curPlanQty = Number(val);
+	}
+	
+	var isInvalid = true;
+	if (isNaN(curPlanQty)) {
+		alert("错误：输入的计划量" + val + "必须为数字");
+	} else if (curPlanQty < 0) {
+		alert("错误：输入的计划量" + val + "不能为负值");
+	} else {
+		isInvalid = false;
+	}
+	
+	if (curPlanQty > cap) {
+		alert("警告：输入的计划量" + val + "超过了机台产能");
+		$(planField).closest("td").addClass("overCap");
+	} else {
+		$(planField).closest("td").removeClass("overCap");
+	}
+	
+	if (isInvalid) {
+		// restore the input order qty data before modification if invalid
+		$(planField).val($(planField).parent().children("span.rps_qty").text()); 
+		return false;
+	} else {
+		// modify the related span text as well if valid
+		var delta = curPlanQty - Number($(planField).attr("valuebf"));
+		$(planField).val(curPlanQty);
+		$(planField).attr("valuebf", curPlanQty);
+		$(planField).parent().children("span.rps_qty").text(curPlanQty);
+		
+		// set related changed style if data was really changed
+		if (curPlanQty != $(planField).closest("td").attr('org-qty')) {
+			$(planField).closest("td").addClass("fchanged");
+		} else {
+			$(planField).closest("td").removeClass("fchanged");
+		}
+		
+		
+		// recalculate left capability and accu plans amount of the date
+		$(".sum_day_plan_qty[date='" + curDate + "']", plansForm).text(Number($(".sum_day_plan_qty[date='" + curDate + "']", plansForm).text()) + delta);
+		$(".left_day_cap_qty[date='" + curDate + "']", plansForm).text(Number($(".left_day_cap_qty[date='" + curDate + "']", plansForm).text()) - delta);
+	}
+
+	// recalculate expected daily stock amounts of the part
+	$("tr.stock[pid='" + pid + "']", plansForm).each(function() {
+		var pid = $(this).attr("pid");
+		var prevStock = parseInt($("tr[pid='" + pid +"'] .org_stock_qty", plansForm).text());
+		isNaN(prevStock) && (prevStock = 0);
+		$(".stock_qty", this).each(function() {
+			var date = $(this).closest("td").attr("date");
+			var dmdQty  = parseInt($(".dmd[pid='" + pid +"']  td[date='" + date + "'] .dmd_qty", plansForm).text());
+			var planQty = parseInt($(".plan[pid='" + pid +"'] td[date='" + date + "']  .rps_qty", plansForm).text());
+			isNaN(dmdQty) && (dmdQty = 0);
+			isNaN(planQty) && (planQty = 0);
+			var stockQty = prevStock + planQty - dmdQty;
+			$(this).text(stockQty);
+			
+			
+			if (stockQty < 0) {
+				$(this).closest("td").addClass("invalidStock");
+			} else {
+				$(this).closest("td").removeClass("invalidStock");
+			}
+			
+			prevStock = stockQty;
+		});
+	});
+	
+	// recalculate accumulative daily plans
+	//calculateAccumulativeDayPlans();
+	
+	// enable submit button
+	$("#saveDmds").prop("disabled", false);
+}
+
+ 
+function beforeSearch(obj) {
+	// can not prevent default....
+
+	//return false;
+}
+	
+
+ 
+	
+function saveMoldPlanAmount(obj) {
+	var plansForm = $(obj).closest(".bjui-pageHeader").siblings(".bjui-pageContent").find("#plansForm");;
+// 	var changedOrd = $(".ord:has(.fchanged)", plansForm);
+// 	if (changedOrd.length == 0) {
+// 		alert("未修改任何数据");
+// 		return false;
+// 	}
+	
+	// fix b-jui odd bug
+	if (!plansForm.data("submitted")) {
+		plansForm.data("submitted", true);
+		// just update the the date-qty fields of changed record
+		$(".ord", plansForm)
+		.filter(function() {
+			if ($(this).find(".fchanged").length != 0) {
+				return false;
+			}
+			return true;
+		})
+		.each(function() {
+				$("input:text", this).prop("disabled", true);
+		});
+		plansForm.submit();
+	}
+}
+
+function toggleMachineCap(selMach)
+{
+	var pid = $(selMach).closest("tr").attr("pid");
+	$("tr[pid='" + pid +"'] .mach_cap").text($("option:selected", selMach).attr("cap"));
+ 
+}
+ 
+
+ 
+
+</script>
+</style>

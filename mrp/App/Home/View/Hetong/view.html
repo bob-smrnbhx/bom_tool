@@ -1,0 +1,153 @@
+<div class="bjui-pageContent">
+        <div class="pageFormContent" style="margin:1px;" data-layout-h="0">
+		          <ul class="nav nav-tabs" role="tablist">
+                   <li class="active"><a href="#hetong" role="tab" data-toggle="tab">合同管理</a></li>
+					<li><a href='#task' role='tab' data-toggle='tab'>服务记录</a></li><li><a href='#proout' role='tab' data-toggle='tab'>出库记录</a></li><li><a href='#shou' role='tab' data-toggle='tab'>收款记录</a></li><li><a href='#fu' role='tab' data-toggle='tab'>付款记录</a></li><li><a href='#piao' role='tab' data-toggle='tab'>开票记录</a></li><li><a href='#huo' role='tab' data-toggle='tab'>发货记录</a></li>
+                  </ul>
+		 <div class="tab-content">
+           <div class="tab-pane fade active in" id="hetong"><table class="table table-bordered table-striped table-hover">
+           <tbody>
+		   <tr><td><label for='id_input' class='control-label x85'>ID:</label>{$Rs.id}</td><td><label for='addtime_input' class='control-label x85'>签约日期:</label>{$Rs.addtime}</td></tr>
+<tr><td><label for='bianhao_input' class='control-label x85'>合同编号:</label>{$Rs.bianhao}</td><td><label for='title_input' class='control-label x85'>合同名称:</label>{$Rs.title}</td></tr>
+<tr><td><label for='jcname_input' class='control-label x85'>客户名称:</label>{$Rs.jcname}</td><td><label for='xingming_input' class='control-label x85'>联系人:</label>{$Rs.xingming}</td></tr>
+<tr><td><label for='dianhua_input' class='control-label x85'>联系电话:</label>{$Rs.dianhua}</td><td><label for='jine_input' class='control-label x85'>合同金额:</label>{$Rs.jine}</td></tr>
+<tr><td><label for='yishou_input' class='control-label x85'>已收款:</label>{$Rs.yishou}</td><td><label for='weishou_input' class='control-label x85'>未收款:</label>{$Rs.weishou}</td></tr>
+<tr><td><label for='yikai_input' class='control-label x85'>已开票:</label>{$Rs.yikai}</td><td><label for='fukuan_input' class='control-label x85'>已付款:</label>{$Rs.fukuan}</td></tr>
+<tr><td><label for='name_input' class='control-label x85'>业务员:</label>{$Rs.name}</td><td><label for='juname_input' class='control-label x85'>分享给:</label>{$Rs.juname}</td></tr>
+<tr><td><label for='uname_input' class='control-label x85'>添加人:</label>{$Rs.uname}</td><td><label for='dqrq_input' class='control-label x85'>到期日期:</label>{$Rs.dqrq}</td></tr>
+<tr><td><label for='uuname_input' class='control-label x85'>更新人:</label>{$Rs.uuname}</td><td><label for='updatetime_input' class='control-label x85'>更新时间:</label>{$Rs.updatetime}</td></tr>
+<tr></tr>
+<tr></tr>
+<tr><td><label for='addm_input' class='control-label x85'>合同年月:</label>{$Rs.addm}</td></tr>
+<tr><td colspan=2><label for='beizhu_input' class='control-label x85'>合同详情:</label><div style='display: inline-block; vertical-align: middle;'><textarea name='beizhu'   data-toggle='kindeditor' data-minheight='150' data-items='fontname, fontsize, |, forecolor, hilitecolor, bold, italic, underline, removeformat, |, justifyleft, justifycenter, justifyright, insertorderedlist, insertunorderedlist, |, emoticons, image, link'>{$Rs.beizhu}</textarea></div></td></tr></tr>
+<tr><td colspan=2><label for='attid_input' class='control-label x85'>上传附件:</label>
+			<php>$attlist=M('files')->where('attid='.$Rs['attid'])->select();</php>	
+	        <foreach name='attlist' item='vf'>{$vf['uid']|truename=###}:<a href='__ROOT__/{$vf['folder']}{$vf['filename']}' target=_blank>{$vf['filedesc']}</A>&nbsp;&nbsp;{$vf['addtime']}<Br/><label  class='control-label x85'></label></foreach></td></tr>
+           </tbody>
+          </table>
+		  </div>
+		  
+		 <div class='tab-pane fade' id='task'><table class='table table-bordered table-striped table-hover'><php>$tasklist=M('task')->where(array('jhid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th height=30>接收人</th>
+<th>开始时间</th>
+<th>结束时间</th>
+<th height=30>任务标题</th>
+<th height=30>关联合同</th>
+<th>状态</th>
+<th>发布人</th>
+<th>发布时间</th>
+<th>更新人</th>
+<th>详细</th></tr></thead><tbody><foreach name='tasklist' item='taskv'><tr><td>{$taskv.id}</td>
+<td>{$taskv.juname|msubstr=###,0,20}</td>
+<td>{$taskv.kssj|substr=###,0,10}</td>
+<td>{$taskv.jssj|substr=###,0,10}</td>
+<td>{$taskv.title|msubstr=###,0,20}</td>
+<td>{$taskv.jhname|msubstr=###,0,20}</td>
+<td>{$taskv.zhuangtai}</td>
+<td>{$taskv.uname}</td>
+<td>{$taskv.addtime|substr=###,0,10}</td>
+<td>{$taskv.uuname}</td>
+  <td><a href='__MODULE__/task/view/id/{$taskv['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-masktask' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div><div class='tab-pane fade' id='proout'><table class='table table-bordered table-striped table-hover'><php>$prooutlist=M('proout')->where(array('jhid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th height=30>产品名称</th>
+<th height=30>产品价格</th>
+<th height=30>计量单位</th>
+<th height=30>规格型号</th>
+<th>出库数量</th>
+<th>经办人</th>
+<th height=30>说明</th>
+<th height=30>关联合同</th>
+<th>操作人</th>
+<th>入库时间</th>
+<th>详细</th></tr></thead><tbody><foreach name='prooutlist' item='prooutv'><tr><td>{$prooutv.id}</td>
+<td>{$prooutv.jpname|msubstr=###,0,20}</td>
+<td>{$prooutv.jpjiage|msubstr=###,0,20}</td>
+<td>{$prooutv.jpdanwei|msubstr=###,0,20}</td>
+<td>{$prooutv.jpguige|msubstr=###,0,20}</td>
+<td>{$prooutv.shuliang}</td>
+<td>{$prooutv.juname}</td>
+<td>{$prooutv.title|msubstr=###,0,20}</td>
+<td>{$prooutv.jhname|msubstr=###,0,20}</td>
+<td>{$prooutv.uname}</td>
+<td>{$prooutv.addtime|substr=###,0,10}</td>
+  <td><a href='__MODULE__/proout/view/id/{$prooutv['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-maskproout' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div><div class='tab-pane fade' id='shou'><table class='table table-bordered table-striped table-hover'><php>$shoulist=M('shou')->where(array('jhid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th height=30>关联合同</th>
+<th height=30>单据编号</th>
+<th>收款方式</th>
+<th height=30>收款金额</th>
+<th height=30>经办人</th>
+<th height=30>备注</th>
+<th>添加人</th>
+<th>添加时间</th>
+<th>详细</th></tr></thead><tbody><foreach name='shoulist' item='shouv'><tr><td>{$shouv.id}</td>
+<td>{$shouv.jhname|msubstr=###,0,20}</td>
+<td>{$shouv.bianhao|msubstr=###,0,20}</td>
+<td>{$shouv.type}</td>
+<td>{$shouv.jine|msubstr=###,0,20}</td>
+<td>{$shouv.juname|msubstr=###,0,20}</td>
+<td>{$shouv.beizhu|msubstr=###,0,20}</td>
+<td>{$shouv.uname}</td>
+<td>{$shouv.addtime|substr=###,0,10}</td>
+  <td><a href='__MODULE__/shou/view/id/{$shouv['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-maskshou' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div><div class='tab-pane fade' id='fu'><table class='table table-bordered table-striped table-hover'><php>$fulist=M('fu')->where(array('jhid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th height=30>关联合同</th>
+<th height=30>单据编号</th>
+<th>款项类型</th>
+<th>付款方式</th>
+<th height=30>付款金额</th>
+<th height=30>经办人</th>
+<th height=30>备注</th>
+<th>添加人</th>
+<th>添加时间</th>
+<th>详细</th></tr></thead><tbody><foreach name='fulist' item='fuv'><tr><td>{$fuv.id}</td>
+<td>{$fuv.jhname|msubstr=###,0,20}</td>
+<td>{$fuv.bianhao|msubstr=###,0,20}</td>
+<td>{$fuv.fenlei}</td>
+<td>{$fuv.type}</td>
+<td>{$fuv.jine|msubstr=###,0,20}</td>
+<td>{$fuv.juname|msubstr=###,0,20}</td>
+<td>{$fuv.beizhu|msubstr=###,0,20}</td>
+<td>{$fuv.uname}</td>
+<td>{$fuv.addtime|substr=###,0,10}</td>
+  <td><a href='__MODULE__/fu/view/id/{$fuv['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-maskfu' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div><div class='tab-pane fade' id='piao'><table class='table table-bordered table-striped table-hover'><php>$piaolist=M('piao')->where(array('jhid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th height=30>关联合同</th>
+<th height=30>开票抬头</th>
+<th>开票金额</th>
+<th>开票编号</th>
+<th height=30>备注</th>
+<th height=30>经办人</th>
+<th>添加人</th>
+<th>添加时间</th>
+<th>详细</th></tr></thead><tbody><foreach name='piaolist' item='piaov'><tr><td>{$piaov.id}</td>
+<td>{$piaov.jhname|msubstr=###,0,20}</td>
+<td>{$piaov.title|msubstr=###,0,20}</td>
+<td>{$piaov.jine}</td>
+<td>{$piaov.bianhao}</td>
+<td>{$piaov.beizhu|msubstr=###,0,20}</td>
+<td>{$piaov.juname|msubstr=###,0,20}</td>
+<td>{$piaov.uname}</td>
+<td>{$piaov.addtime|substr=###,0,10}</td>
+  <td><a href='__MODULE__/piao/view/id/{$piaov['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-maskpiao' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div><div class='tab-pane fade' id='huo'><table class='table table-bordered table-striped table-hover'><php>$huolist=M('huo')->where(array('jhid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th height=30>关联合同</th>
+<th>发货时间</th>
+<th height=30>说明</th>
+<th height=30>物流快递</th>
+<th height=30>经办人</th>
+<th>添加人</th>
+<th height=30>更新时间</th>
+<th>详细</th></tr></thead><tbody><foreach name='huolist' item='huov'><tr><td>{$huov.id}</td>
+<td>{$huov.jhname|msubstr=###,0,20}</td>
+<td>{$huov.addtime|substr=###,0,10}</td>
+<td>{$huov.title|msubstr=###,0,20}</td>
+<td>{$huov.name|msubstr=###,0,20}</td>
+<td>{$huov.juname|msubstr=###,0,20}</td>
+<td>{$huov.uname}</td>
+<td>{$huov.updatetime|msubstr=###,0,20}</td>
+  <td><a href='__MODULE__/huo/view/id/{$huov['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-maskhuo' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div>
+		   
+		 </div>
+        </div>
+		<div class="bjui-footBar">
+        <ul>
+            <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,202 @@
+
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch"  action="__SELF__" method="post">
+	
+	<input type="hidden" name="pageSize" value="{$numPerPage}">
+    <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+	 
+    <div class="bjui-searchBar">
+    </div>
+
+</form>
+    
+</div>
+
+<div class="bjui-pageContent">
+
+	<form id="oldBomConvertForm"  action="__CONTROLLER__/importSpecBom" data-toggle="validate"  data-callback='afterOldPdConverted'  enctype="multipart/form-data" method="post" >
+		<fieldset>
+		<div id='oldBomFile'>
+			<input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+			<label>选择要导入的工程部BOM格式Excel文件: </label><br />
+			<input id="pdOldBomFile" name="pdBomFile" type="file" onchange="afterOldBomFileChanged()"/><br />
+		</div>
+		
+		<div id="usedOldSheets">
+			<label>使用工作表：</label><br />
+			<input type="checkbox" data-toggle="icheck" data-label="第1页" name="usedSheets[]" value="1" checked/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" data-toggle="icheck" data-label="第2页" name="usedSheets[]" value="2" title="勾选后，有就使用，没有就忽略" checked/>
+			<br />
+		</div>
+		
+		<div id="oldBomLocs">
+			<label>生成BOM产地：</label><br />
+			<input type="checkbox" data-toggle="icheck" data-label="宁波" name="bomLocs[]" value="NB" checked/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" data-toggle="icheck" data-label="重庆" name="bomLocs[]" value="CQ" />
+			<br />
+		</div>
+		
+		<div id="altOldBom">
+			<label>宁波油漆件补充转换：</label><br />
+			<input type="checkbox" data-toggle="icheck" data-label="通过-Z二线油漆件补充生成一线油漆件数据" name="genFromZ" value="yes" disabled /><br />
+		</div>
+		
+		<div id="oaOldTpl">
+			<label>OA流转单转换：</label><br />
+			<input type="checkbox" data-toggle="icheck" data-label="生成oa流转单导入模板" name="genOaTpl" value="yes" /><br />
+		</div>
+		
+		</fieldset>
+	
+		<button onclick="startOldConverting()" type="button" id='cvtPdOldBom'  class="btn btn-nm btn-blue">开始转换</button>
+		
+		<a href="__CONTROLLER__/exportCimFormatExcel" id='dlPdOldResult' class="btn btn-nm btn-blue" data-toggle="doexport"  data-icon="arrow-down">下载转换结果</a>
+		<br />
+		
+		<a href="__CONTROLLER__/exportCmpExcel" id='dlOldCmpResult' class="btn btn-nm btn-blue" data-toggle="doexport"  data-icon="arrow-down">下载比较结果</a>
+		<!-- <a href="__CONTROLLER__/exportStdExcel" id='dlPdOldStdResult' class="btn btn-nm btn-blue" data-toggle="doexport"  data-icon="arrow-down">下载标准BOM</a> -->
+	</form>
+
+	<div id="bomConvertPs">
+	<fieldset>
+		<ol>
+		<li>程序功能：
+			<ul>
+				<li>根据工程BOM EXCEL源文件，解析并分别生成QAD的1.4.3, 1.6, 13.1, 13.5, 13.15, 14.13.1, 14.15.1, 7.3.13维护菜单的批量cimload导入模板数据，OA的自制和外购的物料流转单批量导入模板数据。</li>
+				<li>根据工程BOM EXCEL源文件，解析BOM结构，并与同步自QAD的BOM数据进行对比，找出各种差异，并生成差异文件。由工程师进行确认</li>
+			</ul>
+		</li>
+		<li>操作方法：选择需要解析的符合工程BOM文件编制约定的EXCEL源文件，按实际需要勾选或反选相关选项，点击<strong style="color:red;">[开始转换]</strong>，等解析完毕后:
+			<ul>
+				<li>点击新出现的<strong style="color:red;">[下载转换结果]</strong>，打开下载的转换后文件，修正其中红色字体标示的超长描述数据，填写黄色背景标示的BOM中未体现的产品类等数据，再使用Cim2000程序，结合QAD相关菜单导入QAD系统。对于OA流转单数据，请分别逐页拷贝成单页EXCEL文件分别导入OA系统。</li>
+				<li>点击新出现的<strong style="color:red;">[下载比较结果]</strong>，打开下载的比较文件，工程师根据各种差异数据及描述进行分析。</li>
+			</ul>
+		</li>
+		<li>格式要求：
+			<ul>
+				<li>第1页： 为BOM分总成数据，物料列和行的交汇处（单格）为父级物料（列上）和直接子级物料（行左）的数量关系，请填写具体数量。油漆件和注塑件的物料行（行左）可直接体现BOM中使用的原材料（油漆和塑料粒子）重量。</li>
+				<li>第2页： 为BOM后视镜总成数据，物料列和行的交汇处（至少两格）为镜体总成（列上）和装饰罩和其他护罩（行左）的后视镜装配总成信息，请分别填写后视镜总成的图号（第一格）和物料号（第二格）。归属于相同后视镜总成组件的装饰罩+其他护罩（如存在）表格行需连续，不同后视镜的子组件装饰罩+其他护罩（如存在）的整体行区域之间需间隔一行。</li>
+				<li>涉及任何物料描述信息的单元格，请确保单元格内第一行为中文信息（用于导入系统）。</li>
+				<li>第2页后视镜总成的物料描述，将根据第2页对应镜体总成（列上）物料的主描述信息和装饰罩（行左）的颜色和左右描述信息自动生成，最终后视镜总成描述数据格式为：去掉"镜体"两字的镜体描述 + 颜色+ 左|右，请确保两者描述信息符合规范（装饰罩描述必须类似：XXX装饰罩[XX颜色][可插入空格][左|右]XXX，如“装饰罩炫晶黑 左 Scalp LH”）。</li>
+				
+			</ul>
+		</li>
+		<li><strong style="color:red;font-weight:bold;">对比结果文件说明</strong>：
+			<ul>
+				<li>不匹配父级：如果工程原始BOM中体现的某些父级，在QAD中却找不到同样父级代码BOM数据，那么差异数据就会展现在这里。</li>
+				<li>不匹配父子关系：如果工程原始BOM和QAD中都能找到同样的父级，但工程原始BOM和QAD中的某些父子关系却不一样，部分关系于原始BOM中体现而QAD中缺失，部分于QAD中体现而原始BOM中缺失，差异数据和差异类型会展现在这里。</li>
+				<li>不匹配用量：如果工程原始BOM中和QAD中都能找到相同的父子关系，但两边的用量却存在差异，那么差异数据就会展现在这里。</li>
+			</ul>
+		</li>
+		<li>如果已解析的工程BOM文件发生了修改，必须重新解析再重新导入，请重新选择修改后的文件再重新操作一遍。</li>
+		<li>本程序最多只读取工程格式BOM EXCEL文件前三页，默认全部读取（如只包含少于三页工作表将只读取只存在页），如只需第二页或第三页的数据，请确保只勾选相应页选项。</li>
+		<li>对于宁波BOM，物料号请编制为不带任何后缀或者带-Z后缀（宁波二线油漆件专用）的格式，并确保勾选BOM产地为宁波；对于重庆BOM，物料号请编制为不带任何后缀的格式，并确保勾选BOM产地为重庆，程序会自动生成相关-E后缀的BOM代码和工艺流程。</li>
+		<li>(因财务要求规则变化，此功能作废且不再可选)物料代码如包含后缀为-Z的宁波二号线油漆件，将总是自动生成-D后缀相关转换用BOM和工艺流程数据(强制生成)。默认还会自动生成不带后缀的一号线的物料、BOM和工艺流程数据，如之前已建立过一号线全部数据，请反选[宁波油漆件补充转换]下的选项。</li>
+		<li>如需生成OA物料流转单导入模板数据，请勾选相关选项。采购件和自制件将分别生成两页数据用于分别导入。</li>
+		<li>生成的客户日程订单7.3.13数据模板，只用于向寄售订单中添加新的寄售物料行。如果需要批量修改订单物料行或是非寄售订单，请自行调整模板格式。</li>
+		<li>于工程bom文件中体现，但不需建立直接物料的镜体总成，其组件结构将被所在后视镜总成直接包含的虚拟件，请在第一页和第二页工作表中对应使用 &lt;#&gt; + &lt;整数&gt;的格式，如:#1,#2,...#99，来标示为虚拟物料号（两页同结构虚拟镜体总成结构代码须匹配）。</li>
+		<li>对于已经建立过{物料号+客户零件号+BOM+工艺流程} ，不需重复生成导入数据的物料，请使用<strong>粗体</strong>标示。</li>
+		<li>对于已经建立过{物料号+客户零件号}，但尚未建立{BOM+工艺流程}，只需生成必需导入数据的物料，请使用<span style="color:red">红色</span>字体标示。</li>
+		</ol>
+	</fieldset>
+	</div>
+
+</div>
+
+<style>
+#oldBomConvertForm {
+	padding: 1em;
+	width: 470px;
+	float: left;
+	font-family: "微软雅黑";
+	
+}
+#oldBomConvertForm label {
+	font-size: 16px;
+	font-weight: normal;
+}
+#oldBomConvertForm span {
+	font-size: 22px;
+}
+
+#oldBomConvertForm input {
+	font-size: 20px;
+}
+#oldBomFile {
+	padding: 1em 0;
+}
+#oldBomLocs, #altOldBom, #oaOldTpl {
+	padding: 1em 0;
+}
+#cvtPdOldBom {
+	margin:15px 0;
+}
+#dlPdOldResult, #dlPdOldStdResult, #dlOldCmpResult {
+	margin: 15px 0;
+	float: right;
+	display: none;
+}
+
+#bomConvertPs {
+	padding: 1em;
+	width: 650px;
+	float: left;
+}
+#bomConvertPs ol {
+	list-style: inside decimal;
+}
+
+#bomConvertPs ol>li {
+	margin: 5px 0;
+	font-family: "微软雅黑";
+}
+#bomConvertPs li>ul>li {
+	list-style: inside disc;
+	text-indent: 2em;
+}
+</style>
+
+ <script type="text/javascript">
+
+$("#oldBomConvertForm").submit(function() {
+	$("#cvtPdOldBom").prop("disabled", true).text("正在转换，请稍侯");
+});
+
+function afterOldBomFileChanged()
+{
+	$("#cvtPdOldBom").prop("disabled", false).text("开始转换");
+	$("#dlPdOldResult").hide();
+}
+
+function startOldConverting()
+{
+	if ($("#pdOldBomFile").val() != '') {
+		$("#oldBomConvertForm").submit();
+	} else {
+		$("#oldBomConvertForm").alertmsg('error', "请先选择要导入的BOM文件");
+	}
+
+}
+
+function afterOldPdConverted  (json) 
+{
+	 $("#cvtPdOldBom").text("开始转换");
+	 if (!json.err) {
+		 $("#cvtPdOldBom").prop("disabled", false).text("转换完成，点击按最新配置重新转换");
+		 $("#dlPdOldResult").show();
+		 $("#dlPdOldStdResult").show();
+		 $("#dlOldCmpResult").show();
+		 $("#oldBomConvertForm").alertmsg('correct', json.msg);
+	 } else {
+		 $("#cvtPdOldBom").prop("disabled", false).text("转换错误，请修改文件重新转换");
+		 $("#dlPdOldResult").hide();
+		 $("#dlPdOldStdResult").hide();
+		 $("#dlOldCmpResult").hide();
+	 }
+
+}
+
+</script>

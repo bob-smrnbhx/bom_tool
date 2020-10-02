@@ -1,0 +1,1363 @@
+dn: CN=Zhu\,shunping,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: shunping
+title: IT
+givenName: Zhu
+displayName: Zhu,Shunping [Shunping Zhu] (SMR CQHX)
+department: CQ Finance Branch
+company: SMRNBHX-CQ
+sAMAccountName: spzhu
+userPrincipalName: spzhu@jv.motherson.com
+mail: Shunping.zhu@smr-nbhx.com
+
+dn: CN=Zhang\,Ying,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+title: Logistic Manager
+givenName: Ying
+displayName: Zhang,Ying [Ying Zhang] (SMR CQHX)
+department: CQ Logistic Branch
+company: SMRNBHX-CQ
+sAMAccountName: yingzhang
+userPrincipalName: yingzhang@jv.motherson.com
+mail: ying.zhang@smr-nbhx.com
+
+dn: CN=Si\,Zhifeng,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhifeng
+title: Assembly Supervisor
+description: Aessembly supervisor (Manufacture)
+givenName: Si
+displayName: Si,Zhifeng [Zhifeng Si] (SMR CQHX)
+department: CQ Assembly Shop
+company: SMRNBHX-CQ
+sAMAccountName: zfsi
+userPrincipalName: zfsi@jv.motherson.com
+mail: zf.si@smr-nbhx.com
+
+dn: CN=Zhang\,Yushuang,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yushuang
+title: Accountant
+givenName: zhang
+displayName: Zhang,Yushuang [Yushuang Zhang] (SMR CQHX)
+department: CQ Logistic Branch
+company: SMRNBHX-CQ
+sAMAccountName: yszhang
+userPrincipalName: yszhang@jv.motherson.com
+mail: yushuang.zhang@smr-nbhx.com
+
+dn: CN=Tang\,Yu,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: tang
+title: Purchasing Specialist
+description: Purchase (Purchaser)
+givenName: yu
+displayName: Tang,Yu [Yu Tang] (SMR CQHX)
+department: CQ Purchasing Branch
+company: SMRNBHX-CQ
+sAMAccountName: ytang
+userPrincipalName: ytang@jv.motherson.com
+mail: yu.tang@smr-nbhx.com
+
+dn: CN=inspection,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+givenName: inspection
+displayName: liu bo (SMR NBHX)
+sAMAccountName: inspt
+userPrincipalName: inspt@jv.motherson.com
+mail: insption@smr-nbhx.com
+
+dn: CN=Liu\,Bo,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Bo
+givenName: Liu
+displayName: Liu,Bo [Bo Liu] (SMR CQHX)
+sAMAccountName: bliu
+userPrincipalName: bliu@jv.motherson.com
+mail: bo.liu@smr-nbhx.com
+
+dn: CN=Li\,Peng,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Peng
+title: Quality Engineer
+givenName: Li
+displayName: Li,Peng [Peng Li] (SMR CQHX)
+department: CQ Quality Branch
+company: SMRNBHX-CQ
+sAMAccountName: pli
+userPrincipalName: pli@jv.motherson.com
+mail: peng.li@smr-nbhx.com
+
+dn: CN=Da\,Long,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Eymard
+title: Quality engineer
+givenName: Virgile
+displayName: Virgile,Eymard [Virgile, Eymard](SMR CQHX)
+department: Quality
+sAMAccountName: vglmard
+userPrincipalName: vglmard@jv.motherson.com
+
+dn: CN=Zhang\,Zhaijin,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+title: Finance Manager
+givenName: Zhaijin
+displayName: Zhang,Zhaijin [Roy] (SMR CQHX)
+department: CQ Finance Branch
+company: SMRNBHX-CQ
+sAMAccountName: zjzhang
+userPrincipalName: zjzhang@jv.motherson.com
+
+dn: CN=Gong\,Honglin,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Gong
+title: Quality Engineer
+givenName: Honglin
+displayName: Gong,Honglin [Honglin Gong] (SMR CQHX)
+department: CQ Quality Branch
+company: SMRNBHX-CQ
+sAMAccountName: hlgong
+userPrincipalName: hlgong@jv.motherson.com
+mail: Honglin.gong@smr-nbhx.com
+
+dn: CN=Qin\, Jian,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Qin
+title: Plant Manager
+description: Leave off,20150610
+givenName: Jian
+displayName: Qin, Jian (SMR CQHX)
+department: Manufacturing Dept/Chongqing
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jqin
+userPrincipalName: jqin@jv.motherson.com
+
+dn: CN=Meng\, Jinjun,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Meng
+description: not close
+givenName: Jinjun
+displayName: Meng, Jinjun (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jjmeng
+userPrincipalName: jjmeng@jv.motherson.com
+
+dn: CN=Chen\,Jinlan,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Jinlan
+title: Planner
+description: Logistic(Production Planner)
+givenName: Chen
+displayName: Chen,Jinlan [Jinlan Chen ] (SMR CQHX)
+department: CQ Logistic Branch
+company: SMRNBHX-CQ
+sAMAccountName: jlchen
+userPrincipalName: jlchen@jv.motherson.com
+
+dn: CN=Wen\,Hong,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Hong
+givenName: Wen
+displayName: Wen,Hong [Hong Wen] (SMR CQHX)
+sAMAccountName: hwen
+userPrincipalName: hwen@jv.motherson.com
+
+dn: CN=Yang\,Qi,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Qi
+title:: IGFjY291bnRhbnQg
+givenName: Yang
+displayName: Yang,Qi[Qi Yang](SMR CQHX)
+department: Finance department
+sAMAccountName: qyang
+userPrincipalName: qyang@jv.motherson.com
+
+dn: CN=Jiang\,Bowen,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Bowen
+title: Assembly process technician
+givenName: Jiang
+displayName: Jiang, Bowen (SMR CQHX)
+department: CQ Assembly Shop
+company: SMRNBHX-CQ
+sAMAccountName: bwjiang
+userPrincipalName: bwjiang@jv.motherson.com
+
+dn: CN=Zhang\, Ruihong (SMR-NBHX),OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Ruihong
+givenName: Zhang
+displayName: Zhang, Ruihong (SMR-NBHX)
+sAMAccountName: rhzhang
+userPrincipalName: rhzhang@jv.motherson.com
+
+dn: CN=Chen\, Qipeng (SMR-NBHX),OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Qipeng
+givenName: Chen
+displayName: Chen, Qipeng (SMR-NBHX)
+sAMAccountName: qpchen
+userPrincipalName: qpchen@jv.motherson.com
+
+dn: CN=Hui\,Lei,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lei
+givenName: Hui
+displayName: Hui, Lei [Lei Hui] (SMR CQHX)
+sAMAccountName: lhui
+userPrincipalName: lhui@jv.motherson.com
+
+dn: CN=Zhu\,Chunyan,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chunyan
+givenName: Zhu
+displayName: Zhu, Chunyan [Chunyan Zhu] (SMR CQHX)
+sAMAccountName: cyzhu
+userPrincipalName: cyzhu@jv.motherson.com
+
+dn: CN=Tan\,Fei,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Fei
+givenName: Tan
+displayName: Tan, Fei [Fei Tan] (SMR CQHX)
+company: SMRNBHX-CQ
+sAMAccountName: ftan
+userPrincipalName: ftan@jv.motherson.com
+
+dn: CN=Zhang Xinwen,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xinwen
+title: Assistant Manager
+givenName: Zhang
+displayName: Zhang,XinWen [Xinwen Zhang] (SMR CQHX)
+department: Paint Workshop
+sAMAccountName: xwzhang
+userPrincipalName: xwzhang@jv.motherson.com
+
+dn: CN=Deng\,Hongyou,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Hongyou
+title: Tooling Engineer
+givenName: Deng
+displayName: Deng,Hongyou [Hongyou Deng] (SMR CQHX)
+department: CQ Equipment Branch
+company: SMRNBHX-CQ
+sAMAccountName: hydeng
+userPrincipalName: hydeng@jv.motherson.com
+
+dn: CN=Liu\,Jiashun,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Jiashun
+title: Testing Engineer
+givenName: Liu
+displayName: Liu,Jiashun [Jiashun Liu] (SMR CQHX)
+department: CQ Quality Branch
+company: SMRNBHX-CQ
+sAMAccountName: jsliu
+userPrincipalName: jsliu@jv.motherson.com
+
+dn: CN=Li\, Pengcheng,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Li
+description: leave off, 2015-05-12
+givenName: Pengcheng
+displayName: Li, Pengcheng (SMR NBHX)
+sAMAccountName: pcli
+userPrincipalName: pcli@jv.motherson.com
+
+dn: CN=Tan\,Zhenyu,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhenyu
+title: Assembly process technician
+givenName: Tan
+displayName: Zhenyu, Tan (SMR CQHX)
+department: Manufacturing department
+company: SMRNBHX-CQ
+sAMAccountName: zytan
+userPrincipalName: zytan@jv.motherson.com
+
+dn: CN=Guan\,Tian,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Tian
+title: Assembly process technician
+givenName: Guan
+displayName: Guan,Tian
+department: CQ Manufacturing department
+company: SMRNBHX-CQ
+sAMAccountName: tguan
+userPrincipalName: tguan@jv.motherson.com
+
+dn: CN=Ran\,Tao,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Ran
+title: Purchasing
+description: CQPC15012
+givenName: Tao
+displayName: Ran,Tao [Tao Ran] (SMR NBHX)
+department: CQ Logistic Branch
+company: SMRNBHX-CQ
+sAMAccountName: tran
+userPrincipalName: tran@jv.motherson.com
+
+dn: CN=Wang\,Li,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Li
+title: AR
+givenName: Wang
+displayName: Wang,Li [Li Wang] (SMR CQHX)
+department: CQ Finance Branch
+company: SMRNBHX-CQ
+sAMAccountName: lwang
+userPrincipalName: lwang@jv.motherson.com
+
+dn: CN=Tian Zhiguo,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhiguo
+title: Vice manager
+description: CQNB15011
+givenName: Tian
+displayName: Zhiguo, Tian (SMR-NBHX)
+department: Paint & Mold
+sAMAccountName: zgtian
+userPrincipalName: zgtian@jv.motherson.com
+
+dn: CN=Chen\,Xiao(SQE),OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xiao
+title: SQE
+description: Quality(SQE)
+givenName: Chen
+displayName: Chen,Xiao[Xiao Chen](SMR CQHX-Quality)
+department: CQ Quality Branch
+company: SMRNBHX-CQ
+sAMAccountName: xiaochen
+userPrincipalName: xiaochen@jv.motherson.com
+
+dn: CN=Yang\,Chonggang,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chonggang
+title: EHS
+description: CQNB15010
+givenName: Yang
+displayName: Yang,Chonggang [Chonggang Yang] (SMR CQHX)
+department: CQ HR&AD Branch
+company: SMRNBHX-CQ
+sAMAccountName: cgyang
+userPrincipalName: cgyang@jv.motherson.com
+
+dn: CN=Li\,Yong,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Li
+title: Faci&Maint manager
+description: NNBO13037
+givenName: Yong
+displayName: Li,Yong [Yong Li] (SMR CQHX)
+department: CQ Equipment Branch
+company: SMRNBHX-CQ
+sAMAccountName: liyong
+userPrincipalName: liyong@jv.motherson.com
+
+dn: CN=Lin\,Xiaobing,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lin
+title: Robot Procedure Engineer
+givenName: Xiaobing
+displayName: Lin, Xiaobing [Xiaobing Lin] (SMR CQHX)
+department: CQ Painting Shop
+company: SMRNBHX-CQ
+sAMAccountName: xblin
+userPrincipalName: xblin@jv.motherson.com
+
+dn: CN=Ma\,Pengfei,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: pengfei
+title: Logistic Engineer
+givenName: Ma
+displayName: Ma,Pengfei [Peng Feima] (SMR-CQHX)
+department: CQ Logistic Branch
+company: SMRNBHX-CQ
+sAMAccountName: pfma
+userPrincipalName: pfma@jv.motherson.com
+
+dn: CN=Wang Debo,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Debo
+givenName: Wang
+displayName: Wang Debo
+sAMAccountName: dbwang
+userPrincipalName: dbwang@jv.motherson.com
+mail: debo.wang@smr-nbhx.com
+
+dn: CN=Zhao\,Shuguo,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Shuguo
+title: Test Engineer
+givenName: Zhao
+displayName: Zhao, Shuguo [Shuguo Zhao] (SMR CQHX)
+department: Quality department
+company: SMRNBHX-CQ
+sAMAccountName: sgzhao
+userPrincipalName: sgzhao@jv.motherson.com
+
+dn: CN=Li\,Man,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Li
+title: HR Specialist
+givenName: Man
+displayName: Li,Man [Man Li] (SMR CQHX)
+department: CQ HR&AD Branch
+company: SMRNBHX-CQ
+sAMAccountName: mli
+userPrincipalName: mli@jv.motherson.com
+
+dn: CN=Xiong\,Feng,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: xiong
+description: CQPC15012
+givenName: feng
+displayName: Xiong, Feng (SMR NBHX)
+department:: UHVyY2hhc2luZyA=
+logonHours:: ////////////////////////////
+sAMAccountName: fxiong
+userPrincipalName: fxiong@jv.motherson.com
+
+dn: CN=Yang\,XiaoHong,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yang
+title: Cost Accountant
+description: leave off
+givenName: Xiaohong
+displayName: Yang, XiaoHong (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: xhyang
+userPrincipalName: xhyang@jv.motherson.com
+
+dn: CN=Wang\,JunYing,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wang
+title: Purchasing Supervisor
+givenName: Junying
+displayName: Wang,JunYing [Viki] (SMR CQHX)
+department: CQ Purchasing Branch
+company: SMRNBHX-CQ
+sAMAccountName: jywang
+userPrincipalName: jywang@jv.motherson.com
+
+dn: CN=Zhang\,Haijun,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+givenName: Haijun
+displayName: Zhang, Haijun (SMR NBHX)
+department:: UHVyY2hhc2luZyA=
+sAMAccountName: hjzhang
+userPrincipalName: hjzhang@jv.motherson.com
+
+dn: CN=Zhao Yiyou,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yiyou
+description: not close
+givenName: Zhao
+displayName: Zhao Yiyou
+sAMAccountName: yyzhao
+userPrincipalName: yyzhao@jv.motherson.com
+
+dn: CN=Deng\,Lan,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: deng
+description: leave off
+givenName: lan
+displayName: Deng, Lan (SMR CQHX)
+department:: UHVyY2hhc2luZyA=
+sAMAccountName: ldeng
+userPrincipalName: ldeng@jv.motherson.com
+
+dn: CN=Du\,Lin,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Du
+description: Leave off
+givenName: Lin
+displayName: Du, Lin (SMR CQHX)
+sAMAccountName: ldu
+userPrincipalName: ldu@jv.motherson.com
+
+dn: CN=gong pengshen,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: pengshen
+title: Production Planner
+description: CQNB16002
+givenName: gong
+displayName: Pengshen, Gong (SMR NBHX)
+department: Logistics Division
+sAMAccountName: psgong
+userPrincipalName: psgong@jv.motherson.com
+
+dn: CN=Li\,Guihua,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: li
+givenName: guihua
+displayName: Li,Guihua(SMR NBHX)
+department:: UHVyY2hhc2luZyA=
+sAMAccountName: guihuali
+userPrincipalName: guihuali@jv.motherson.com
+
+dn: CN=Li\,Jun,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Li
+givenName: Jun
+displayName: Li, Jun (SMR NBHX)
+sAMAccountName: jlii
+userPrincipalName: jlii@jv.motherson.com
+
+dn: CN=Shao\,Zhenlan,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Shao
+description: NNBO14027
+givenName: Zhenglan
+displayName: Shao, Zhenlan (SMR CQHX)
+sAMAccountName: zlshao
+userPrincipalName: zlshao@jv.motherson.com
+
+dn: CN=Tu\,Yanli,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: tu
+description: leave off,20150530
+givenName: yanli
+displayName: Tu,Yanli (SMR NBHX)
+department:: UHVyY2hhc2luZyA=
+sAMAccountName: yltu
+userPrincipalName: yltu@jv.motherson.com
+
+dn: CN=Wen\,Jian,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: wen
+description: leave off
+givenName: jian
+displayName: Wen,Jian (SMR NBHX)
+department:: UHVyY2hhc2luZyA=
+sAMAccountName: jwen
+userPrincipalName: jwen@jv.motherson.com
+
+dn: CN=Xiong\,Dairun,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: dairun
+description: leave off,20150618
+givenName: xiong
+displayName: Xiong, Dairun (SMR NBHX)
+department:: UHVyY2hhc2luZyA=
+sAMAccountName: drxiong
+userPrincipalName: drxiong@jv.motherson.com
+
+dn: CN=Wu\,Linghui,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Linghui
+title: Korean interpreter
+givenName: Wu
+displayName: Wu,Linghui [Linghui Wu] (SMR CQHX)
+department: Quality department
+company: SMRNBHX-CQ
+sAMAccountName: lhwu
+userPrincipalName: lhwu@jv.motherson.com
+mail: linghui.wu@smr-nbhx.com
+
+dn: CN=Luo\,Yi,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Luo
+title: Assembly Process Engineer
+givenName: Yi
+displayName: Luo,Yi [Yi Luo](SMR NBHX)
+department: CQ Manufactureing Project Branch
+company: SMRNBHX-CQ
+sAMAccountName: yluo
+userPrincipalName: yluo@jv.motherson.com
+
+dn: CN=Xu\,Jian,OU=Chongqing Disabled Users,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Jian
+title: Planner
+description: Logistic (Planner)
+givenName: Xu
+displayName: Xu,Jian [Jian Xu] (SMR CQHX)
+department: CQ Logistics Branch
+company: SMRNBHX-CQ
+sAMAccountName: jianxu
+userPrincipalName: jianxu@jv.motherson.com
+
+dn: CN=Fang\,Youjun,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: fang
+title: Supervisor
+description: system supervisor
+givenName: youjun
+displayName: Fang,Youjun [Jerry] (SMR CQHX)
+department: Finance
+company: Ningbo SMR Huaxiang Automotive Mirrors Limited
+sAMAccountName: yjfang
+userPrincipalName: yjfang@jv.motherson.com
+
+dn: CN=Tang\,Kuan,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Kuan
+givenName: Tang
+displayName: Tang Kuan
+sAMAccountName: ktang
+userPrincipalName: ktang@jv.motherson.com
+mail: kuan.tang@smr-nbhx.com
+
+dn: CN=Dan\,XiaoDong,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Dan
+title: Quality Manager
+givenName: XiaoDong
+displayName: Dan,XiaoDong [Xiaodong Dan] (SMR CQHX)
+department: CQ Quality Branch
+company: SMRNBHX-CQ
+sAMAccountName: xddan
+userPrincipalName: xddan@jv.motherson.com
+mail: Xiaodong.Dan@smr-nbhx.com
+
+dn: CN=Wenping\, Cao (SMR NBHX),OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wenping
+givenName: Cao
+displayName: Wenping, Cao (SMR NBHX)
+sAMAccountName: wpcao
+userPrincipalName: wpcao@jv.motherson.com
+mail: wenping.cao@smr-nbhx.com
+
+dn: CN=prodcq,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: prodcq
+description: PNB(10)
+displayName: prodcq  (SMR CQHX)
+sAMAccountName: prodcq
+userPrincipalName: prodcq@jv.motherson.com
+
+dn: CN=Wang Bin,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Bing
+givenName: Wang
+displayName: Wang,Bing [Bing Wang] (SMR CQHX)
+sAMAccountName: bwang
+userPrincipalName: bwang@jv.motherson.com
+mail: bin.wang@smr-nbhx.com
+
+dn: CN=Chen\,Junyu,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Junyu
+title: equipment maintenance
+givenName: Chen
+displayName: Junyu, Chen (Other)
+department: equipment
+company: Zhou qingyou
+sAMAccountName: wxdong
+userPrincipalName: wxdong@jv.motherson.com
+mail: weixing.dong@smr-nbhx.com
+
+dn: CN=Li\, Yongchuan,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yongchuan
+givenName: Li
+displayName: Li, Yongchuan [Yongchuan Li] (SMR CQHX)
+sAMAccountName: ycli
+userPrincipalName: ycli@jv.motherson.com
+mail: yongchuan.li@smr-nbhx.com
+
+dn: CN=Wang\,Min,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Min
+givenName: Wang
+displayName: Wang, Min [Min Wang] (SMR CQHX)
+company: SMRNBHX-CQ
+sAMAccountName: mwang
+userPrincipalName: mwang@jv.motherson.com
+mail: min.wang@smr-nbhx.com
+
+dn: CN=Li\,Wei,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: li
+title: Cashier
+givenName: wei
+displayName: Li,Wei [Wei Li] (SMR CQHX)
+department: CQ  Finance Branch
+company: SMRNBHX-CQ
+sAMAccountName: wli
+userPrincipalName: wli@jv.motherson.com
+mail: wei.li@smr-nbhx.com
+
+dn: CN=Fu\,Qiang,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Qiang
+givenName: Fu
+displayName: Fu, Qiang [Qiang Fu] (SMR CQHX)
+sAMAccountName: qfu
+userPrincipalName: qfu@jv.motherson.com
+mail: qiang.fu@smr-nbhx.com
+
+dn: CN=Gao\,Yuan,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: gao
+title: Controller
+description:: 6auY6L+c
+givenName: yuan
+displayName: Gao,Yuan [Gavin] (SMR CQHX-Financial)
+department: Finance Manager
+company: Chongqing SMR Huaxiang Automotive Mirrors Limited
+sAMAccountName: yuangao
+userPrincipalName: yuangao@jv.motherson.com
+mail: yuan.gao@smr-nbhx.com
+
+dn: CN=Chen\,Xiao,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chen
+title: Manufacturing engineering&Assembly workshop manager
+description: Engineering manager
+givenName: Xiao
+displayName: Chen,Xiao [Xiao Chen] (SMR CQHX-Engineer)
+department: CQ Manufactureing Project Branch
+company: SMRNBHX-CQ
+sAMAccountName: xchen
+userPrincipalName: xchen@jv.motherson.com
+mail: Xiao.Chen@smr-nbhx.com
+
+dn: CN=Wu\,Yuting,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yuting
+title: ledger clerk
+givenName: Wu
+displayName: Wu, Yuting [Yuting Wu] (SMR CQHX)
+department: ZhongXiang  logistics
+company: zhong xiang wu liu
+sAMAccountName: cqzxwl
+userPrincipalName: cqzxwl@jv.motherson.com
+mail: cqzxwl@smr-nbhx.com
+
+dn: CN=Tang\,Peng,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Peng
+givenName: Tang
+displayName: Tang Peng [Peng Tang] (SMR CQHX)
+sAMAccountName: ptang
+userPrincipalName: ptang@jv.motherson.com
+mail: peng.tang@smr-nbhx.com
+
+dn: CN=Wang\,Dongqiang,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: dongqiang
+title: Injection molding monitor
+givenName: wang
+displayName: Wang,Dongqiang [Dongqiang Wang] (SMR CQHX)
+department: CQ Mold
+company: SMRNBHX-CQ
+sAMAccountName: dqwang
+userPrincipalName: dqwang@jv.motherson.com
+
+dn: CN=Duan\,Pinghui,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Pinghui
+title: AR
+givenName: Duan
+displayName: Duan,Pinghui [Pinghui Duan] (SMR CQHX)
+department: CQ Finance Branch
+company: SMRNBHX-CQ
+sAMAccountName: phduan
+userPrincipalName: phduan@jv.motherson.com
+mail: pinghui.duan@smr-nbhx.com
+
+dn: CN=Zhang\,Bin,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Bin
+givenName: Zhang
+displayName: Zhang,Bin (SMR)
+sAMAccountName: bzhang
+userPrincipalName: bzhang@jv.motherson.com
+mail: bin.zhang@smr-nbhx.com
+
+dn: CN=Luo\,Liang,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Luo
+title: Molding&Painting workshop manager
+description: NNBO13029
+givenName: Liang
+displayName: Luo,Liang [Liang Luo] (SMR CQHX)
+department: CQ Painting Shop
+company: SMRNBHX-CQ
+sAMAccountName: luoliang
+userPrincipalName: luoliang@jv.motherson.com
+mail: Liang.luo@smr-nbhx.com
+
+dn: CN=Tang\,Li,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Li
+givenName: Tang
+displayName: Tang Li
+company: SMRNBHX-CQ
+sAMAccountName: ltang
+userPrincipalName: ltang@jv.motherson.com
+mail: li.tang@smr-nbhx.com
+
+dn: CN=Chen\,Lina,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lina
+title: Sales Assistant
+givenName: Chen
+displayName: Lina,Chen [Lina Chen] (SMR NBHX)
+department: Sales Dept.
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: LNCHEN
+userPrincipalName: LNCHEN@jv.motherson.com
+mail: ln.chen@smr-nbhx.com
+
+dn: CN=tvcq,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+givenName: tvcq
+displayName: tvcq
+sAMAccountName: tvcq
+userPrincipalName: tvcq@jv.motherson.com
+
+dn: CN=inspector,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: CQPC15027
+givenName: inspector
+displayName: inspector (SMR NBHX)
+sAMAccountName: insptor
+userPrincipalName: insptor@jv.motherson.com
+mail: insptor@smr-nbhx.com
+
+dn: CN=Wu\,Hebin,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: wu
+title: Advanced Quality Engineer
+description: Manufacture (Manufacture engineer)
+givenName: hebin
+displayName: Wu,Hebin [Hebin,Wu] (SMR CQHX)
+department: CQ Manufactureing Project Branch
+company: SMRNBHX-CQ
+sAMAccountName: hbwu
+userPrincipalName: hbwu@jv.motherson.com
+mail: hebin.wu@smr-nbhx.com
+
+dn: CN=Wang\,Hong,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: hong
+title: Project Engineer
+description:: 546L6Jm577yI6YeN5bqG77yJ
+givenName: wang
+displayName: Wang, Hong (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hwang
+userPrincipalName: hwang@jv.motherson.com
+mail: hong.wang@smr-nbhx.com
+
+dn: CN=Zhou\,Jing,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhou
+title: Statistician
+givenName: Jing
+displayName: Zhou, Jing [Jing Zhou] (SMR CQHX)
+department: CQ Painting Shop
+company: SMRNBHX-CQ
+sAMAccountName: jingzhou
+userPrincipalName: jingzhou@jv.motherson.com
+mail: jing.zhou@smr-nbhx.com
+
+dn: CN=Su\,Li,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Su
+title: Quality Engineer
+givenName: Li
+displayName: Su,Li [Li Su] (SMR CQHX)
+department: CQ Quality Branch
+company: SMRNBHX-CQ
+sAMAccountName: lsu
+userPrincipalName: lsu@jv.motherson.com
+mail: li.su@smr-nbhx.com
+
+dn: CN=Leng\,Chongsong,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chongsong
+givenName: Leng
+displayName: Chongsong, Leng (SMR)
+sAMAccountName: csleng
+userPrincipalName: csleng@jv.motherson.com
+mail: chongsong.leng@smr-nbhx.com
+
+dn: CN=Tan Chunlin,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chunlin
+givenName: Tan
+displayName: Tan Chunlin
+sAMAccountName: cltan
+userPrincipalName: cltan@jv.motherson.com
+mail: chunlin.tan@smr-nbhx.com
+
+dn: CN=Yan\,Shoumin,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Shoumin
+title: Painting Supervisor
+givenName: Yan
+displayName: Yan,Shoumin [Shoumin Yan] (SMR CQHX)
+department: CQ Painting Shop
+company: SMRNBHX-CQ
+sAMAccountName: smyan
+userPrincipalName: smyan@jv.motherson.com
+mail: shoumin.yan@smr-nbhx.com
+
+dn: CN=Pan\,Shenglong,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: pan
+title: Product Engineer
+givenName: shenglong
+displayName: Pan,Shenglong [Shenglong Pan] (SMR CQHX)
+department: CQ Manufactureing Project Branch
+company: SMRNBHX-CQ
+sAMAccountName: slpan
+userPrincipalName: slpan@jv.motherson.com
+mail: shenglong.pan@smr-nbhx.com
+
+dn: CN=Gong\,Jun,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Jun
+title: Production Planner
+givenName: Gong
+displayName: Jun, Gong [Gong Jun] (SMR CQHX)
+department: CQ Logistic Branch
+company: SMRNBHX-CQ
+sAMAccountName: jgong
+userPrincipalName: jgong@jv.motherson.com
+mail: jun.gong@smr-nbhx.com
+
+dn: CN=Yang\,Ning,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yang
+title: Assembly Process Engineer
+description: NNBO12013
+givenName: Ning
+displayName: Yang,Ning [Ning Yang] (SMR CQHX)
+department: CQ Manufactureing Project Branch
+company: SMRNBHX-CQ
+sAMAccountName: nyang
+userPrincipalName: nyang@jv.motherson.com
+mail: ning.yang@smr-nbhx.com
+
+dn: CN=Wang\,Linglan,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: wang
+title: Planner Supervisor
+description: Logistics (Planing supervisor)
+givenName: linglan
+displayName: Wang,Linglan [Linglan Wang] (SMR CQHX)
+department: CQ Logistic Branch
+company: SMRNBHX-CQ
+sAMAccountName: llwang
+userPrincipalName: llwang@jv.motherson.com
+mail: ll.wang@smr-nbhx.com
+
+dn: CN=Yao\,Songbo,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Songbo
+title: Molding Engineer
+description: CQNB15009
+givenName: Yao
+displayName: Yao,Songbo [Songbo Yao] (SMR CQHX)
+department: CQ Molding Shop
+company: SMRNBHX-CQ
+sAMAccountName: sbyao
+userPrincipalName: sbyao@jv.motherson.com
+mail: songbo.yao@smr-nbhx.com
+
+dn: CN=Zhang\,Liang,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+title: Painting Process Engineer
+givenName: Liang
+displayName: Zhang,Liang [Liang Zhang] (SMR CQHX)
+department: CQ Painting Shop
+company: SMRNBHX-CQ
+sAMAccountName: lzhang
+userPrincipalName: lzhang@jv.motherson.com
+mail: Liang.Zhang@smr-nbhx.com
+
+dn: CN=Tao\,Wei,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Tao
+description: Production Planner
+givenName: wei
+displayName: Tao Wei [Wei Tao] (SMR CQHX)
+sAMAccountName: wtao
+userPrincipalName: wtao@jv.motherson.com
+mail: wei.tao@smr-nbhx.com
+
+dn: CN=Yuan Facong,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Facong
+description: Yuan,Facong [Facong Yuan] (SMR CQHX)
+givenName: Yuan
+displayName: Yuan,Facong [Facong Yuan] (SMR CQHX)
+sAMAccountName: fcyuan
+userPrincipalName: fcyuan@jv.motherson.com
+mail: facong.yuan@smr-nbhx.com
+
+dn: CN=Yuan\,Facong,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: facong
+title: Statistician
+givenName: Yuan
+displayName: Yuan,Facong [Facong Yuan] (SMR CQHX)
+department: CQ Assembly Shop
+company: SMRNBHX-CQ
+sAMAccountName: manufacture
+userPrincipalName: manufacture@jv.motherson.com
+mail: manufacture@smr-nbhx.com
+
+dn: CN=Li\,Xingbo,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Li
+title: Product Engineer
+givenName: Xingbo
+displayName: Li, Xingbo [Xingbo Li] (SMR CQHX)
+department: CQ Manufactureing Project Branch
+company: SMRNBHX-CQ
+sAMAccountName: xbli
+userPrincipalName: xbli@jv.motherson.com
+mail: Xingbo.Li@smr-nbhx.com
+
+dn: CN=Li\,Jing,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: li
+title: Hardware House Keeper
+givenName: jing
+displayName: Li,Jing [Jing Li] (SMR CQHX)
+department: CQ Equipment Branch
+company: SMRNBHX-CQ
+sAMAccountName: jingli
+userPrincipalName: jingli@jv.motherson.com
+mail: jing.li@smr-nbhx.com
+
+dn: CN=tzcj,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+title: Quality Controlling supervisor
+description: CQPC14006
+givenName: tzcj
+displayName: tzcj (SMR-NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: tzcj
+userPrincipalName: tzcj@jv.motherson.com
+mail: tzcj@smr-nbhx.com
+
+dn: CN=Ou Yi,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yi
+givenName: Ou
+displayName: Ou Yi
+sAMAccountName: you
+userPrincipalName: you@jv.motherson.com
+mail: yi.ou@smr-nbhx.com
+
+dn: CN=Ma\,Shifang,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Shifang
+title: HR&AD Manager
+givenName: Ma
+displayName: Ma,Shifang [Shifang Ma] (SMR CQHX)
+department: CQ HR&AD Branch
+company: SMRNBHX-CQ
+sAMAccountName: sfma
+userPrincipalName: sfma@jv.motherson.com
+mail: shifang.ma@smr-nbhx.com
+
+dn: CN=Liu\,Cai,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Liu
+title: translator and assistant
+description: CQPC15010
+givenName: Cai
+displayName: Liu,Cai [Cai Liu] (SMR CQHX)
+department: CQ Quality Branch
+company: SMRNBHX-CQ
+sAMAccountName: cliu
+userPrincipalName: cliu@jv.motherson.com
+mail: cai.liu@smr-nbhx.com
+
+dn: CN=Deng\,Yayun,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yayun
+title: AR
+givenName: Deng
+displayName: Deng,Yayun [Deng Yayun] (SMR CQHX)
+department: CQ Finance Branch
+company: SMRNBHX-CQ
+sAMAccountName: yydeng
+userPrincipalName: yydeng@jv.motherson.com
+mail: yayun.deng@smr-nbhx.com
+
+dn: CN=Huang\,Fang,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Huang
+title: System Engineer
+givenName: Fang
+displayName: Huang,Fang [Fang Huang] (SMR CQHX)
+department: Quality Quality Branch
+company: SMRNBHX-CQ
+sAMAccountName: fhuang
+userPrincipalName: fhuang@jv.motherson.com
+mail: Fang.Huang@smr-nbhx.com
+
+dn: CN=Yu\,Shuijiang,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yu
+title: Robot Procedure Engineer
+givenName: Shuijiang
+displayName: Yu,Shuijiang [Shuijiang Yu] (SMR CQHX)
+department: CQ Painting Shop
+company: SMRNBHX-CQ
+sAMAccountName: sjyu
+userPrincipalName: sjyu@jv.motherson.com
+mail: Shuijiang.Yu@smr-nbhx.com
+
+dn: CN=Deng\,Xingli,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Deng
+title: Laboratory Technician
+givenName: Xingli
+displayName: Deng,Xingli [Xing Lideng] (SMR CQHX)
+department: CQ Quality Branch
+company: SMRNBHX-CQ
+sAMAccountName: xldeng
+userPrincipalName: xldeng@jv.motherson.com
+mail: Xingli.Deng@smr-nbhx.com
+
+dn: CN=Ran\,Xuehong,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xuehong
+title: Purchase member
+givenName: Ran
+displayName: Ran, Xuehong [Xuehong Ran] (SMR CQHX)
+department: Logistics department
+sAMAccountName: xhran
+userPrincipalName: xhran@jv.motherson.com
+mail: xuehong.ran@smr-nbhx.com
+
+dn: CN=Huang Lulu,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lulu
+givenName: Huang
+displayName: Huang,Lulu [Lulu Huang] (SMR CQHX)
+sAMAccountName: llhuang
+userPrincipalName: llhuang@jv.motherson.com
+mail: lulu.huang@smr-nbhx.com
+
+dn: CN=Liu\,Wei,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wei
+title: Purchasing
+givenName: Liu
+displayName: Liu,Wei [Wei Liu] (SMR CQHX)
+department: CQ Logistics Branch
+company: SMRNBHX-CQ
+sAMAccountName: wliu
+userPrincipalName: wliu@jv.motherson.com
+mail: wei.liu@smr-nbhx.com
+
+dn: CN=Tong\,Jinpeng,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Tong
+title: Quality Engineer
+description: NNBO15022
+givenName: Jinpeng
+displayName: Tong,Jinpeng [Jinpeng Tong] (SMR CQHX)
+department: CQ Quality Branch
+company: SMRNBHX-CQ
+sAMAccountName: jptong
+userPrincipalName: jptong@jv.motherson.com
+mail: Jinpeng.Tong@smr-nbhx.com
+
+dn: CN=GaoQiang Mu,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Mu
+givenName: GaoQiang
+displayName: GaoQiang Mu
+sAMAccountName: gqmu
+userPrincipalName: gqmu@jv.motherson.com
+mail: gaoqiang.mu@smr-nbhx.com
+
+dn: CN=Wang\,Shuhong,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Shuhong
+givenName: Wang
+displayName: Wang Shuhong
+sAMAccountName: shwang
+userPrincipalName: shwang@jv.motherson.com
+mail: shuhong.wang@smr-nbhx.com
+
+dn: CN=Boardroom[NO.1] Chongqing,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chongqing
+givenName: Boardroom[NO.1]
+displayName: Chongqing Meeting Room [NO.1]
+sAMAccountName: boardroomcq01
+userPrincipalName: boardroomcq01@jv.motherson.com
+mail: boardroomcq01@smr-nbhx.com
+
+dn: CN=Hou\,Ting,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Hou
+title: AR
+givenName: Ting
+displayName: Hou,Ting [Ting Hou] (SMR CQHX)
+department: CQ Finance Branch
+company: SMRNBHX-CQ
+sAMAccountName: thou
+userPrincipalName: thou@jv.motherson.com
+mail: Ting.Hou@smr-nbhx.com
+
+dn: CN=Boardroom[NO.2] Chongqing,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chongqing
+givenName: Boardroom[NO.2]
+displayName: Chongqing Meeting Room [NO.2]
+sAMAccountName: boardroomcq02
+userPrincipalName: boardroomcq02@jv.motherson.com
+mail: boardroomcq02@smr-nbhx.com
+
+dn: CN=Zhang Lin,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lin
+givenName: Zhang
+displayName: Zhang Lin
+sAMAccountName: linzhang
+userPrincipalName: linzhang@jv.motherson.com
+mail: lin.zhang@smr-nbhx.com
+
+dn: CN=Boardroom[NO.3] Chongqing,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chongqing
+givenName: Boardroom[NO.3]
+displayName: Chongqing Meeting Room [NO.3]
+sAMAccountName: boardroomcq03
+userPrincipalName: boardroomcq03@jv.motherson.com
+mail: boardroomcq03@smr-nbhx.com
+
+dn: CN=Boardroom[Board] Chongqing,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chongqing
+givenName: Boardroom[Board]
+displayName: Chongqing Meeting Room [Board]
+sAMAccountName: boardroomcq04
+userPrincipalName: boardroomcq04@jv.motherson.com
+mail: boardroomcq04@smr-nbhx.com
+
+dn: CN=Zhou\,Qingyou,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhou
+title: Facility Engineer
+givenName: Qingyou
+displayName: Zhou,Qingyou [Qing Youzhou] (SMR CQHX)
+department: CQ Equipment Branch
+company: SMRNBHX-CQ
+sAMAccountName: qyzhou
+userPrincipalName: qyzhou@jv.motherson.com
+mail: Qingyou.Zhou@smr-nbhx.com
+
+dn: CN=Wei\,Yongjian,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wei
+title: Plant General Manager
+description: U_Huaxiang person
+givenName: Yongjian
+displayName: Wei,Yongjian [Yongjian,Wei] (SMR CQHX)
+department: Manager's Office
+company: SMRNBHX-CQ
+sAMAccountName: yjwei
+userPrincipalName: yjwei@jv.motherson.com
+mail: yongjian.wei@smr-nbhx.com
+
+dn: CN=Nie\,Xiaohong,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: xiaohong
+title: HR Specialist
+description: CQPC14002
+givenName: nie
+displayName: Nie,Xiaohong [Xiaohong Nie] (SMR CQHX)
+department: CQ HR&AD Branch
+company: SMRNBHX-CQ
+sAMAccountName: xhnie
+userPrincipalName: xhnie@jv.motherson.com
+mail: xiaohong.nie@smr-nbhx.com
+
+dn: CN=Xiang\,Song,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xiang
+title: Quality Controlling supervisor
+givenName: Song
+displayName: Xiang, Song [Song Xiang] (SMR CQHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: sxiang
+userPrincipalName: sxiang@jv.motherson.com
+mail: Song.Xiang@smr-nbhx.com
+
+dn: CN=Liu\,Weiang,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Weiang
+givenName: Liu
+displayName: Liu,Weiang [Weiang Liu] (SMR CQHX)
+sAMAccountName: waliu
+userPrincipalName: waliu@jv.motherson.com
+mail: weiang.liu@smr-nbhx.com
+
+dn: CN=Gao\,Yang,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Gao
+title: Facility Engineer
+givenName: Yang
+displayName: Gao,Yang [Yang Gao] (SMR CQHX)
+department: CQ Equipment Branch
+company: SMRNBHX-CQ
+sAMAccountName: ygao
+userPrincipalName: ygao@jv.motherson.com
+mail: Yang.Gao@smr-nbhx.com
+
+dn: CN=Huang\,Wei,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wei
+givenName: Huang
+displayName: Huang,Wei [Wei Huang] (SMR CQHX)
+sAMAccountName: whuang
+userPrincipalName: whuang@jv.motherson.com
+mail: wei.huang@smr-nbhx.com
+
+dn: CN=Zhang\,Qianyuan,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Qianyuan
+givenName: Zhang
+displayName: Zhang Qianyuan
+company: CQHX
+sAMAccountName: qyzhang
+userPrincipalName: qyzhang@jv.motherson.com
+mail: qianyuan.zhang@smr-nbhx.com
+
+dn: CN=Tan\,Sheng,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Sheng
+givenName: Tan
+displayName: Tan Sheng
+sAMAccountName: stan
+userPrincipalName: stan@jv.motherson.com
+mail: sheng.tan@smr-nbhx.com
+
+dn: CN=Mu\,Yongfeng,OU=Chongqing-Users and Groups,OU=Chongqing,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yongfeng
+title: Package Engineer
+givenName: Mu
+displayName: Mu,Yongfeng [Yongfeng Mu] (SMR CQHX)
+department: Logistic department
+sAMAccountName: yfmu
+userPrincipalName: yfmu@jv.motherson.com
+mail: yongfeng.mu@smr-nbhx.com
+

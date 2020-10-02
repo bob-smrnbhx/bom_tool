@@ -1,0 +1,358 @@
+ 
+ <!-- <script src="/xcrm/Public/BJUI/js/jquery-1.7.2.min.js"></script>   -->    
+ 
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch" action="__SELF__" method="get">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">             
+    <input type="hidden" name="pageCurrent" value="{$pageCurrent}">       
+    <input type="hidden" name="orderField" value="{$_REQUEST['orderField']}">         
+    <input type="hidden" name="orderDirection" value="{$_REQUEST['orderDirection']}"> 
+	
+
+
+        <div class="bjui-searchBar">
+           <label for='f'>筛选：</label>
+           <select id='f' name='f'  data-toggle="selectpicker">
+           	   <option value='ptp_part'  <eq name='Think.request.f' value='ptp_part'>selected</eq>>物料号</option>
+               <option value='ptp_buyer' <eq name='Think.request.f' value='ptp_buyer'>selected</eq>>计划员</option>
+               <!--<option value='comp_site' <eq name='Think.request.f' value='comp_site'>selected</eq>>地点</option>
+               <option value='comp_line' <eq name='Think.request.f' value='comp_line'>selected</eq>>产线</option>  -->
+               <option value='ptp_desc1' <eq name='Think.request.f' value='comp_desc1'>selected</eq>>描述1</option>
+           </select>
+           <input type="text" value="{$_REQUEST['v']}" id="v" name="v" class="form-control" size="15" title="输入筛选条件获取对应的供应商mrp数据" />
+           
+           <button type="submit"  class="btn-default" onclick="beforeSearch(this)"  data-icon="search" >查询</button>
+            <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">清空查询</a> 
+ 
+			
+			<span style="float:right;margin-right:20px;"><button type='button' class="btn-default" data-icon="arrow-down" id='savePlan'   onclick="alert('导入成功')"    >导入</button></span>
+			
+			<span style="float:right;margin-right:20px;"><button type='button' class="btn-default" data-icon="save" id='savePlan'   onclick="alert('保存成功')"   >保存</button></span>
+			<span style="float:right;margin-right:20px;"><button type='button' class="btn-default" data-icon="arrow-up" id='savePlan'   onclick="alert('导出成功')"    >导出</button></span>
+		
+		</div> 
+</form>
+</div>
+
+
+
+<div class="bjui-pageContent">
+<form id="assyPlansForm"  action="__CONTROLLER__/updateAssyPlans" data-callback='afterPlansSaving'   data-toggle="validate" method="post"  >   <!--建议使用validate表单，因为ajaxform表单 实测总是不自动弹出响应对话框 -->
+	<table id="tabledit1" style="white-space: nowrap;"  data-toggle="tablefixed"   data-nowrap="true"  class="table table-bordered table-hover table-striped table-top" >
+        <thead>
+            <tr>
+            <th width="10" height="30"></th>
+ 			
+			<th title="物料号"  width="120px" data-order-field='ptp_part'>零件</th>
+			<th title="物料描述" width="170px" data-order-field='ptp_desc1'>描述1</th>
+			<th title="物料描述" width="150px"  data-order-field='ptp_desc1'>描述2</th>
+			<th width="70px">类型</th>
+			<volist id="date" name="dates">
+			<th title="{$date}"  date="{$date}"  width='50'>{$date|substr=5}</th>
+			</volist>
+ 
+            </tr>
+        </thead>
+        <tbody>
+        <volist id="part" name="parts">
+            <tr class='dmnd' pid='{$part.id}'>
+	            <td width="10" height="30"></td>
+				<td rowspan="6">{$part.part}</td>
+				<td rowspan="6">{$part.desc1}</td>
+				<td rowspan="6">{$part.desc2}</td>
+				<td><strong>客户需求</strong></td>
+				<volist id="date" name="dates">
+				<td date='{$date}'> <span class='dmnd_qty ' >{$part[$date]['dmd_qty']|floatval}</span>
+				</td>
+					 			
+				</volist>
+
+            </tr>
+            <tr class='plan' pid='{$part.id}' readonly>
+	            <td width="10" height="30"></td>
+				<!-- <td rowspan='5'>初始库存：<span class='org_stock_qty'>{$part.in_qty_oh|floatval}</span></td> -->
+				<td><strong>计划</strong></td>
+				<volist id="date" name="dates">
+				<td ondblclick='togglePlanQtyFields(this)' date='{$date}'  org-qty="{$part[$date]['plan_qty']}"    >
+					<span class='drps_qty'>{$part[$date]['plan_qty']|floatval}</span> 
+				</td>
+				</volist>
+            </tr>
+            <tr class='inter' pid='{$part.id}'>
+	            <td width="10" height="30"></td>
+				<td><strong>内库库存</strong></td>
+				<volist id="date" name="dates">
+				<td date='{$date}' <span class='inter_qty'>{$part[$date]['inter_qty']|floatval}</span></td>
+				</volist>
+            </tr>
+            <tr class='exter' pid='{$part.id}'>
+	            <td width="10" height="30"></td>
+				<td><strong>外库库存</strong></td>
+				<volist id="date" name="dates">
+				<td date='{$date}' <span class='inter_qty'>{$part[$date]['exter_qty']|floatval}</span></td>
+				</volist>
+            </tr>
+            <tr class='total' pid='{$part.id}'>
+	            <td width="10" height="30"></td>
+				<td><strong>所有库存</strong></td>
+				<volist id="date" name="dates">
+				<td date='{$date}' <span class='inter_qty'>{$part[$date]['total_qty']|floatval}</span></td>
+				</volist>
+            </tr>
+            <tr class='stock' pid='{$part.id}'>
+	            <td width="10" height="30"></td>
+				<td><strong>结余</strong></td>
+				<volist id="date" name="dates">
+				<td date='{$date}' <span class='inter_qty'>{$part[$date]['stock_qty']|floatval}</span></td>
+				</volist>
+            </tr>
+            <tr><td></td></tr>
+        </volist>
+        </tbody>
+    </table>
+
+</form>    	
+
+    <div class="bjui-footBar">
+
+        
+	    <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="{$numPerPage}" data-page-current="{$pageCurrent}">
+        </div>
+    </div>
+ 
+</div>
+<style>
+#plansForm tr.plan input {
+	display: none;
+}
+#plansForm tr.plan_input input.drps_qty{
+	display: inline-block;
+}
+#plansForm tr.plan_input span.drps_qty{
+	display: none;
+}
+#plansForm .fchanged .drps_qty {
+	color: red;
+}
+#plansForm .invalidStock {
+	background-color: red;
+}
+ 
+
+</style>
+<script type='text/javascript'>
+$(document).ready(function() {
+	// ensure all the event handlers would just be bound once due to th B-jui's duplicate html snippet reloading feature.	
+	if ($(document).data("prpLoaded")) {
+		return;
+	}
+	$(document).data("prpLoaded" , true);
+
+
+});
+
+
+function togglePlanQtyFields (planTd) 
+{
+	var plansForm = $(planTd).closest("#plansForm"); 
+	$("tr.plan", plansForm).removeClass("plan_input");
+	$(planTd).closest("tr").addClass("plan_input");
+	$("input:text", planTd).focus();
+}
+
+
+function calculateAmount (planField) 
+{
+	var plansForm = $(planField).closest("#plansForm");
+	var saveBtn = plansForm.closest(".bjui-pageContent").siblings(".bjui-pageHeader").find("#savePlan");
+	var pid = $(planField).closest("tr").attr("pid");
+	
+	
+	var orgStockQty = Number($(".plan[pid=" + pid + "] .org_stock_qty", plansForm).text());
+ 
+	if (isNaN(orgStockQty)) {
+		orgStockQty = 0;
+	};
+	
+
+	// check if order qty is valid.
+	var val = $.trim($(planField).val());
+	var curPlanQty;
+	curPlanQty = Number(val);
+	
+	var isInvalid = true;
+	if (isNaN(curPlanQty)) {
+		alert("错误：输入的计划量" + val + "必须为数字");
+	} else if (curPlanQty < 0) {
+		alert("错误：输入的计划量" + val + "不能为负值");
+	}  else {
+		isInvalid = false;
+	}
+	if (isInvalid) {
+		// restore the order qty data before modification if invalid
+		$(planField).val($(planField).parent().children("span.drps_qty").text()); 
+		return false;
+	} else {
+		// modify the related span text as well if valid
+		$(planField).val(curPlanQty);
+		$(planField).parent().children("span.drps_qty").text(curPlanQty);
+		
+		// set related changed style if data was really changed
+		if (curPlanQty != $(planField).closest("td").attr('org-qty')) {
+			$(planField).closest("td").addClass("fchanged");
+		} else {
+			$(planField).closest("td").removeClass("fchanged");
+		}
+	}
+
+	$(".stock[pid=" + pid + "] td[date]", plansForm).removeClass('invalidStock');
+	saveBtn.prop("disabled", false);
+	// start calculation , validation, modification.
+	var dates = [];
+	$("th[date]", plansForm).each(function() {
+		dates.push($(this).attr("date"));
+	});
+	var prevDate = 'org_date';
+	var prevStockQty = orgStockQty;
+	var invalidStockStartDate = '';
+	for (var i = 0; i < dates.length; i++) {
+		var date = dates[i];
+		var dmndQty = Number($(".dmnd[pid=" + pid + "] td[date=" + date + "] .dmnd_qty", plansForm).text());
+		var planQty = Number($(".plan[pid=" + pid + "] td[date=" + date + "] input.drps_qty", plansForm).val());
+		if (isNaN(dmndQty)) {
+			dmndQty = 0;
+		}
+		if (isNaN(planQty)) {
+			planQty = 0;
+		}
+
+		// calculate and repopulate
+		var stockQty = prevStockQty + planQty - dmndQty; 
+		$(".stock[pid=" + pid + "] td[date=" + date + "] .stock_qty", plansForm).text(stockQty);
+		
+		
+		// highlight invalid stock
+		if (stockQty < 0) {
+			// disable the order qty save button if invalid stock exists
+			saveBtn.prop("disabled", true);
+			$("#plansForm .stock[pid=" + pid + "] td[date=" + date + "]", $.CurrentNavtab).addClass('invalidStock');
+		}
+		
+		// find the first invalid stock date
+		if (i > 0) {
+			if (invalidStockStartDate == '' && stockQty < 0) {
+				invalidStockStartDate = date;
+				//alert("注意：输入的计划量导致该供需关系预计库存量从" + invalidStockStartDate + "起将不满足下一日的客户需要！");
+			}
+		}
+
+
+		prevDate = date;
+		prevStockQty = stockQty;
+		
+
+	}
+
+	//$(".stock[pid=" + pid + "] td[date]", plansForm).removeClass('invalidStock');
+	// highlight all invalid stock
+	
+	
+	
+	
+/* 	if (invalidStockStartDate) {
+		// disable the order qty save button if invalid stock exists
+		saveBtn.prop("disabled", true);
+		
+		if (invalidStockStartDate == 'org_date') {
+			$(".stock[pid=" + pid + "] td[date]", plansForm)
+			.add($(".stock[pid=" + pid + "] .org_stock_qty", plansForm).closest("td"))
+			.addClass('invalidStock');
+		} else {
+			for (var i = 0; i < dates.length; i++) {
+				var date = dates[i];
+				// highlight the dates from the first invalid stock date
+				if (invalidStockStartDate && date >= invalidStockStartDate) {
+					$("#plansForm .stock[pid=" + pid + "] td[date=" + date + "]", $.CurrentNavtab).addClass('invalidStock');
+				}
+			}
+		}
+	} 
+	
+	// if no invalid stock exists in the page(including within another record), then make the save button clickable.
+	if ($("#plansForm .stock td[date].invalidStock", $.CurrentNavtab).length == 0) {
+		saveBtn.prop("disabled", false);
+	} */
+}
+
+function beforeSearch(obj) {
+	// can not prevent default....
+
+	//return false;
+}
+	
+
+ 
+	
+function savePlanAmount(obj) {
+	var plansForm = $(obj).closest(".bjui-pageHeader").siblings(".bjui-pageContent").find("#plansForm");;
+// 	var changedOrd = $(".ord:has(.fchanged)", plansForm);
+// 	if (changedOrd.length == 0) {
+// 		alert("未修改任何数据");
+// 		return false;
+// 	}
+	
+	// fix b-jui odd bug
+	if (!plansForm.data("submitted")) {
+		plansForm.data("submitted", true);
+		// just update the the date-qty fields of changed record
+		$(".ord", plansForm)
+		.filter(function() {
+			if ($(this).find(".fchanged").length != 0) {
+				return false;
+			}
+			return true;
+		})
+		.each(function() {
+				$("input:text", this).prop("disabled", true);
+		});
+		plansForm.submit();
+	}
+}
+
+function resetOrderAmount(obj) {
+	var tmpobj = $("<div></div>");
+	$(tmpobj).navtab({
+		'id':'proDayMrp/index', 
+		'url': $(obj).closest("#pagerForm").attr('action'),
+		'title': 'MRP日运算',
+		'fresh': true
+	});
+}
+
+function afterPlansSaving (json) {
+	var url = $.CurrentNavtab.find("#pagerForm").attr("action");
+	// open a msg dialog manually
+	//alert(url);
+	
+	alert(json.message);
+	if (json.statusCode == 200) {
+		var tmpobj = $("<div></div>");
+		$(tmpobj).navtab({
+			'id':'prodmd/index', 
+			'url': url,  //必须使用可变的url而不能使用可变的data，否则BJUI有bug不会修改查询字符串
+			//'data': "ptp_id=" + ids.join("_"),
+			'fresh': true,
+			'title': '生产平衡表',
+			'onLoad': function () {
+				//alert('done');
+			}
+		});
+	}
+
+}
+
+ 
+
+</script>
+</style>

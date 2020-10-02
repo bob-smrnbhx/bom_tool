@@ -1,0 +1,10 @@
+<form id="stocksUploadForm" data-toggle="ajaxform" style="padding: 1em; line-height: 30px;"  enctype="multipart/form-data" action="__URL__/importStocks/override/yes" method="POST">
+<input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+<label style="font-size: 20px;">选择要导入的库存Excel文件: </label><input name="rps" type="file" style="font-size: 20px;" /><br />
+<input type='submit' id="submitStocks" style="font-size: 20px; float: right;" id="uploadFile" name='upload' value="导入" />
+</form>
+<script type="text/javascript">
+$("#stocksUploadForm").submit(function() {
+	$("#submitStocks").prop("disabled", true).val("正在 导入，请等待");
+});
+</script>

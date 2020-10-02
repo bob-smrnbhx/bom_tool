@@ -1,0 +1,22 @@
+<div class="bjui-pageContent">
+    <form action="__URL__/edit/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+		<input type="hidden" name="id" value="{$id}">
+        <div class="pageFormContent" data-layout-h="0">
+          <table class="table table-condensed table-hover" width="100%">
+           <tbody>
+		   <tr><td><label for='jcid_input' class='control-label x85'>客户ID:</label><input type='text' id='jcid' name='jcid'  size='20' data-toggle='lookup' data-url='__MODULE__/public/cname/navTabId/{:CONTROLLER_NAME}'  value='{$Rs.jcid}'  ></td></tr>
+<tr><td><label for='jcname_input' class='control-label x85'>客户名称:</label><input type='text' id='jcname' name='jcname'  size='20' data-toggle='lookup' data-url='__MODULE__/public/cname/navTabId/{:CONTROLLER_NAME}'  value='{$Rs.jcname}'  ></td><td><label for='type_input' class='control-label x85'>跟单方式:</label><select name='type'  data-toggle='selectpicker' ><option value=''>请选择</option><volist name='Think.config.CUSTGD_TYPE' id='type'><option value='{$type}' <if condition=" $type EQ $Rs['type'] " >selected</if> >{$type}</option></volist></td></tr>
+<tr><td><label for='fenlei_input' class='control-label x85'>进展阶段:</label><select name='fenlei'  data-toggle='selectpicker' ><option value=''>请选择</option><volist name='Think.config.CUSTGD_FENLEI' id='fenlei'><option value='{$fenlei}' <if condition=" $fenlei EQ $Rs['fenlei'] " >selected</if> >{$fenlei}</option></volist></td><td><label for='xcrq_input' class='control-label x85'>下次联系:</label><input type='text' data-toggle='datepicker' id='xcrq' name='xcrq'   size='20'   value='{$Rs.xcrq|substr=###,0,10}'  ></td></tr>
+<tr></tr>
+<tr><td colspan=2><label for='value_input' class='control-label x85'>详情:</label><textarea name='value'  cols='65' rows='5' >{$Rs.value}</textarea></td></tr>
+           </tbody>
+          </table>
+        </div>
+        <div class="bjui-footBar">
+            <ul>
+                <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+                <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+            </ul>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,202 @@
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch" action="__SELF__" method="get">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">             
+    <input type="hidden" name="pageCurrent" value="{$pageCurrent}">       
+    <input type="hidden" name="orderField" value="{$_REQUEST['orderField']}">         
+    <input type="hidden" name="orderDirection" value="{$_REQUEST['orderDirection']}"> 
+
+        <div class="bjui-searchBar">
+           <label for='f'>筛选：</label>
+           <select id='f' name='f'  data-toggle="selectpicker">
+               <option value='ptp_part' <eq name='Think.request.f' value='ptp_part'>selected</eq>>物料号</option>
+               <option value='ptp_buyer' <eq name='Think.request.f' value='ptp_buyer'>selected</eq>>计划员</option>
+               <option value='drps_line' <eq name='Think.request.f' value='drps_line'>selected</eq>>产线</option>
+               <!-- <option value='ptp_line' <eq name='Think.request.f' value='ptp_line'>selected</eq>>配置</option> -->
+               <option value='ptp_promo' <eq name='Think.request.f' value='ptp_line'>selected</eq>>推销组</option>
+               <option value='ptp_desc1' <eq name='Think.request.f' value='ptp_desc1'>selected</eq>>描述1</option>
+           </select>
+           <input type="text" value="{$_REQUEST['v']}" id='v' name="v" class="form-control" size="15" />
+           
+             <button type="submit"  class="btn-default"  onclick='clearPageNum(this)' data-icon="search">查询</button>
+<!--              <button type="button"  class="btn-default" onclick='clearPageNum(this)' data-icon="search">查询</button> -->
+              <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">清空查询</a> 
+     
+		</div> 
+</form>
+</div>
+
+
+
+<div class="bjui-pageContent"  >
+<form action="__CONTROLLER__/saveRps" id="rpsForm"   class="pageForm"  data-callback='afterRpsSaving'  method="post"> 
+	    <table id="tabledit1" style="white-space: nowrap;  "  data-toggle="tablefixed"  data-layout-h="0" data-nowrap="true"    class="table table-bordered table-hover table-striped table-top" >
+        <thead>
+            <tr>
+            <th width="10" height="30"></th>
+            <th width='70'></th>
+			<th width='50'></th>
+			<th width='75'></th>
+			<!--<th title="配置" >配置</th>  -->
+			<th width='70'></th>
+			<th width='100'></th>
+			<th width='180'></th>
+			
+			<volist id="date" name="dates">
+			<th title="{$dHeadersMap[$date]}" width='90' >{$dHeadersMap[$date]}</th>
+			</volist>
+            </tr>
+        
+        
+            <tr>
+            <th width="10" height="30"></th>
+            <th title="计划员"  data-order-field='ptp_buyer' >计划员</th>
+			<th title="地点" data-order-field='ptp_site' >地点</th>
+			<th title="产线" data-order-field='drps_line' >产线</th>
+			<!--<th title="配置" >配置</th>  -->
+			<th title="推销组" data-order-field='ptp_promo' >推销组</th>
+			<th title="物料号" data-order-field='ptp_part' >物料号</th>
+			<th title="物料描述" data-order-field='ptp_desc1' >物料描述</th>
+			
+			<volist id="date" name="dates">
+			<th title="{$date}">{$date|substr=5}</th>
+			</volist>
+            </tr>
+            
+            
+            
+
+            
+        </thead>
+        <tbody>	  
+          <volist id="part" name="parts">
+          <tr>
+		   	<td></td>
+		 	<td>{$part.ptp_buyer}</td>
+		 	<td>{$part.ptp_site}</td>
+			<td>{$part.drps_line}</td>
+			<!--<td>{$part.ptp_peizhi}</td>  -->
+			<td>{$part.ptp_promo}</td>
+			<td>{$part.ptp_part}</td>
+			<td>{$part.ptp_desc1}</td>
+
+
+			<volist id="date" name="dates">
+			<td id="drp#{$part['drps'][$date]['drps_id']}#{$date}#{$part.ptp_part}#{$part.ptp_site}#{$part.id}" org-qty="{$part['drps'][$date]['drps_qty']}" <eq name="$part['drps'][$date]['drps_ismrp']" value='1'>class='drpIsMrp'</eq> >{$part['drps'][$date]['drps_qty']}</td>
+			</volist>
+			
+			
+
+            <!--<td data-noedit="true">
+            	<button type="button" class="btn-green" data-toggle="doedit">编辑</button>  
+            </td>-->
+			<!--
+		   	<td><a href="__CONTROLLER__/view/id/{$v['id']}/navTabId/{:CONTROLLER_NAME}"  data-toggle="dialog" data-width="900" data-height="500" data-id="dialog-mask" data-mask="true" >详细</a></td>
+		   	<td <php>echo display(CONTROLLER_NAME.'/edit');</php> > <a href="__CONTROLLER__/edit/id/{$v['id']}/navTabId/{:CONTROLLER_NAME}"   class="btn btn-green btn-sm" data-toggle="dialog" data-width="900" data-height="500" data-id="dialog-mask" data-mask="true" >编辑</a></td>
+		   	</td>
+		    -->
+         </tr> 
+          </volist>
+       </tbody>
+       <present name='datesSum'>
+       <tfoot>
+         <tr>
+         	<td></td>
+         	<td colspan='9' style="font-weight: bold; text-align: center">总计</td>
+			<volist id="dateSum" name="datesSum">
+			<td>{$dateSum}</td>
+			</volist>
+			<volist id="weekSum" name="weeksSum">
+			<td>{$weekSum}</td>
+			</volist>
+			<volist id="monthSum" name="monthsSum">
+			<td>{$monthSum}</td>
+			</volist>
+
+         </tr>
+       </tfoot>
+       </present>
+    </table>
+	
+
+    <div class="bjui-footBar">
+        <div class="pages">
+            <span>共 {$totalCount} 条  每页 {$numPerPage} 条</span>
+        </div>
+        
+	    <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="{$numPerPage}" data-page-current="{$pageCurrent}">
+        </div>
+    </div>
+    
+</form>   
+</div>
+<style>
+#rpsForm input.fchanged {
+	color:red;
+}
+
+.drpIsMrp input.form-control{
+	color: blue;
+	font-weight:  bold;
+}
+</style>
+<script type='text/javascript'>
+$(document).ready(function() {
+	// ensure all the event handlers would just be bound once due to th B-jui's duplicate html snippet reloading feature.	
+	if ($(document).data("planLoaded")) {
+		return;
+	}
+	$(document).data("planLoaded", true);
+	
+	
+});
+
+
+ 
+
+
+function openDecompTab (obj) 
+{
+		var ids = [];
+		$.CurrentNavtab.find("input:checkbox[name=sel_pan]:checked").each(function() {
+			ids.push($(this).val());
+		});
+
+		var url = '__MODULE__/prodecomp/index&site=1000';
+		var ptpCondQs = [];
+		if (ids.length != 0) {
+			ptpCondQs.push("par_id=" + ids.join("_"));  
+		}
+		
+		var of = $.CurrentNavtab.find("#f");
+		var ov = $.CurrentNavtab.find("#v");
+		if (of.val() && ov.val() != '') {
+			var f = of.val().replace("ptp_", 'par_');
+			ptpCondQs.push('par_f=' + f + '&par_v=' + ov.val());
+		}
+		if (ptpCondQs.length) {
+			url += '?' + ptpCondQs.join("&");
+		}
+		
+		
+		// what a stupid compromise for stupid bjui....
+		var tmpobj = $("<div></div>");
+		$(tmpobj).navtab({
+			'id':'prodecomp/index&site=1000', 
+			'url': url,  //必须使用可变的url而不能使用可变的data，否则BJUI有bug不会修改查询字符串
+			//'data': "ptp_id=" + ids.join("_"),
+			'fresh': true,
+			'title': '物料分解',
+			'onLoad': function () {
+				//alert('done');
+			}
+		});
+
+
+}
+	
+ 
+ 
+
+
+</script>

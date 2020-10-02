@@ -1,0 +1,11 @@
+<form id="dmdsUploadForm"  style="padding: 1em; line-height: 30px;" enctype="multipart/form-data" action="__CONTROLLER__/importDmds" method="POST">
+<input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+<label style="font-size: 20px;">选择要导入的客户需求Excel文件: </label><input name="dmds" type="file" style="font-size: 20px;" /><br />
+<label for='dmd-override' style="font-size: 20px;">是否覆盖</label><input type='checkbox' style='width: 20px' id='dmd-override' name="override" value='yes' checked/>
+<input type='submit' id="submitDmds" style="font-size: 20px; float: right;" id="uploadFile" name='upload' value="导入" />
+</form>
+<script type="text/javascript">
+$("#dmdsUploadForm").submit(function() {
+	$("#submitDmds").prop("disabled", true).val("正在导入，请等待");
+});
+</script>

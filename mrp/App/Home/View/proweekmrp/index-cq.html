@@ -1,0 +1,417 @@
+ 
+<!--<script src="/xcrm/Public/BJUI/js/jquery-1.7.2.min.js"></script>    -->
+ 
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch" action="__SELF__" method="get">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">             
+    <input type="hidden" name="pageCurrent" value="{$pageCurrent}">       
+    <input type="hidden" name="orderField" value="{$_REQUEST['orderField']}">         
+    <input type="hidden" name="orderDirection" value="{$_REQUEST['orderDirection']}"> 
+	
+
+
+        <div class="bjui-searchBar">
+           <label for='f'>筛选：</label>
+           <select id='f' name='f'  data-toggle="selectpicker">
+               <option value='comp_vend' <eq name='Think.request.f' value='comp_vend'>selected</eq>>供应商</option>
+               <option value='comp_buyer' <eq name='Think.request.f' value='comp_buyer'>selected</eq>>采购员</option>
+               <option value='comp_part'  <eq name='Think.request.f' value='comp_part'>selected</eq>>物料号</option>
+               <!--<option value='comp_site' <eq name='Think.request.f' value='comp_site'>selected</eq>>地点</option>
+               <option value='comp_line' <eq name='Think.request.f' value='comp_line'>selected</eq>>产线</option>
+               <option value='comp_desc1' <eq name='Think.request.f' value='comp_desc1'>selected</eq>>描述1</option>  -->
+           </select>
+           <input type="text" value="{$_REQUEST['v']}" id="v" name="v" class="form-control" size="15" title="输入筛选条件获取对应的供应商mrp数据" />
+           <input type="hidden" value="{$_REQUEST['par_id']}" id="par_id" name="par_id"  class="form-control" />
+           <input type="hidden" value="{$_REQUEST['par_f']}" id="par_f" name="par_f"  class="form-control" />
+           <input type="hidden" value="{$_REQUEST['par_v']}" id="par_v" name="par_v"  class="form-control" />
+           
+           <button type="submit"  class="btn-default" onclick="beforeSearch(this)"  data-icon="search" >查询</button>
+            <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">清空查询</a> 
+            
+            <if condition="!$asChecker">
+            	<span style="float:right;margin-right:20px;"><button type='button' class="btn-default" data-icon="save" id='saveOrder'   onclick="saveOrderAmount(this)" <if condition='$activeNbr'>disabled title="已被主管审批，无法再次提交"</if> >提交</button></span>
+            	<span style="float:right;margin-right:20px;"><button type="button" class="btn btn-red row-del" data-icon="undo" id='resetOrder'  onclick="resetOrderAmount(this)">重置</button></span>
+            	  <span style="float:right;margin-right:20px;"><a href="__CONTROLLER__/exportBalanceExcel/site/6000" class="btn btn-blue" data-toggle="doexport"   data-icon="arrow-up" title="导出平衡表excel文件">平衡表导出</a></span>  
+            <else />
+            	<span style="float:right;margin-right:20px;"><button type='button' class="btn-default" data-icon="save" id='comfirmOrder'  onclick="confirmOrderAmount(this)" <if condition='$activePassState neq 1' >disabled title="尚未被采购员确认并提交"</if> >审核</button></span>
+            	<!-- <span style="float:right;margin-right:20px;"><a class="btn btn-red " href="__CONTROLLER__/confirmOrder" data-icon="save" id='confirmOrder' data-toggle="doajaxchecked" data-idname="ords" data-group="pass_ord" >审核</a></span> -->
+            </if>
+			
+
+		</div> 
+</form>
+</div>
+
+
+
+<div class="bjui-pageContent">
+<form id="wOrdsForm" <if condition="!$asChecker">action="__CONTROLLER__/submitVendOrder/site/6000" xxdata-callback='afterOrdsSaving'<else />action="__CONTROLLER__/confirmVendOrder/site/6000" xxdata-callback='afterOrdsConfirming'</if> data-toggle="validate" method="post"  >   <!--建议使用validate表单，因为ajaxform表单 实测总是不自动弹出响应对话框 -->
+	<input type='hidden' name='vend' value='{$vend}' />
+	<table id="tabledit1" style="white-space: nowrap;"  data-toggle="tablefixed"   data-nowrap="true"   class="table table-bordered table-hover table-striped table-top" >
+        <thead>
+            <tr>
+            <th width="10" height="30"></th>
+            <th width='50' data-order-field='tran_ispass'>状态</th>
+            <th title="采购员" width='60'  xxdata-order-field='comp_buyer' data-notread="true">采购员</th>
+            <th title="供应商代码" width='70'  data-order-field='vd_addr' data-notread="true">供应商</th>
+			<th title="供应商名称" width='180' >供应商名称</th>
+			<th title="物料号" width='90' xxdata-order-field='comp_part'>零件</th>
+			<th title="物料描述" width='180' xxdata-order-field='comp_desc1'>描述1</th>
+			<th width='40'>类型</th>
+			<volist id="weekTh" name="weeksTh">
+			<th title="{$weekTh}" width='90' date="{$weekTh}" >{$weekTh|substr=5}</th>
+			</volist>
+ 
+            </tr>
+        </thead>
+        <tbody>
+        <volist id="part" name="parts">
+            <tr class='dmnd' pid='{$part.id}'>
+
+	            <td width="10" height="30"></td>
+            	<td rowspan="4" style="text-align: center;">
+            		<if condition="$part['tran_ispass'] eq 1">
+            			<span style='color:green'>未审核</span>
+            		<elseif condition="$part['tran_ispass'] eq 2" />
+            			<span style='color:blue'>已审核</span>	
+            		<else />
+           				<span style='color:red'>未提交</span>
+            		</if>
+          		</td>	
+	            <td rowspan="4">{$part.comp_buyer}</td>
+	            <td rowspan="4">{$part.vd_addr}</td>
+				<td rowspan="4">{$part.vd_sort}</td>
+				<td rowspan="4">{$part.comp_part}</td>
+				<td>{$part.comp_desc1}</td>
+				<td><strong>需求</strong></td>
+				<volist id="weekTh" name="weeksTh">
+				<td date='{$weekTh}' <if condition="($part['tran_ispass'] eq 0) && $part['tran_ispass']   AND $part['comps_drps'][$weekTh]['mrp_pars']">title="父物料{$part['comps_drps'][$weekTh]['mrp_pars']|implode=',',###}生产计划已修改"</if>>
+					<span class='dmnd_qty <if condition="($part['tran_ispass'] eq 0) && $part['comps_drps'][$weekTh]['mrp_pars']">par_ismrp</if>' >{$part['dmnd_qtys'][$weekTh]|floatval}</span>
+				</td>
+					 			
+				</volist>
+
+            </tr>
+            <tr class='ord' pid='{$part.id}' readonly>
+	            <td width="10" height="30"></td>
+				<td>收容：<span class='ord_mult_qty'>{$part.comp_ord_mult|floatval}</span></td>
+				<td><strong>采购</strong></td>
+				<volist id="weekTh" name="weeksTh">
+				<td  <if condition='!$asChecker'> ondblclick='toggleOrdQtyFields(this)'</if>  date='{$weekTh}'  ispass='{$part['tran_ispass']}' org-qty='{$part['shop_qtys'][$weekTh]}'   class='{$part['is_shop_day'][$weekTh]?'is_shop_day':''}' title="{$part['is_shop_day'][$weekTh]?'是发货日':'非发货日'}">
+					<span class='ord_qty'>{$part['shop_qtys'][$weekTh]}</span>
+					<if condition='!$asChecker'><input style='width: 100%;'  type='text' name='orderQty[{$part.vd_addr}-{$part.comp_part}-{$part.comp_site}][{$weekTh}]' value="{$part['tran_ispass']==2 ? 0: $part['shop_qtys'][$weekTh]}"   onchange="calculateAmount(this)"   class='ord_qty'  <if condition="$part['tran_ispass']==2">readonly</if> /> </if>
+				</td>
+				</volist>
+            </tr>
+            <tr class='trans' pid='{$part.id}'>
+	            <td width="10" height="30"></td>
+				<td>安全：<span class='rop_qty'>{$part.comp_rop|floatval}</span></td>
+				<td><strong>在途</strong></td>
+				<volist id="weekTh" name="weeksTh">
+				<td date='{$weekTh}'><span class='trans_qty'>
+					{$part['tran_qtys'][$weekTh]}
+				</span></td>
+				</volist>
+            </tr>
+            <tr class='stock' pid='{$part.id}'>
+	            <td width="10" height="30"></td>
+				<td>在库：<span class='org_stock_qty'>{$part.in_qty_oh|floatval}<span></td>
+				<td><strong>结余</strong></td>
+				<volist id="weekTh" name="weeksTh">
+				<td date='{$weekTh}' <if condition="$part['fday_map'][$weekTh]">class="isfday" title="处于fday范围"</if>   ><span class='stock_qty'>{$part['stock_qtys'][$weekTh]|floatval}</span></td>
+				</volist>
+            </tr>
+            <tr><td></td></tr>
+        </volist>
+        </tbody>
+    </table>
+
+</form>    	
+
+    <div class="bjui-footBar">
+        <div class="pages">
+            <span>共 {$totalCount} 个{$asChecker?'待审核':''}供应商，  当前供应商 {$vend} 包含 {$numPerPage} 个零件</span>
+        </div>
+        
+	    <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="1" data-page-current="{$pageCurrent}">
+        </div>
+    </div>
+ 
+</div>
+<style>
+#wOrdsForm tr.ord input {
+	display: none;
+}
+#wOrdsForm tr.ord_input input.ord_qty{
+	display: inline-block;
+}
+#wOrdsForm tr.ord_input span.ord_qty{
+	display: none;
+}
+#wOrdsForm .is_shop_day{
+	background-color: yellow !important;
+}
+#wOrdsForm .is_shop_day .ord_qty{
+	background-color: yellow !important;
+}
+#wOrdsForm .fchanged .ord_qty {
+	color: red;
+}
+#wOrdsForm .invalidStock {
+	background-color: red;
+}
+#wOrdsForm .par_ismrp {
+	color: red;
+}
+#wOrdsForm .isfday {
+	font-weight: bold;
+	background: #66CC33;
+}
+
+</style>
+<script type='text/javascript'>
+$(document).ready(function() {
+	// ensure all the event handlers would just be bound once due to th B-jui's duplicate html snippet reloading feature.	
+	if ($(document).data("mrpLoaded" + {$asChecker|intval})) {
+		return;
+	}
+	$(document).data("mrpLoaded" + {$asChecker|intval}, true);
+
+
+});
+
+
+function toggleOrdQtyFields (ordTd) 
+{
+	if ($(ordTd).attr("ispass") != 2) { 
+		var wOrdsForm = $(ordTd).closest("#wOrdsForm"); 
+		$("tr.ord", wOrdsForm).removeClass("ord_input");
+		$(ordTd).closest("tr").addClass("ord_input");
+		$("input:text", ordTd).focus();
+	}
+}
+
+
+function calculateAmount (ordField) 
+{
+	var wOrdsForm = $(ordField).closest("#wOrdsForm");
+	var saveBtn = wOrdsForm.closest(".bjui-pageContent").siblings(".bjui-pageHeader").find("#saveOrder");
+	var pid = $(ordField).closest("tr").attr("pid");
+	
+	
+	saveBtn.prop("disabled", false);
+	
+	var saftyQty = Number($(".trans[pid=" + pid + "] .rop_qty", wOrdsForm).text());
+	var ordMultQty = Number($(".ord[pid=" + pid + "] .ord_mult_qty", wOrdsForm).text());
+	var orgStockQty = Number($(".stock[pid=" + pid + "] .org_stock_qty", wOrdsForm).text());
+	if (isNaN(saftyQty)) {
+		 saftyQty = 0;
+	};
+	if (isNaN(ordMultQty) || ordMultQty == 0) {
+		// order mult qty defaults to be 1.
+		ordMultQty = 1;
+	};
+	if (isNaN(orgStockQty)) {
+		orgStockQty = 0;
+	};
+	
+	// check if order qty is valid.
+	var val = $.trim($(ordField).val());
+	var curOrderQty;
+	if (val.charAt(0) == '*') {
+		// if qty value starts with '*', treat following part as quantity multiply
+		var mult = val.slice(1);
+		curOrderQty = Number(mult) * ordMultQty;
+	} else {
+		curOrderQty = Number(val);
+	}
+	var isInvalid = true;
+	if (isNaN(curOrderQty)) {
+		alert("错误：输入的采购量" + val + "必须为数字");
+	} else if (curOrderQty < 0) {
+		alert("错误：输入的采购量" + val + "不能为负值");
+	} else if (curOrderQty % ordMultQty != 0) {
+		alert("错误：输入的采购量" + val + "不是收容量：" + ordMultQty + " 的整数倍"); 
+	} else {
+		isInvalid = false;
+	}
+	if (isInvalid) {
+		// restore the order qty data before modification if invalid
+		$(ordField).val($(ordField).parent().children("span.ord_qty").text()); 
+		return false;
+	} else {
+		// modify the related span text as well if valid
+		$(ordField).val(curOrderQty);
+		$(ordField).parent().children("span.ord_qty").text(curOrderQty);
+		
+		// set related changed style if data was really changed
+		if (curOrderQty != $(ordField).closest("td").attr('org-qty')) {
+			$(ordField).closest("td").addClass("fchanged");
+		} else {
+			$(ordField).closest("td").removeClass("fchanged");
+		}
+	}
+
+	// start calculation , validation, modification.
+	var dates = [];
+	$("th[date]", wOrdsForm).each(function() {
+		dates.push($(this).attr("date"));
+	});
+	var prevDate = 'org_date';
+	var prevStockQty = orgStockQty;
+	var invalidStockStartDate = '';
+	for (var i = 0; i < dates.length; i++) {
+		var date = dates[i];
+		var dmndQty = Number($(".dmnd[pid=" + pid + "] td[date=" + date + "] .dmnd_qty", wOrdsForm).text());
+		var tranQty = Number($(".trans[pid=" + pid + "] td[date=" + date + "] .trans_qty", wOrdsForm).text());
+		var orderQty = Number($(".ord[pid=" + pid + "] td[date=" + date + "] input.ord_qty", wOrdsForm).val());
+		if (isNaN(dmndQty)) {
+			dmndQty = 0;
+		}
+		if (isNaN(tranQty)) {
+			tranQty = 0;
+		}
+		if (isNaN(orderQty)) {
+			orderQty = 0;
+		}
+
+		// calculate and repopulate
+		var stockQty= 0;
+		stockQty = prevStockQty + tranQty + orderQty - dmndQty; 
+		$(".stock[pid=" + pid + "] td[date=" + date + "] .stock_qty", wOrdsForm).text(stockQty);
+		
+		// find the first invalid stock date
+		if (i > 0) {
+			if (invalidStockStartDate == '' && prevStockQty - dmndQty < saftyQty) {
+				invalidStockStartDate = prevDate;
+				alert("注意：输入的采购量导致该供需关系预计库存量从" + invalidStockStartDate + "起将不满足下一日的生产需要！");
+			}
+		}
+
+
+		prevDate = date;
+		prevStockQty = stockQty;
+	}
+
+	$(".stock[pid=" + pid + "] td[date]", wOrdsForm).removeClass('invalidStock');
+	
+	if (invalidStockStartDate) {
+		// disable the order qty save button if invalid stock exists
+		saveBtn.prop("disabled", true);
+		
+		if (invalidStockStartDate == 'org_date') {
+			$(".stock[pid=" + pid + "] td[date]", wOrdsForm)
+			.add($(".stock[pid=" + pid + "] .org_stock_qty", wOrdsForm).closest("td"))
+			.addClass('invalidStock');
+		} else {
+			for (var i = 0; i < dates.length; i++) {
+				var date = dates[i];
+				// highlight the dates from the first invalid stock date
+				if (invalidStockStartDate && date >= invalidStockStartDate) {
+					$("#wOrdsForm .stock[pid=" + pid + "] td[date=" + date + "]", $.CurrentNavtab).addClass('invalidStock');
+				}
+			}
+		}
+	} 
+	
+	// if no invalid stock exists in the page(including within another record), then make the save button clickable.
+	if ($("#wOrdsForm .stock td[date].invalidStock", $.CurrentNavtab).length == 0) {
+		saveBtn.prop("disabled", false);
+	}
+}
+
+function beforeSearch(obj) {
+	// can not prevent default....
+
+	//return false;
+}
+	
+
+function confirmOrderAmount(obj) {
+	var wOrdsForm = $(obj).closest(".bjui-pageHeader").siblings(".bjui-pageContent").find("#wOrdsForm");
+	
+	// fix b-jui odd bug
+	if (!wOrdsForm.data("submitted")) {
+		wOrdsForm.data("submitted", true);
+		wOrdsForm.submit();
+	}
+}	
+	
+function saveOrderAmount(obj) {
+	var wOrdsForm = $(obj).closest(".bjui-pageHeader").siblings(".bjui-pageContent").find("#wOrdsForm");;
+// 	var changedOrd = $(".ord:has(.fchanged)", wOrdsForm);
+// 	if (changedOrd.length == 0) {
+// 		alert("未修改任何数据");
+// 		return false;
+// 	}
+	
+	// fix b-jui odd bug
+	if (!wOrdsForm.data("submitted")) {
+		wOrdsForm.data("submitted", true);
+		// just update the the date-qty fields of changed record
+		$(".ord", wOrdsForm)
+		.filter(function() {
+			if ($(this).find(".fchanged").length != 0) {
+				return false;
+			}
+			return true;
+		})
+		.each(function() {
+				$("input:text", this).prop("disabled", true);
+		});
+		wOrdsForm.submit();
+	}
+}
+
+function resetOrderAmount(obj) {
+	var tmpobj = $("<div></div>");
+	$(tmpobj).navtab({
+		'id':'proWeekMrp/index/site/6000', 
+		'url': $(obj).closest("#pagerForm").attr('action'),
+		'title': 'MRP周运算',
+		'fresh': true
+	});
+}
+
+function afterOrdsSaving(json) 
+{
+	var url = $.CurrentNavtab.find("#pagerForm").attr("action");
+	
+	alert(json.message);
+	if (json.statusCode == 200) {
+		var tmpobj = $("<div></div>");
+		$(tmpobj).navtab({
+			'id':'proWeekMrp/index/site/6000', 
+			'url': url,   
+			'fresh': true,
+			'title': 'MRP周运算',
+			'onLoad': function () {
+				//alert('done');
+			}
+		});
+	}
+
+}
+
+function afterOrdsConfirming(json)
+{
+	var url = $.CurrentNavtab.find("#pagerForm").attr("action");
+	
+	alert(json.message);
+	if (json.statusCode == 200) {
+		var tmpobj = $("<div></div>");
+		$(tmpobj).navtab({
+			'id':'proWeekMrpCheck/index/site/6000', 
+			'url': url,   
+			'fresh': true,
+			'title': 'MRP周审核',
+			'onLoad': function () {
+				//alert('done');
+			}
+		});
+	}
+}
+
+</script>
+</style>

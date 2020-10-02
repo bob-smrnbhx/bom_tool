@@ -1,0 +1,106 @@
+<div class="bjui-pageContent">
+	<div class="pageFormContent" data-layout-h="0">
+		<table class="table table-bordered table-striped table-hover">
+			<tbody>
+				<tr>
+					<td><label for='id_input' class='control-label x85'>ID:</label>
+						{$Rs.id}</td>
+					<td><label for='kssj_input' class='control-label x85'>会员卡号:</label>
+						{$Rs.card_number}</td>
+				</tr>
+				<tr>
+					<td><label for='jssj_input' class='control-label x85'>卡类别:</label>
+						{$Rs.category}</td>
+					<td><label for='uname_input' class='control-label x85'>分布:</label>
+						{$Rs.belong}</td>
+				</tr>
+				<tr>
+					<td><label for='bumen_input' class='control-label x85'>姓名:</label>
+						{$Rs.name}</td>
+					<td><label for='addtime_input' class='control-label x85'>性别:</label>
+						<if condition="$Rs.sex eq 0"> 男<else /> 女</if>
+						</td>
+				</tr>
+				<tr>
+					<td><label for='uuname_input' class='control-label x85'>身份证号:</label>
+						{$Rs.idcard}</td>
+					<td><label for='updatetime_input' class='control-label x85'>工作单位:</label>
+						{$Rs.work}</td>
+				</tr>
+				<tr>
+					<td><label for='uuname_input' class='control-label x85'>家庭住址:</label>
+						{$Rs.address}</td>
+					<td><label for='updatetime_input' class='control-label x85'>手机:</label>
+						{$Rs.telphone}</td>
+				</tr>
+				<tr>
+					<td><label for='uuname_input' class='control-label x85'>QQ:</label>
+						{$Rs.qq}</td>
+					<td><label for='updatetime_input' class='control-label x85'>微信:</label>
+						{$Rs.weixin}</td>
+				</tr>
+				<tr>
+					<td><label for='uuname_input' class='control-label x85'>照片:</label>
+						{$Rs.photo}</td>
+					<td><label for='updatetime_input' class='control-label x85'>入会时间:</label>
+						{$Rs.join_time}</td>
+				</tr>
+				<tr>
+					<td><label for='uuname_input' class='control-label x85'>金额:</label>
+						{$Rs.money}</td>
+					<td><label for='updatetime_input' class='control-label x85'>审证日期:</label>
+						{$Rs.shzh_time}</td>
+				</tr>
+				<tr>
+					<td><label for='uuname_input' class='control-label x85'>业务:</label>
+						{$Rs.business}</td>
+					<td><label for='updatetime_input' class='control-label x85'>车牌号码:</label>
+						{$Rs.car_number}</td>
+				</tr>
+				<tr>
+					<td><label for='uuname_input' class='control-label x85'>车主:</label>
+						{$Rs.owners}</td>
+					<td><label for='updatetime_input' class='control-label x85'>车身颜色:</label>
+						{$Rs.color}</td>
+				</tr>
+				<tr>
+					<td><label for='uuname_input' class='control-label x85'>车辆品牌:</label>
+						{$Rs.brand}</td>
+					<td><label for='updatetime_input' class='control-label x85'>车辆类型:</label>
+						{$Rs.style}</td>
+				</tr>
+				<tr>
+					<td><label for='uuname_input' class='control-label x85'>发动机号:</label>
+						{$Rs.engine_number}</td>
+					<td><label for='updatetime_input' class='control-label x85'>车架号:</label>
+						{$Rs.vin}</td>
+				</tr>
+				<tr>
+					<td><label for='uuname_input' class='control-label x85'>准驾车型:</label>
+						{$Rs.zjcx}</td>
+					<td><label for='updatetime_input' class='control-label x85'>审车日期:</label>
+						{$Rs.shch_time}</td>
+				</tr>
+				<tr>
+					<td><label for='uuname_input' class='control-label x85'>保险公司:</label>
+						{$Rs.insurer}</td>
+					<td><label for='updatetime_input' class='control-label x85'>保险到期日期:</label>
+						{$Rs.bx_time}</td>
+				</tr>
+				
+				<tr></tr>
+				<tr>
+					<td colspan=2><label for='note' class='control-label x85'>备注:</label>
+						<textarea name='note'  cols='65' rows='5' >{$Rs.note}</textarea></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="bjui-footBar">
+		<ul>
+			<li>
+				<button type="button" class="btn-close" data-icon="close">关闭</button>
+			</li>
+		</ul>
+	</div>
+</div>

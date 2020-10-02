@@ -1,0 +1,21 @@
+<div class="bjui-pageContent">
+    <form action="__URL__/add/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+		<input type="hidden" name="id" value="{$id}">
+        <div class="pageFormContent" data-layout-h="0">
+          <table class="table table-condensed table-hover" width="100%">
+           <tbody>
+			<tr><td><label for='jpid_input' class='control-label x85'>产品ID:</label><input type='text' id='jpid' name='jpid'  size='20' data-toggle='lookup' data-url='__MODULE__/public/proname/navTabId/{:CONTROLLER_NAME}'  value='{$Rs.jpid}'  ></td><td><label for='jpname_input' class='control-label x85'>产品名称:</label><input type='text' id='jpname' name='jpname'  size='20' data-toggle='lookup' data-url='__MODULE__/public/proname/navTabId/{:CONTROLLER_NAME}'  value='{$Rs.jpname}'  ></td></tr>
+
+
+<tr><td><label for='juid_input' class='control-label x85'>经办人:</label><input type='text' id='juid' name='juid'  size='20' data-toggle='lookup' data-url='__MODULE__/public/user/navTabId/{:CONTROLLER_NAME}'  value='{$Rs.juid}'  ></td><td><label for='juname_input' class='control-label x85'>经办人:</label><input type='text' id='juname' name='juname'  size='20' data-toggle='lookup' data-url='__MODULE__/public/user/navTabId/{:CONTROLLER_NAME}'  value='{$Rs.juname}'  ></td></tr>
+           </tbody>
+          </table>
+        </div>
+        <div class="bjui-footBar">
+            <ul>
+                <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+                <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+            </ul>
+        </div>
+    </form>
+</div>

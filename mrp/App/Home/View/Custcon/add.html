@@ -1,0 +1,24 @@
+<div class="bjui-pageContent">
+    <form action="__URL__/add/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+		<input type="hidden" name="id" value="{$id}">
+        <div class="pageFormContent" data-layout-h="0">
+          <table class="table table-condensed table-hover" width="100%">
+           <tbody>
+			<tr><td><label for='jcid_input' class='control-label x85'>客户ID:</label><input type='text' id='jcid' name='jcid'  size='20' data-toggle='lookup' data-url='__MODULE__/public/cname/navTabId/{:CONTROLLER_NAME}'  value='{$jcid}'  ></td><td><label for='jcname_input' class='control-label x85'>客户名称:</label><input type='text' id='jcname' name='jcname'  size='0' data-toggle='lookup' data-url='__MODULE__/public/cname/navTabId/{:CONTROLLER_NAME}'  value='{$jcname}'  ></td></tr>
+<tr><td><label for='xingming_input' class='control-label x85'>姓名:</label><input type='text' id='xingming' name='xingming'  size='20'   value='{$Rs.xingming}'  ></td><td><label for='sex_input' class='control-label x85'>性别:</label><select name='sex'  data-toggle='selectpicker' ><option value=''>请选择</option><volist name='Think.config.BASE_SEX' id='sex'><option value='{$sex}' <if condition=" $sex EQ $Rs['sex'] " >selected</if> >{$sex}</option></volist></td></tr>
+<tr><td><label for='bumen_input' class='control-label x85'>部门职务:</label><input type='text' id='bumen' name='bumen'  size='20'   value='{$Rs.bumen}'  ></td><td><label for='phone_input' class='control-label x85'>手机号码:</label><input type='text' id='phone' name='phone' data-rule='required;' size='20'   value='{$Rs.phone}'  ></td></tr>
+<tr><td><label for='email_input' class='control-label x85'>EMAIL:</label><input type='text' id='email' name='email'  size='20'   value='{$Rs.email}'  ></td><td><label for='qq_input' class='control-label x85'>QQ:</label><input type='text' id='qq' name='qq'  size='20'   value='{$Rs.qq}'  ></td></tr>
+<tr><td><label for='name_input' class='control-label x85'>爱好:</label><input type='text' id='name' name='name'  size='20'   value='{$Rs.name}'  ></td></tr>
+<tr></tr>
+<tr><td colspan=2><label for='beizhu_input' class='control-label x85'>备注:</label><textarea name='beizhu'  cols='65' rows='5' >{$Rs.beizhu}</textarea></td></tr>
+           </tbody>
+          </table>
+        </div>
+        <div class="bjui-footBar">
+            <ul>
+                <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+                <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+            </ul>
+        </div>
+    </form>
+</div>

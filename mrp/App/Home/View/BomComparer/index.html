@@ -1,0 +1,149 @@
+
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch"  action="__SELF__" method="post">
+	
+	<input type="hidden" name="pageSize" value="{$numPerPage}">
+    <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+	 
+    <div class="bjui-searchBar">
+    </div>
+
+</form>
+    
+</div>
+
+<div class="bjui-pageContent">
+
+	<form id="bomCompareForm"  action="__CONTROLLER__/importSpecBom" data-toggle="validate"  data-callback='afterBomCompared'  enctype="multipart/form-data" method="post" >
+		<fieldset>
+		<div id='bomFile'>
+			<input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+			<label>选择工程原始BOM导入后生成的标准BOM的EXCEL文件: </label><br />
+			<input id="cimBomFile" name="cimBomFile" type="file" onchange="afterStdBomFileChanged()"/><br />
+		</div>
+	
+		
+		</fieldset>
+	
+		<button onclick="startComparing()" type="button" id='compBoms'  class="btn btn-nm btn-blue">开始比较</button>
+		
+		<a href="__CONTROLLER__/exportCmpExcel" id='dlCmpResult' class="btn btn-nm btn-blue" data-toggle="doexport"  data-icon="arrow-down">下载比较结果</a>
+	</form>
+
+	<div id="bomConvertPs">
+	<fieldset>
+		<ol>
+ 			<li>程序功能：根据工程BOM EXCEL源文件，生成标准格式的BOM文件，然后与QAD中的BOM数据进行比较，自动找出差异</li>
+ 			<li>操作方法：要求将符合约定格式的工程BOM EXCEL源文件，通过[工程BOM文件转换]程序，先转换成标准格式的BOM文件，再回到此程序页面，选择标准BOM文件再进行比较。</li>
+ 			<li>步骤：
+				<ul>
+					<li>自行按约定格式，整理出工程约定格式的BOM EXCEL源文件。</li>
+					<li>将BOM EXCEL源文件，通过上面的[工程BOM文件转换]菜单功能（分为新格式和老格式），选择文件上传，点击[开始转换]，如果格式无误，将自动出现[下载标准BOM]按钮，请点击该按钮下载并保存标准格式BOM。</li>
+					<li>在此功能页面内，选择上一步导出的标准格式BOM文件，点击[开始比较]，等比较完毕后再点击新出现的[下载比较结果]，使用此比较信息文件，自行分析确认比较结果。</li>
+				</ul>	
+			</li>
+			<li>最终比较结果包含三个工作簿，说明如下：
+				<ul>
+					<li>不匹配父级：如果工程原始BOM中体现的某些父级，在QAD中却找不到同样父级代码BOM数据，那么差异数据就会展现在这里。</li>
+					<li>不匹配父子关系：如果工程原始BOM和QAD中都能找到同样的父级，但工程原始BOM和QAD中的某些父子关系却不一样，部分关系于原始BOM中体现而QAD中缺失，部分于QAD中体现而原始BOM中缺失，差异数据和差异类型会展现在这里。</li>
+					<li>不匹配用量：如果工程原始BOM中和QAD中都能找到相同的父子关系，但两边的用量却存在差异，那么差异数据就会展现在这里。</li>
+				</ul>
+			</li>
+		</ol>
+	</fieldset>
+	</div>
+
+</div>
+
+<style>
+#bomCompareForm {
+	padding: 1em;
+	width: 470px;
+	float: left;
+	font-family: "微软雅黑";
+	
+}
+#bomCompareForm label {
+	font-size: 16px;
+	font-weight: normal;
+}
+#bomCompareForm span {
+	font-size: 22px;
+}
+
+#bomCompareForm input {
+	font-size: 20px;
+}
+#bomFile {
+	padding: 1em 0;
+}
+#bomLocs, #altBom, #oaTpl {
+	padding: 1em 0;
+}
+#compBoms {
+	margin:15px 0;
+}
+#dlCmpResult {
+	margin: 15px 0;
+	float: right;
+	display: none;
+}
+
+#bomConvertPs {
+	padding: 1em;
+	width: 650px;
+	float: left;
+}
+#bomConvertPs ol {
+	list-style: inside decimal;
+}
+
+#bomConvertPs ol>li {
+	margin: 5px 0;
+	font-family: "微软雅黑";
+}
+#bomConvertPs li>ul>li {
+	list-style: inside disc;
+	text-indent: 2em;
+}
+</style>
+
+ <script type="text/javascript">
+
+$("#bomCompareForm").submit(function() {
+	$("#compBoms").prop("disabled", true).text("正在转换，请稍侯");
+});
+
+function afterStdBomFileChanged()
+{
+	$("#compBoms").prop("disabled", false).text("开始转换");
+	$("#dlCmpResult").hide();
+}
+
+function startComparing()
+{
+	if ($("#cimBomFile").val() != '' && $("#cimBomFile").val() != '') {
+		$("#bomCompareForm").submit();
+	} else {
+		$("#bomCompareForm").alertmsg('error', "请先选择要比较的标准BOM文件");
+	}
+
+}
+
+function afterBomCompared  (json) 
+{
+	 $("#compBoms").text("开始转换");
+	 if (!json.err) {
+		 $("#compBoms").prop("disabled", false).text("比较完成，点击按最新文件重新转换");
+		 $("#dlCmpResult").show();
+		 $("#bomCompareForm").alertmsg('correct', json.msg);
+	 } else {
+		 $("#compBoms").prop("disabled", false).text("比较错误，请核对文件格式重新转换");
+		 $("#dlCmpResult").hide();
+		 $("#bomCompareForm").alertmsg('error', json.msg);
+	 }
+
+}
+
+</script>

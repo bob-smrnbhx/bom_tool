@@ -1,0 +1,165 @@
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch" action="__SELF__" method="get">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">             
+    <input type="hidden" name="pageCurrent" value="{$pageCurrent}">       
+    <input type="hidden" name="orderField" value="{$_REQUEST['orderField']}">         
+    <input type="hidden" name="orderDirection" value="{$_REQUEST['orderDirection']}"> 
+	
+
+
+        <div class="bjui-searchBar">
+           <label for='f'>筛选：</label>
+           <select id='f' name='f'  data-toggle="selectpicker">
+               <option value='comp_part' <eq name='Think.request.f' value='comp_part'>selected</eq>>物料号</option>
+               <option value='comp_buyer' <eq name='Think.request.f' value='comp_buyer'>selected</eq>>采购员</option>
+               <option value='comp_vend' <eq name='Think.request.f' value='comp_vend'>selected</eq>>供应商</option>
+               <option value='comp_site' <eq name='Think.request.f' value='comp_site'>selected</eq>>地点</option>
+               <option value='comp_line' <eq name='Think.request.f' value='comp_line'>selected</eq>>产线</option>
+               <option value='comp_desc1' <eq name='Think.request.f' value='comp_desc1'>selected</eq>>描述1</option>
+           </select>
+           <input type="text" value="{$_REQUEST['v']}" id="v" name="v" class="form-control" size="15" />
+           <input type="hidden" value="{$_REQUEST['par_id']}" id="par_id" name="par_id"  class="form-control" />
+           <input type="hidden" value="{$_REQUEST['par_f']}" id="par_f" name="par_f"  class="form-control" />
+           <input type="hidden" value="{$_REQUEST['par_v']}" id="par_v" name="par_v"  class="form-control" />
+           
+           <button type="submit"  class="btn-default" data-icon="search">查询</button>
+            <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">清空查询</a> 
+            
+            <span style="float:right;margin-right:20px;"><a type="button" class="btn btn-red row-del" id='calcMrp'  onclick="openMrpTab(this)">MRP运算</a></span>  
+		</div> 
+</form>
+</div>
+
+
+
+<div class="bjui-pageContent">
+	    <table id="tabledit1" style="white-space: nowrap;"  data-toggle="tablefixed"  data-layout-h="0" data-nowrap="true"   class="table table-bordered table-hover table-striped table-top">
+        <thead>
+            <tr>
+            <th width="10" height="30"></th>
+            <th width='60'></th>
+            <th width='70'></th>
+			<th width='60'></th>
+			<th width='50'></th>
+			<!--<th title="父物料号">父物料号</th>  -->
+			<th width='90'></th>
+			<!--  <th title="用量" data-order-field='ps_qty_per'>用量</th>-->
+			<th width='180'></th>
+			<volist id="date" name="dates">
+			<th title="{$dheader}" width='70'>{$date|substr=5}</th>
+			</volist>
+            </tr>
+        
+            <tr>
+            <th width="10" height="30"></th>
+            <th title="采购员" width='60'  data-order-field='comp_buyer' data-notread="true">采购员</th>
+            <th title="供应商" width='70'  data-order-field='comp_vend' data-notread="true">供应商</th>
+			<th title="推销组" width='60' data-order-field='comp_promo'>推销组</th>
+			<th title="地点" width='50' data-order-field='comp_site'>地点</th>
+			<!--<th title="父物料号">父物料号</th>  -->
+			<th title="物料号" width='90' data-order-field='comp_part'>物料号</th>
+			<!--  <th title="用量" data-order-field='ps_qty_per'>用量</th>-->
+			<th title="物料描述" width='180' data-order-field='comp_desc1'>物料描述</th>
+			<volist id="dheader" name="dheaders">
+			<th title="{$dheader}" width='70'>{$dheader}</th>
+			</volist>
+            </tr>
+        </thead>
+        <tbody>	  
+          <volist id="part" name="parts">
+          <tr>
+		   	<td></td>
+		 	<td>{$part.comp_buyer}</td>
+		 	<td>{$part.comp_vend}</td>
+			<td>{$part.comp_promo}</td>
+			<td>{$part.comp_site}</td>
+			<!-- <td>{$part.par_parts|implode=",",###}</td> -->
+			<td title="父物料号分别是: {$part.par_parts|implode=',',###}">{$part.comp_part}</td>
+			<!--  <th title="子物料分别用量： {$part.ps_qty_pers|implode=',',###}">{$part.ps_qty_per_sum}</th>-->
+			<td title='{$part.comp_desc1}'>{$part.comp_desc1}</td>
+
+
+			<volist id="date" name="dates">
+			<td title="{$part['drps'][$date]['drps_title']}">{$part['drps'][$date]['drps_cqty']}</td>
+			</volist>
+         </tr> 
+          </volist>
+       </tbody>
+       <present name='datesSum'>
+       <tfoot>
+         <tr>
+         	<td></td>
+         	<td colspan='10' style="font-weight: bold; text-align: center">总计</td>
+			<volist id="dateSum" name="datesSum">
+			<td>{$dateSum}</td>
+			</volist>
+			<volist id="weekSum" name="weeksSum">
+			<td>{$weekSum}</td>
+			</volist>
+			<volist id="monthSum" name="monthsSum">
+			<td>{$monthSum}</td>
+			</volist>
+
+         </tr>
+       </tfoot>
+       </present>
+    </table>
+	
+
+    <div class="bjui-footBar">
+        <div class="pages">
+            <span>共 {$totalCount} 条  每页 {$numPerPage} 条</span>
+        </div>
+        
+	    <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="{$numPerPage}" data-page-current="{$pageCurrent}">
+        </div>
+    </div>
+     
+</div>
+<style>
+#rpsForm input.fchanged {
+	color:red;
+}
+
+
+</style>
+<script type='text/javascript'>
+$(document).ready(function() {
+	// ensure all the event handlers would just be bound once due to th B-jui's duplicate html snippet reloading feature.	
+	if ($(document).data("decompLoaded")) {
+		return;
+	}
+	$(document).data("decompLoaded", true);
+	
+	
+	
+});
+function openMrpTab (obj) {
+		var ptpCondQs = [];
+		if ($.CurrentNavtab.find("#par_id").val()) {
+			ptpCondQs.push('par_id=' + $.CurrentNavtab.find("#par_id").val());
+		}
+		if ($.CurrentNavtab.find("#v").val() != '') {
+			ptpCondQs.push('f=' +  $.CurrentNavtab.find("#f").val());
+			ptpCondQs.push('v=' +  $.CurrentNavtab.find("#v").val());
+		}
+		if ($.CurrentNavtab.find("#par_v").val() != '') {
+			ptpCondQs.push('par_f=' +  $.CurrentNavtab.find("#par_f").val());
+			ptpCondQs.push('par_v=' +  $.CurrentNavtab.find("#par_v").val());
+		}
+		
+		var url = '__MODULE__/proDayMrp/index/site/6000?' + ptpCondQs.join("&");
+		var tmpobj = $("<div></div>");
+		$(tmpobj).navtab({
+			'id':'proDayMrp/index/site/6000', 
+			'url':url,
+			'fresh': true,
+			'title': '采购件MRP运算',
+			'onLoad': function () {
+				//alert('done');
+			}
+		});
+}	
+	
+</script>

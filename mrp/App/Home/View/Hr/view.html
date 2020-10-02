@@ -1,0 +1,160 @@
+<div class="bjui-pageContent">
+        <div class="pageFormContent" style="margin:1px;" data-layout-h="0">
+		          <ul class="nav nav-tabs" role="tablist">
+                   <li class="active"><a href="#hr" role="tab" data-toggle="tab">员工档案</a></li>
+					<li><a href='#hrht' role='tab' data-toggle='tab'>人事合同</a></li><li><a href='#hrjf' role='tab' data-toggle='tab'>奖罚管理</a></li><li><a href='#hrzz' role='tab' data-toggle='tab'>证照管理</a></li><li><a href='#hrpx' role='tab' data-toggle='tab'>培训管理</a></li><li><a href='#hrdd' role='tab' data-toggle='tab'>人事调动</a></li><li><a href='#hrgh' role='tab' data-toggle='tab'>员工关怀</a></li>
+                  </ul>
+		 <div class="tab-content">
+           <div class="tab-pane fade active in" id="hr"><table class="table table-bordered table-striped table-hover">
+           <tbody>
+		   <tr><td><label for='id_input' class='control-label x85'>ID:</label>{$Rs.id}</td><td><label for='xingming_input' class='control-label x85'>姓名:</label>{$Rs.xingming}</td></tr>
+<tr><td><label for='sex_input' class='control-label x85'>性别:</label>{$Rs.sex}</td><td><label for='gonghao_input' class='control-label x85'>工号:</label>{$Rs.gonghao}</td></tr>
+<tr><td><label for='bumen_input' class='control-label x85'>部门:</label>{$Rs.bumen}</td><td><label for='zhiwei_input' class='control-label x85'>职位:</label>{$Rs.zhiwei}</td></tr>
+<tr><td><label for='shenfenzheng_input' class='control-label x85'>身份证号:</label>{$Rs.shenfenzheng}</td><td><label for='shengri_input' class='control-label x85'>生日:</label>{$Rs.shengri}</td></tr>
+<tr><td><label for='jiankang_input' class='control-label x85'>健康状况:</label>{$Rs.jiankang}</td><td><label for='hunyin_input' class='control-label x85'>婚姻状况:</label>{$Rs.hunyin}</td></tr>
+<tr><td><label for='minzu_input' class='control-label x85'>民族:</label>{$Rs.minzu}</td><td><label for='jiguan_input' class='control-label x85'>籍贯:</label>{$Rs.jiguan}</td></tr>
+<tr><td><label for='zhengzhi_input' class='control-label x85'>政治面貌:</label>{$Rs.zhengzhi}</td><td><label for='rudang_input' class='control-label x85'>入党时间:</label>{$Rs.rudang}</td></tr>
+<tr><td><label for='hukou_input' class='control-label x85'>户口类别:</label>{$Rs.hukou}</td><td><label for='hukoudi_input' class='control-label x85'>户口所在地:</label>{$Rs.hukoudi}</td></tr>
+<tr><td><label for='jiadizhi_input' class='control-label x85'>家庭地址:</label>{$Rs.jiadizhi}</td><td><label for='jiadianhua_input' class='control-label x85'>家庭电话:</label>{$Rs.jiadianhua}</td></tr>
+<tr><td><label for='type_input' class='control-label x85'>员工类型:</label>{$Rs.type}</td><td><label for='ruzhi_input' class='control-label x85'>入职时间:</label>{$Rs.ruzhi}</td></tr>
+<tr><td><label for='zaizhi_input' class='control-label x85'>在职状态:</label>{$Rs.zaizhi}</td><td><label for='lizhi_input' class='control-label x85'>离职时间:</label>{$Rs.lizhi}</td></tr>
+<tr><td><label for='xuexiao_input' class='control-label x85'>毕业学校:</label>{$Rs.xuexiao}</td><td><label for='biye_input' class='control-label x85'>毕业时间:</label>{$Rs.biye}</td></tr>
+<tr><td><label for='zhuanye_input' class='control-label x85'>专业:</label>{$Rs.zhuanye}</td><td><label for='xueli_input' class='control-label x85'>学历:</label>{$Rs.xueli}</td></tr>
+<tr><td><label for='xuewei_input' class='control-label x85'>学位:</label>{$Rs.xuewei}</td><td><label for='uname_input' class='control-label x85'>添加人:</label>{$Rs.uname}</td></tr>
+<tr><td><label for='addtime_input' class='control-label x85'>新增时间:</label>{$Rs.addtime}</td><td><label for='uuname_input' class='control-label x85'>更新人:</label>{$Rs.uuname}</td></tr>
+<tr><td><label for='updatetime_input' class='control-label x85'>更新时间:</label>{$Rs.updatetime}</td><td><label for='birthday_input' class='control-label x85'>生日月份:</label>{$Rs.birthday}</td></tr>
+<tr></tr>
+<tr><td colspan=2><label for='shehui_input' class='control-label x85'>社会关系:</label><textarea name='shehui'  cols='65' rows='5' >{$Rs.shehui}</textarea></td></tr></tr>
+<tr><td colspan=2><label for='xuexi_input' class='control-label x85'>学习经历:</label><textarea name='xuexi'  cols='65' rows='5' >{$Rs.xuexi}</textarea></td></tr></tr>
+<tr><td colspan=2><label for='gongzuo_input' class='control-label x85'>工作经历:</label><textarea name='gongzuo'  cols='65' rows='5' >{$Rs.gongzuo}</textarea></td></tr></tr>
+<tr><td colspan=2><label for='jineng_input' class='control-label x85'>工作技能:</label><textarea name='jineng'  cols='65' rows='5' >{$Rs.jineng}</textarea></td></tr></tr>
+<tr><td colspan=2><label for='beizhu_input' class='control-label x85'>备注:</label><div style='display: inline-block; vertical-align: middle;'><textarea name='beizhu'   data-toggle='kindeditor' data-minheight='150' data-items='fontname, fontsize, |, forecolor, hilitecolor, bold, italic, underline, removeformat, |, justifyleft, justifycenter, justifyright, insertorderedlist, insertunorderedlist, |, emoticons, image, link'>{$Rs.beizhu}</textarea></div></td></tr></tr>
+<tr><td colspan=2><label for='attid_input' class='control-label x85'>上传附件:</label>
+			<php>$attlist=M('files')->where('attid='.$Rs['attid'])->select();</php>	
+	        <foreach name='attlist' item='vf'>{$vf['uid']|truename=###}:<a href='__ROOT__/{$vf['folder']}{$vf['filename']}' target=_blank>{$vf['filedesc']}</A>&nbsp;&nbsp;{$vf['addtime']}<Br/><label  class='control-label x85'></label></foreach></td></tr>
+           </tbody>
+          </table>
+		  </div>
+		  
+		 <div class='tab-pane fade' id='hrht'><table class='table table-bordered table-striped table-hover'><php>$hrhtlist=M('hrht')->where(array('juid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th>员工姓名</th>
+<th height=30>合同名称</th>
+<th>合同编号</th>
+<th>合同类型</th>
+<th>生效日期</th>
+<th>结束日期</th>
+<th>添加时间</th>
+<th>更新时间</th>
+<th>详细</th></tr></thead><tbody><foreach name='hrhtlist' item='hrhtv'><tr><td>{$hrhtv.id}</td>
+<td>{$hrhtv.juname}</td>
+<td>{$hrhtv.title|msubstr=###,0,20}</td>
+<td>{$hrhtv.bianhao}</td>
+<td>{$hrhtv.type}</td>
+<td>{$hrhtv.kssj|substr=###,0,10}</td>
+<td>{$hrhtv.jsrj|substr=###,0,10}</td>
+<td>{$hrhtv.addtime|substr=###,0,10}</td>
+<td>{$hrhtv.updatetime|substr=###,0,10}</td>
+  <td><a href='__MODULE__/hrht/view/id/{$hrhtv['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-maskhrht' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div><div class='tab-pane fade' id='hrjf'><table class='table table-bordered table-striped table-hover'><php>$hrjflist=M('hrjf')->where(array('juid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th height=30>员工姓名</th>
+<th>奖罚属性</th>
+<th height=30>奖罚名称</th>
+<th>生效日期</th>
+<th height=30>奖罚金额</th>
+<th>生效工资月份</th>
+<th>添加时间</th>
+<th>更新时间</th>
+<th>详细</th></tr></thead><tbody><foreach name='hrjflist' item='hrjfv'><tr><td>{$hrjfv.id}</td>
+<td>{$hrjfv.juname|msubstr=###,0,20}</td>
+<td>{$hrjfv.type}</td>
+<td>{$hrjfv.title|msubstr=###,0,20}</td>
+<td>{$hrjfv.sxrq|substr=###,0,10}</td>
+<td>{$hrjfv.jine|msubstr=###,0,20}</td>
+<td>{$hrjfv.gongzi|substr=###,0,10}</td>
+<td>{$hrjfv.addtime|substr=###,0,10}</td>
+<td>{$hrjfv.updatetime|substr=###,0,10}</td>
+  <td><a href='__MODULE__/hrjf/view/id/{$hrjfv['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-maskhrjf' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div><div class='tab-pane fade' id='hrzz'><table class='table table-bordered table-striped table-hover'><php>$hrzzlist=M('hrzz')->where(array('juid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th>员工姓名</th>
+<th height=30>证照名称</th>
+<th height=30>证照编号</th>
+<th>证照类型</th>
+<th>生效日期</th>
+<th>结束日期</th>
+<th>添加时间</th>
+<th>更新时间</th>
+<th>详细</th></tr></thead><tbody><foreach name='hrzzlist' item='hrzzv'><tr><td>{$hrzzv.id}</td>
+<td>{$hrzzv.juname}</td>
+<td>{$hrzzv.title|msubstr=###,0,20}</td>
+<td>{$hrzzv.bianhao|msubstr=###,0,20}</td>
+<td>{$hrzzv.type}</td>
+<td>{$hrzzv.sxrq|substr=###,0,10}</td>
+<td>{$hrzzv.jsrq|substr=###,0,10}</td>
+<td>{$hrzzv.addtime|substr=###,0,10}</td>
+<td>{$hrzzv.updatetime|substr=###,0,10}</td>
+  <td><a href='__MODULE__/hrzz/view/id/{$hrzzv['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-maskhrzz' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div><div class='tab-pane fade' id='hrpx'><table class='table table-bordered table-striped table-hover'><php>$hrpxlist=M('hrpx')->where(array('juid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th height=30>员工姓名</th>
+<th height=30>培训主题</th>
+<th height=30>培训费用</th>
+<th>开始时间</th>
+<th>结束时间</th>
+<th height=30>获得证书</th>
+<th height=30>培训地点</th>
+<th>添加时间</th>
+<th>更新时间</th>
+<th>详细</th></tr></thead><tbody><foreach name='hrpxlist' item='hrpxv'><tr><td>{$hrpxv.id}</td>
+<td>{$hrpxv.juname|msubstr=###,0,20}</td>
+<td>{$hrpxv.title|msubstr=###,0,20}</td>
+<td>{$hrpxv.feiyong|msubstr=###,0,20}</td>
+<td>{$hrpxv.kssj|substr=###,0,10}</td>
+<td>{$hrpxv.jssj|substr=###,0,10}</td>
+<td>{$hrpxv.zhengshu|msubstr=###,0,20}</td>
+<td>{$hrpxv.didian|msubstr=###,0,20}</td>
+<td>{$hrpxv.addtime|substr=###,0,10}</td>
+<td>{$hrpxv.updatetime|substr=###,0,10}</td>
+  <td><a href='__MODULE__/hrpx/view/id/{$hrpxv['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-maskhrpx' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div><div class='tab-pane fade' id='hrdd'><table class='table table-bordered table-striped table-hover'><php>$hrddlist=M('hrdd')->where(array('juid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th>员工姓名</th>
+<th height=30>调动原因</th>
+<th>调动类型</th>
+<th>调动日期</th>
+<th height=30>调动前部门</th>
+<th height=30>调用后部门</th>
+<th height=30>调动前职位</th>
+<th height=30>调动后职位</th>
+<th>添加时间</th>
+<th>更新时间</th>
+<th>详细</th></tr></thead><tbody><foreach name='hrddlist' item='hrddv'><tr><td>{$hrddv.id}</td>
+<td>{$hrddv.juname}</td>
+<td>{$hrddv.title|msubstr=###,0,20}</td>
+<td>{$hrddv.type}</td>
+<td>{$hrddv.ddrq|substr=###,0,10}</td>
+<td>{$hrddv.bumen|msubstr=###,0,20}</td>
+<td>{$hrddv.hbumen|msubstr=###,0,20}</td>
+<td>{$hrddv.zhiwei|msubstr=###,0,20}</td>
+<td>{$hrddv.hzhiwei|msubstr=###,0,20}</td>
+<td>{$hrddv.addtime|substr=###,0,10}</td>
+<td>{$hrddv.updatetime|substr=###,0,10}</td>
+  <td><a href='__MODULE__/hrdd/view/id/{$hrddv['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-maskhrdd' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div><div class='tab-pane fade' id='hrgh'><table class='table table-bordered table-striped table-hover'><php>$hrghlist=M('hrgh')->where(array('juid'=>I('id')))->select();</php> <thead> <tr><th>ID</th>
+<th>员工姓名</th>
+<th height=30>关怀主题</th>
+<th>关怀类型</th>
+<th>关怀时间</th>
+<th height=30>关怀费用</th>
+<th>添加时间</th>
+<th>更新时间</th>
+<th>详细</th></tr></thead><tbody><foreach name='hrghlist' item='hrghv'><tr><td>{$hrghv.id}</td>
+<td>{$hrghv.juname}</td>
+<td>{$hrghv.title|msubstr=###,0,20}</td>
+<td>{$hrghv.type}</td>
+<td>{$hrghv.sj|substr=###,0,10}</td>
+<td>{$hrghv.feiyong|msubstr=###,0,20}</td>
+<td>{$hrghv.addtime|substr=###,0,10}</td>
+<td>{$hrghv.updatetime|substr=###,0,10}</td>
+  <td><a href='__MODULE__/hrgh/view/id/{$hrghv['id']}/navTabId/{:CONTROLLER_NAME}'  data-toggle='dialog' data-width='800' data-height='500' data-id='dialog-maskhrgh' data-mask='true' >详细</a></td></tr> </foreach> </tbody> </table></div>
+		   
+		 </div>
+        </div>
+		<div class="bjui-footBar">
+        <ul>
+            <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+        </ul>
+    </div>
+</div>

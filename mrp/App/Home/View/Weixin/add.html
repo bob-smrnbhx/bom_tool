@@ -1,0 +1,76 @@
+
+<div class="bjui-pageContent">
+    <form action="__URL__/add/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+		<input type="hidden" name="id" value="{$id}">
+        <div class="pageFormContent" data-layout-h="0">
+          <table class="table table-condensed table-hover" width="100%">
+           <tbody><tr>
+           <td  colspan=2><label for='title_input' class='control-label x100'>微信名:</label><input type='text'  name='weixin' data-rule='required;' size='20'   value='{$Rs.weixin}'  ></td><td  colspan=2><label for='kssj_input' class='control-label x100'>到期时间:</label><input type='text' data-toggle='datepicker' data-pattern='yyyy-MM-dd HH:mm:ss' id='kssj' name='dqtime'  data-rule='required;datetime' size='20'   value='{$Rs.dqtime}'  ></td>
+           </tr>
+           <tr>
+           <td  colspan=2><label for='title_input' class='control-label x100'>appid:</label><input type='text'  name='appid' data-rule='required;' size='20'   value='{$Rs.appid}'  ></td> 
+           <td  colspan=2><label for='title_input' class='control-label x100'>appsecret:</label><input type='text'  name='appsecret' data-rule='required;' size='20'   value='{$Rs.appsecret}'  ></td>
+           </tr>   <tr><td  colspan=2><label for='title_input' class='control-label x100'>权限:</label><input type='text'  name='qx' data-rule='required;' size='20'   value='{$Rs.qx}'  ></td><td  colspan=2><label for='title_input' class='control-label x100'>token:</label><input type='text'  name='token' data-rule='required;' size='20'   value='{$Rs.token}'  ></td></tr>
+           
+           <tr><td  colspan=2><label for='title_input' class='control-label x100'>第三方URL:</label><input type='text'  name='appurl' size='20'   value='{$Rs.appurl}'  ></td><td  colspan=2><label for='title_input' class='control-label x100'>第三方token:</label><input type='text'  name='apptoken' size='20'   value='{$Rs.apptoken}'  ></td></tr>
+           
+           
+              <tr>
+           
+           <td  colspan=2><label for='title_input' class='control-label x100'>红包推广:</label><select name='hbtui'  data-toggle='selectpicker' >
+                    <option value='0'>否</option>
+      
+                      <option value='1' >
+                        <if condition=" 1 EQ $Rs['hbtui'] ">selected</if>
+                       是</option>
+ 
+                  </select></td><td  colspan=2><label for='title_input' class='control-label x100'>所属微信:</label><select name='glhd'  data-toggle='selectpicker' >
+                    <option value=''>请选择</option>
+                    <volist name='huodonglist' id='type'>
+                      <option value='{$key}' >
+                        <if condition=" $key EQ $Rs['glhd'] ">selected</if>
+                        {$type}</option>
+                    </volist>
+                  </select></td>
+           </tr>
+           <tr>
+           
+           <td  colspan=4><label for='title_input' class='control-label x100'>展示图片:</label><input id="hdimg" type='text'  name='image'  size='50'   value=''  >   <input type="button" id="thumbnail_btn" class="btn btn-info" value="选择图片" /></td>
+           </tr>
+<tr><td  colspan=3><label for='beizhu_input' class='control-label x85'>详细说明:</label><div style='display: inline-block; vertical-align: middle;'><textarea name='content'   data-toggle='kindeditor' data-minheight='150' data-items='source, |, undo, redo, |, preview, print, template, code, cut, copy, paste,
+        plainpaste, wordpaste, |, justifyleft, justifycenter, justifyright,
+        justifyfull, insertorderedlist, insertunorderedlist, indent, outdent, subscript,
+        superscript, clearhtml, quickformat, selectall, |, fullscreen, /,
+        formatblock, fontname, fontsize, |, forecolor, hilitecolor, bold,
+        italic, underline, strikethrough, lineheight, removeformat, |, image, multiimage,
+        flash, media, insertfile, table, hr, emoticons, baidumap, pagebreak,
+        anchor, link, unlink
+'>{$Rs.content}</textarea></div></td></tr>
+           </tbody>
+          </table>
+        </div>
+        <div class="bjui-footBar">
+            <ul>    <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+                <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+             
+            </ul>
+        </div>
+    </form>
+</div><script type="text/javascript">
+    // 单独调用KindEditor图片插件
+    var editor = KindEditor.editor({
+        allowFileManager : true
+    });
+    KindEditor('#thumbnail_btn').click(function() {
+        editor.loadPlugin('image', function() {
+            editor.plugin.imageDialog({
+                imageUrl : KindEditor('#url1').val(),
+                clickFn : function(url, title, width, height, border, align) {
+                    KindEditor('#hdimg').val(url);
+                    editor.hideDialog();
+                }
+            });
+        });
+    });
+
+</script>

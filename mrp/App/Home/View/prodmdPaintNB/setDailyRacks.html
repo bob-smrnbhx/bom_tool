@@ -1,0 +1,154 @@
+ 
+<!-- <script src="/dev/Public/BJUI/js/jquery-1.7.2.min.js"></script>   -->  
+ 
+<div class="bjui-pageHeader">
+
+
+<form id="pagerForm" data-toggle="ajaxsearch" action="__SELF__" method="get">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">             
+    <input type="hidden" name="pageCurrent" value="{$pageCurrent}">       
+    <input type="hidden" name="orderField" value="{$_REQUEST['orderField']}">         
+    <input type="hidden" name="orderDirection" value="{$_REQUEST['orderDirection']}"> 
+	
+	<input type="hidden" id="actionUrl" name="actionUrl" value="__ACTION__" />
+	
+    <div class="bjui-searchBar">
+    	<strong>开始日期: <input type="text" id="startDate" data-toggle="datepicker" value="{$startDate}"/></strong>
+    	<button type='submit' class="btn-default" data-icon="undo">刷新</button>
+		<span style="float:right;margin-right:20px;"><button type='button' class="btn-default" data-icon="save" id='savedracks'   onclick="saveProjDailyRack(this)"  >保存</button></span>
+
+	</div> 
+</form>
+
+</div>
+
+<div class="bjui-pageContent">
+<form id="dracksForm"  action="__CONTROLLER__/updateDailyHours"  data-toggle="validate" method="post"  >   
+	<table style="white-space: nowrap;"  data-toggle="tablefixed"   data-nowrap="true"   class="table table-bordered table-hover table-striped table-top" >
+        <thead>
+        	<tr>
+            	<th width="10" height="30"></th>
+            	<th width="40"></th>
+	            <th width="80"></th>
+				<volist id="date" name="dates">
+				<th title="{$date}" width="60">{$fmdates[$date]}</th>
+				</volist>
+			</tr>
+            <tr>
+                <th></th>
+                <th>地点</th>
+	            <th>项目名称</th>
+				<volist id="date" name="dates">
+				<th title="{$date}" >{$date|substr=5}</th>
+				</volist>
+			</tr>
+
+            
+        </thead>
+        
+        <tbody>
+        <foreach item="projInfo" key='pno' name="projsInfo">
+        	<tr class='plan'>
+        		<td></td>
+        		<td>{$projInfo.site}</td>
+        		<td title="{$projInfo.name}">{$projInfo.name}</td>
+				<volist id="date" name="dates">
+				<td title="{$date}" ondblclick='dispRackQtyFields(this)' date='{$date}'>
+					<span class="drack" >{$projInfo['dracks'][$date]}</span>
+					<input type='text' class="drack"  style='width: 100%;' name="pdh#{$projInfo['site']}#{$projInfo['no']}#{$date}" value="{$projInfo['dracks'][$date]}" onchange="return changeRack(this)"/>  
+				</td>
+				</volist>
+        	</tr>
+        </foreach>
+
+        </tbody>
+    </table>
+
+</form>    	
+
+    <div class="bjui-footBar">
+
+    </div>
+ 
+</div>
+
+<style>
+#dracksForm tr.plan input.drack {
+	display: none;
+}
+#dracksForm tr.plan_input input.drack{
+	display: inline-block;
+}
+#dracksForm tr.plan_input span.drack{
+	display: none;
+}
+</style>
+
+<script type='text/javascript'>
+$(document).ready(function() {
+ 	var actionUrl = $("#actionUrl", $.CurrentNavtab).val();
+ 	
+	$.CurrentNavtab.on("afterchange.bjui.datepicker", "#startDate", function() {
+		var tmpobj = $("<div></div>");
+		$(tmpobj).navtab({
+			'id':'prodmdPaintCQ/setDailyHours/site/' + '{$Think.request.site}', 
+			'url': actionUrl + '/site/' + '{$Think.request.site}' + "/startDate/" + $("#startDate", $.CurrentNavtab).val() ,
+			'title': '涂装日挂具数报表',
+			'fresh': true
+		});
+	});
+	
+	$(document).dblclick(function(event) {
+		if ($(event.target).closest("tr.plan").length == 0) {
+			hideAllPlanQtyFields();
+		}
+	});
+
+});
+
+ 
+
+function dispRackQtyFields (RackTd) 
+{
+	var dracksForm = $(RackTd).closest("#dracksForm"); 
+	if (!$(RackTd).hasClass('plan_input')) {
+		$("tr.plan", dracksForm).removeClass("plan_input");
+		$(RackTd).closest("tr").addClass("plan_input");
+		$("input:text", RackTd).focus();
+	}
+}
+
+function hideAllPlanQtyFields()
+{
+	$("tr.plan").removeClass("plan_input");
+}
+
+ 
+function changeRack(rackField)
+{
+	var hour = Number($(rackField).val());
+	if (isNaN(hour) || parseInt(hour) != hour || hour < 0) {
+		alert('挂具数必须为非负整数');
+		$(rackField).val($(rackField).closest("td").find("span.drack").text());
+		return false;
+	}
+	
+	$(rackField).closest("td").find("span.drack").text(hour);
+}
+ 
+	
+function saveProjDailyRack(obj) {
+	var dracksForm = $(obj).closest(".bjui-pageHeader").siblings(".bjui-pageContent").find("#dracksForm");;
+ 
+	// fix b-jui odd bug
+	if (!dracksForm.data("submitted")) {
+		dracksForm.data("submitted", true);
+		dracksForm.submit();
+	}
+}
+
+ 
+ 
+
+</script>
+</style>

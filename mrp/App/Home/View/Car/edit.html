@@ -1,0 +1,181 @@
+<div class="bjui-pageContent">
+	<form action="__URL__/edit/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+		<input type="hidden" name="id" value="{$id}">
+		<div class="pageFormContent" data-layout-h="0">
+		<table class="table table-condensed table-hover" width="100%">
+			<tbody>
+				<tr>
+					<td>
+						<label for="card_number" class="control-label x85">会员卡号：</label>
+						<input type="text" name="card_number" id="card_number" value="{$Rs.card_number}" dasta-rule="required" size="30">
+					</td>
+					<td>
+						<label for="category" class="control-label x85">卡类别：</label>
+						<input type="text" name="category" id="category" value="{$Rs.category}" data-rule="" size="30">
+					</td>
+					<td>
+						<label for="belong" class="control-label x85">分布：</label>
+						<input type="text" name="belong" id="belong" value="{$Rs.belong}" data-rule="" size="30">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="name" class="control-label x85">姓名：</label>
+						<input type="text" name="name" id="name" value="{$Rs.name}" dasta-rule="required" size="30">
+					</td>
+					<td>
+						<label for="sex" class="control-label x85">性别：</label>
+						<if condition="$Rs.sex eq 0">
+							<input type="radio" name="sex" id="sex1" data-toggle="icheck" value="0" checked data-label="男&nbsp;&nbsp;">
+							<input type="radio" name="sex" id="sex2" data-toggle="icheck" value="1" data-label="女">
+						<else /> 
+							<input type="radio" name="sex" id="sex1" data-toggle="icheck" value="0" data-label="男&nbsp;&nbsp;">
+							<input type="radio" name="sex" id="sex2" data-toggle="icheck" value="1" checked data-label="女">
+						</if>
+						
+					</td>
+					<td>
+						<label for="idcard" class="control-label x85">身份证号：</label>
+						<input type="text" name="idcard" id="idcard" value="{$Rs.idcard}" data-rule="" size="30">
+					</td>
+				</tr>
+				<tr>
+					<td colspan=3>
+						<label for="work" class="control-label x85">工作单位：</label>
+						<input type="text" name="work" id="work" value="{$Rs.work}" data-rule="" size="100">
+					</td>
+				</tr>
+				<tr>
+					<td colspan=3>
+						<label for="address" class="control-label x85">家庭住址：</label>
+						<input type="text" name="address" id="address" value="{$Rs.address}" data-rule="" size="100">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="telphone" class="control-label x85">手机：</label>
+						<input type="text" name="telphone" id="telphone" value="{$Rs.telphone}" data-rule="required;mobile" size="30">
+					</td>
+					<td>
+						<label for="qq" class="control-label x85">QQ：</label>
+						<input type="text" name="qq" id="qq" value="{$Rs.qq}" data-rule="" size="30">
+					</td>
+					<td>
+						<label for="weixin" class="control-label x85">微信：</label>
+						<input type="text" name="weixin" id="weixin" value="{$Rs.weixin}" data-rule="" size="30">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="join_time" class="control-label x85">入会时间：</label>
+						<input type="text" name="join_time" id="join_time" value="{$Rs.join_time}" data-toggle="datepicker" data-rule="date" size="15">
+					</td>
+					<td colspan="2">
+						<label class="control-label x85">车友照片：</label>
+						<div style="display: inline-block; vertical-align: middle;">
+							<div id="j_custom_pic_up" data-toggle="upload" data-uploader="../upload.php" 
+								data-file-size-limit="1024000000"
+								data-file-type-exts="*.jpg;*.png;*.gif;*.mpg"
+								data-multi="false"
+								data-auto = "true"
+								data-on-upload-success="pic_upload_success"
+								data-icon="cloud-upload">
+							</div>
+							<input type="hidden" name="photo" value="{$Rs.photo}" id="j_custom_pic">
+							<span id="j_custom_span_pic"></span>
+						</div>
+					</td>   
+				</tr>
+				<tr>
+					<td>
+						<label for="money" class="control-label x85">金额：</label>
+						<input type="text" name="money" id="money" value="{$Rs.money}" dasta-rule="required" size="30">
+					</td>
+					<td>
+						<label for="shzh_time" class="control-label x85">审证日期：</label>
+						<input type="text" name="shzh_time" id="shzh_time" value="{$Rs.shzh_time}" data-toggle="datepicker" data-rule="date" size="15">
+					</td>
+					<td>
+						<label for="business" class="control-label x85">业务：</label>
+						<input type="text" name="business" id="business" value="{$Rs.business}" data-rule="" size="30">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="car_number" class="control-label x85">车牌号码：</label>
+						<input type="text" name="car_number" id="car_number" value="{$Rs.car_number}" dasta-rule="required" size="30">
+					</td>
+					<td>
+						<label for="owners" class="control-label x85">车主：</label>
+						<input type="text" name="owners" id="owners" value="{$Rs.owners}" data-rule="" size="30">
+					</td>
+					<td>
+						<label for="color" class="control-label x85">车身颜色：</label>
+						<input type="text" name="color" id="j_custom_color" value="{$Rs.color}" data-toggle="colorpicker" data-bgcolor="true" size="15" readonly>
+						<a href="javascript:;" title="清除颜色" data-toggle="clearcolor" data-target="#j_custom_color">清除颜色</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="brand" class="control-label x85">车辆品牌：</label>
+						<input type="text" name="brand" id="brand" value="{$Rs.brand}" data-rule="" size="30">
+					</td>
+					<td>
+						<label for="style" class="control-label x85">车辆类型：</label>
+						<input type="text" name="style" id="style" value="{$Rs.style}" data-rule="" size="30">
+					</td>
+					<td>
+						<label for="engine_number" class="control-label x85">发动机号：</label>
+						<input type="text" name="engine_number" id="engine_number" value="{$Rs.engine_number}" data-rule="" size="30">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="vin" class="control-label x85">车架号：</label>
+						<input type="text" name="vin" id="vin" value="{$Rs.vin}" data-rule="" size="30">
+					</td>
+					<td>
+						<label for="zjcx" class="control-label x85">准驾车型：</label>
+						<input type="text" name="zjcx" id="zjcx" value="{$Rs.zjcx}" data-rule="" size="30">
+					</td>
+					<td>
+						<label for="engine_number" class="control-label x85">审车日期：</label>
+						<input type="text" name="shch_time" id="shch_time" value="{$Rs.shch_time}" data-toggle="datepicker" data-rule="date" size="15">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="insurer" class="control-label x85">保险公司：</label>
+						<input type="text" name="insurer" id="insurer" value="{$Rs.insurer}" data-rule="" size="30">
+					</td>
+					<td>
+						<label for="bx_time" class="control-label x100">保险到期日期：</label>
+						<input type="text" name="bx_time" id="bx_time" value="{$Rs.bx_time}" data-toggle="datepicker" data-rule="date" size="15">
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan=3>
+						<label for="note" class="control-label x85">备注：</label>
+						<div style='display: inline-block; vertical-align: middle;'>
+							<textarea name='note' data-toggle='kindeditor' data-minheight='150' data-items='fontname, fontsize, |, forecolor, hilitecolor, bold, italic, underline, removeformat, |, justifyleft, justifycenter, justifyright, insertorderedlist, insertunorderedlist, |, emoticons, image, link'>
+							{$Rs.note}
+							</textarea>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+		<div class="bjui-footBar">
+			<ul>
+				<li>
+					<button type="button" class="btn-close" data-icon="close">取消</button>
+				</li>
+				<li>
+					<button type="submit" class="btn-default" data-icon="save">保存</button>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>

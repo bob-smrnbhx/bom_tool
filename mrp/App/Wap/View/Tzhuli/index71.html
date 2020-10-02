@@ -1,0 +1,318 @@
+<?php 
+/** 江西景德镇 明日之星 ID=71 参团活动 **/
+function hidtel($phone){
+         return  preg_replace('/(1[34578]{1}[0-9])[0-9]{4}([0-9]{4})/i','$1****$2',$phone);
+ } 
+//截取utf8字符串 
+function utf8Substr($str, $from, $len) 
+{  
+return preg_replace('#^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$from.'}'. 
+'((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$len.'}).*#s', 
+'$1',$str); 
+} 
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title><?php echo $news['title']; ?></title>
+    <meta name="description" content="微信模板" />
+    <meta name="keywords" content="" /> 
+    <link href="__PUBLIC__/styles/default/css/base.css" type="text/css" rel="stylesheet" />
+    <link href="__PUBLIC__/styles/default/css/mrzx.css?v=00" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="__PUBLIC__/styles/default/js/jquery.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__PUBLIC__/styles/default/js/menu.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+    $(function(){
+        countDown($("#dtime").text(),"#colockbox1");
+        $('#name').focus(function(){
+            $('.show').empty();
+        });
+        $('#tel').focus(function(){
+            $('.show').empty();
+        });
+      });
+      function countDown(time,id){
+        var day_elem = $(id).find('.day');
+        var hour_elem = $(id).find('.hour');
+        var minute_elem = $(id).find('.minute');
+        var second_elem = $(id).find('.second');
+        var end_time = new Date(time).getTime(),//月份是实际月份-1
+        sys_second = (end_time-new Date().getTime())/1000;
+        var timer = setInterval(function(){
+          if (sys_second > 1) {
+            sys_second -= 1;
+            var day = Math.floor((sys_second / 3600) / 24);
+            var hour = Math.floor((sys_second / 3600) % 24);
+            var minute = Math.floor((sys_second / 60) % 60);
+            var second = Math.floor(sys_second % 60);
+            day_elem && $(day_elem).text(day);//计算天
+            $(hour_elem).text(hour<10?"0"+hour:hour);//计算小时
+            $(minute_elem).text(minute<10?"0"+minute:minute);//计算分钟
+            $(second_elem).text(second<10?"0"+second:second);//计算秒杀
+          } else { 
+            clearInterval(timer);
+          }
+        }, 1000);
+      }
+            
+    function oncheck()
+    {
+        var tel = $('#tel').val();
+        var name = $('#name').val();
+		var zlb = $('#zlb').val();
+		var record = $('#record').val();
+        if(name == "" || tel == "")
+        {
+            $('.show').html("姓名或者手机号码不能为空!");
+            return false;
+        }
+        re= /^(13[0-9]|15[012356789]|18[02356789]|14[57]|17[0-9])[0-9]{8}$/;
+        if(!re.test(tel))
+        {
+            $('.show').html("手机号码格式不正确!");
+            return false;
+        }
+		
+		if(zlb == "" || record == "")
+        {
+            $('.show').html("公司名称或意向股不能为空!");
+            return false;
+        }
+        
+        if(tel.length != 11)
+        {
+            $('.show').html("手机号码必须为11位数字!");
+            return false;
+        }
+
+		if(record > 10 || record < 1)
+		{
+			$('.show').html("意向股数不能超过10股!");
+			return false;
+		}
+        
+        return true;
+    }
+  </script>
+      
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+  wx.config({
+    debug: false,
+    appId: '{$signPackage["appId"]}',
+    timestamp: '{$signPackage["timestamp"]}',
+    nonceStr: '{$signPackage["nonceStr"]}',
+    signature: '{$signPackage["signature"]}',
+    jsApiList: [
+      // 所有要调用的 API 都要加到这个列表中
+      'onMenuShareTimeline','onMenuShareAppMessage'
+    ]
+  });
+  wx.ready(function () {
+    // 在这里调用 API
+ 
+    wx.onMenuShareTimeline({
+      title: "明日之星户外运动基地大势所趋！", // 分享标题
+	  link: "http://www.dscm.com.cn__SELF__&fx_id={$fx_id}", // 分享链接
+      desc: "看得懂就是趋势，看不懂就是过失！明日之星户外运动基地项目建设计划书...", // 分享描述
+      imgUrl: "http://www.dscm.com.cn__PUBLIC__/styles/default/images/mrzx/mrzhx_01.jpg", // 分享图标
+      trigger: function () {
+          //alert("点击分享："); 
+      },
+      success: function () { 
+          // 用户确认分享后执行的回调函数
+          //alert("分享成功");
+      },
+      cancel: function () { 
+          // 用户取消分享后执行的回调函数
+          //alert("用户取消分享");
+      }
+    });
+  
+  	wx.onMenuShareAppMessage({
+      title: "明日之星户外运动基地大势所趋！", // 分享标题
+	  link: "http://www.dscm.com.cn__SELF__&fx_id={$fx_id}", // 分享链接
+      desc: "看得懂就是趋势，看不懂就是过失！明日之星户外运动基地项目建设计划书...", // 分享描述
+      	imgUrl: "http://www.dscm.com.cn__PUBLIC__/styles/default/images/mrzx/mrzhx_01.jpg", // 分享图标
+    	type: 'link', // 分享类型,music、video或link，不填默认为link
+		success: function () { 
+			// 用户确认分享后执行的回调函数  
+		},
+		cancel: function () { 
+			// 用户取消分享后执行的回调函数
+		}
+	 });
+  });
+</script>
+</head>
+<style>
+#content{width: 100%;height: auto; margin: 0 auto;}
+#content div{width: 100%; height: auto; margin: 0 auto;}
+#menu{width: 68px;height: auto; position: fixed;top: 10%;right: 10px;}
+#menu ul{display: block;list-style: none}
+#menu ul li a{width: 68px; height: 34px; line-height: 34px; text-align: center;background-color: #000;color: #32c96a;display: block}
+#menu ul li a:hover,#menu ul li a.cur{background-color: #32c92a;color: #fff;}
+.change{width: 68px; height: 34px; line-height: 34px; text-align: center;background-color: #32c92a;color: #fff;display: block;position: fixed;top: 2%;right: 10px;}
+</style>
+<body> 
+
+	<!--<audio src="__PUBLIC__/styles/default/images/mrzhx.mp3" autoplay="autoplay" loop="loop"></audio>-->
+    <div id="all">  
+
+        <!--<div style="margin-top:10px;background-color:#fff;font-size:20px;height:40px;line-height:40px;text-align:center;font-family:Arial, Helvetica, sans-serif;">活动倒计时，距离结束还有</div> -->
+        <div id="dtime" style="display:none"><?php  echo date("Y/m/d H:i:s", $news['jssj']);?></div>
+        <div class="colockbox" id="colockbox1" style="text-align:center;margin-bottom:0px;"><span class="day">00</span> 天 <span class="hour">00</span> 时 <span class="minute">00</span> 分 <span class="second">00</span> 秒 </div>
+		
+
+		
+        <script>
+		$(function(){
+		   
+			// 我要参加活动点击事件；
+		   $(".a1").click(function(){
+			$("#name").focus();
+			  $(".notice2").animate({
+				top:'50px',
+				left:'12px'
+			  });
+			});
+
+			$('.none').click(function(){
+			  $(".notice2").animate({
+				top:'50px',
+				left:'-999px'
+			  });
+			}); 
+
+                $(".notice2 input[type='text']").focus(function(){
+                  $(this).val("");
+                });
+				
+				
+				$(".change").click(function(){
+				  $("#menu").slideToggle('slow');
+				});
+				
+				
+            });
+        </script>
+		
+<div class="change">收缩菜单</div>
+<div id="menu">
+	<ul>
+		<li><a href="#item1" class="cur">关于我们</a></li>
+		<li><a href="#item2">项目概要</a></li>
+		<li><a href="#item3">商业思路</a></li>
+		<li><a href="#item4">主营业务</a></li>
+		<li><a href="#item5">场地规划</a></li>
+		<li><a href="#item6">盈利预算</a></li>
+		<li><a href="#item7">附页</a></li>
+	</ul>
+</div>
+
+<div id="content">
+
+	  <div class="notice2" style="width:90%;">
+	  <form action="index.php?s=/Wap/Tzhuli/weixinadd/" method="post" enctype="multipart/form-data" onsubmit="return oncheck()">   
+				 
+		<?php if($is_join) {echo '<p><a style="color:#fff;" href="javascript:void()">您已提交过入股意向，请等待发起人跟您的联系！</a></p><a href="javascript:void();" class="none">Close</a>'; }
+		else{?> <p>您的姓名:           	
+		<input type="text" name="name" value=""  placeholder="点击填写您的姓名" id="name" /></p> 
+		<input name="id" type="hidden" value="<?php echo $wx_id;?>" />
+		<input name="hdid" type="hidden" value="<?php echo $hdid;?>" />
+		<p>您的手机: <input type="number" name="tel" value="" placeholder="点击填写您的手机号" id="tel" /></p>
+		<p>企业名称: <input type="text" name="record" value="" placeholder="点击填写企业名称" id="zljl" /></p>
+		<p>意向股数: <input type="number" name="zlb" value="" placeholder="点击填写意向股" id="record" /></p>
+		<input type="submit" value="提交" class="btn1" />
+		<input type="button" value="取消" class="btn1 none" /><?php }?>
+		<div class="show"></div>
+		<!--<a href="javascript:void();" class="none">Close</a>-->
+	  </form>
+	  </div>
+	<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_01.jpg" width="100%" />    
+	<div class="item" id="item1">
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_02.jpg" width="100%" />
+		
+	</div>
+	<div class="item" id="item2">
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_03.jpg" width="100%" /> 	
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_04.jpg" width="100%" /> 
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_05.jpg" width="100%" /> 
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_06.jpg" width="100%" /> 
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_07.jpg" width="100%" /> 
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_08.jpg" width="100%" /> 
+	</div>
+	<div class="item" id="item3">
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_09.jpg" width="100%" />       
+	</div>
+	<div class="item" id="item4">
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_10.jpg" width="100%" /> 
+	</div>
+	<div class="item" id="item5">
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_11.jpg" width="100%" /> 
+	</div>
+	<div class="item" id="item6">
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzxx013.jpg" width="100%" /> 
+		<img src="__PUBLIC__/styles/default/images/mrzx/mrzhx_13.jpg" width="100%" /> 
+	</div>
+	<div class="item" id="item7">
+		<img src="__PUBLIC__/styles/default/images/mrzx/fujian_02.jpg" width="100%" /> 
+		<img src="__PUBLIC__/styles/default/images/mrzx/fujian_03.jpg" width="100%" /> 
+		<img src="__PUBLIC__/styles/default/images/mrzx/fujian_04.jpg" width="100%" /> 
+	</div>
+</div>
+		
+<!--
+        <div class="help" id="wejoin">      
+                      
+         <div class="fx_notice" style="display:block;">
+            <p>
+            	入股认筹金账号<br/>
+				任衍丽&nbsp;&nbsp;工商&nbsp;&nbsp;6222081605000413684<br/> 
+				任衍丽&nbsp;&nbsp;建行&nbsp;&nbsp;6217002170002069881
+            </p>
+          </div>
+
+          
+        </div>-->
+		
+		
+<!--		<div style="font-size:12px;color:#fff;background:#1eb5be;height:20px;line-height:12px;padding-left:10px;">
+			入团人数 <span style="color:#CC0;">{$cjrs}人</span>
+		</div>
+-->		
+		<div class="list">  
+          <h4><span>编号</span><span>姓名</span><span style="width:38%;">手机号</span><span>入股数</span></h4>
+          <div class="list_lh">
+			  <ul><?php
+				$i=1;
+				foreach($zhulitop AS $one){?> 
+			  <li <?php if($i%2==0) echo "class='lieven'"; ?> > 
+			   	<span><?php echo $i;$i++; $wxusz=M('wxuser')->getById($one['uid']); ?></span>
+				<span><?php echo utf8Substr($wxusz['name'], 0, 3);?></span>
+				<span style="width:38%;"><?php echo hidtel($wxusz['tel']);?></span>
+				<span><?php echo $one['zlb'];?>股</span>
+			  </li>
+			  <?php }?>
+			  </ul>
+          </div>  
+
+		  <h3 style="height:40px;line-height:40px;color:#0548ad;padding-bottom:40px;background:#1eb5be;text-align: center;">都市传媒网络部技术支持 15206620189</h3>    
+        </div>
+
+
+        <div id="footer"> 
+		   <a href="http://www.dscm.com.cn/xcrm/index.php?s=/Wap/Tzhuli/index/hdid/{$hdid}" class="retrun"><img src="__PUBLIC__/styles/default/images/zfc_home.png" /></a>
+           <a href="tel:18579182798">联系我们</a>
+		   <a href="javascript:void();" class="a1">我要入股</a>
+		   
+        </div>
+
+    </div> 
+</body>
+</html>

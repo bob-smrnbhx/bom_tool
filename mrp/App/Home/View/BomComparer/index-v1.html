@@ -1,0 +1,136 @@
+
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch"  action="__SELF__" method="post">
+	
+	<input type="hidden" name="pageSize" value="{$numPerPage}">
+    <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+	 
+    <div class="bjui-searchBar">
+    </div>
+
+</form>
+    
+</div>
+
+<div class="bjui-pageContent">
+
+	<form id="bomCompareForm"  action="__CONTROLLER__/importSpecBom" data-toggle="validate"  data-callback='afterPdConverted'  enctype="multipart/form-data" method="post" >
+		<fieldset>
+		<div id='bomFile'>
+			<input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+			<label>选择工程原始BOM导入后生成的标准BOM的EXCEL文件: </label><br />
+			<input id="cimBomFile" name="cimBomFile" type="file" onchange="afterBomFileChanged()"/><br />
+			<label>选择QAD50.13.13导出的BOM直接父子关系EXCEL文件: </label><br />
+			<input id="qadBomFile" name="qadBomFile" type="file" onchange="afterBomFileChanged()"/><br />
+		</div>
+	
+		
+		</fieldset>
+	
+		<button onclick="startComparing()" type="button" id='compBoms'  class="btn btn-nm btn-blue">开始比较</button>
+		
+		<a href="__CONTROLLER__/exportCmpExcel" id='dlCmpResult' class="btn btn-nm btn-blue" data-toggle="doexport"  data-icon="arrow-down">下载比较结果</a>
+	</form>
+
+	<div id="bomConvertPs">
+	<fieldset>
+		<ol>
+ 
+		</ol>
+	</fieldset>
+	</div>
+
+</div>
+
+<style>
+#bomCompareForm {
+	padding: 1em;
+	width: 470px;
+	float: left;
+	font-family: "微软雅黑";
+	
+}
+#bomCompareForm label {
+	font-size: 16px;
+	font-weight: normal;
+}
+#bomCompareForm span {
+	font-size: 22px;
+}
+
+#bomCompareForm input {
+	font-size: 20px;
+}
+#bomFile {
+	padding: 1em 0;
+}
+#bomLocs, #altBom, #oaTpl {
+	padding: 1em 0;
+}
+#compBoms {
+	margin:15px 0;
+}
+#dlCmpResult {
+	margin: 15px 0;
+	float: right;
+	display: none;
+}
+
+#bomConvertPs {
+	padding: 1em;
+	width: 650px;
+	float: left;
+}
+#bomConvertPs ol {
+	list-style: inside decimal;
+}
+
+#bomConvertPs ol>li {
+	margin: 5px 0;
+	font-family: "微软雅黑";
+}
+#bomConvertPs li>ul>li {
+	list-style: inside disc;
+	text-indent: 2em;
+}
+</style>
+
+ <script type="text/javascript">
+
+$("#bomCompareForm").submit(function() {
+	$("#compBoms").prop("disabled", true).text("正在转换，请稍侯");
+});
+
+function afterBomFileChanged()
+{
+	$("#compBoms").prop("disabled", false).text("开始转换");
+	$("#dlCmpResult").hide();
+}
+
+function startComparing()
+{
+	if ($("#cimBomFile").val() != '' && $("#qadBomFile").val() != '') {
+		$("#bomCompareForm").submit();
+	} else {
+		$("#bomCompareForm").alertmsg('error', "请先选择要比较的两种EXCEL文件");
+	}
+
+}
+
+function afterPdConverted  (json) 
+{
+	 $("#compBoms").text("开始转换");
+	 if (!json.err) {
+		 $("#compBoms").prop("disabled", false).text("比较完成，点击按最新文件重新转换");
+		 $("#dlCmpResult").show();
+		 $("#bomCompareForm").alertmsg('correct', json.msg);
+	 } else {
+		 $("#compBoms").prop("disabled", false).text("比较错误，请核对文件格式重新转换");
+		 $("#dlCmpResult").hide();
+		 $("#bomCompareForm").alertmsg('error', json.msg);
+	 }
+
+}
+
+</script>

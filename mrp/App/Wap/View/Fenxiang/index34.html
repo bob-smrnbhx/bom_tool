@@ -1,0 +1,471 @@
+<?php 
+/**  七田阳光分享活动  ID=34 分享活动 **/
+function hidtel($phone){
+         return  preg_replace('/(1[34578]{1}[0-9])[0-9]{4}([0-9]{4})/i','$1****$2',$phone);
+ } 
+//截取utf8字符串 
+function utf8Substr($str, $from, $len) 
+{  
+return preg_replace('#^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$from.'}'. 
+'((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$len.'}).*#s', 
+'$1',$str); 
+} 
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <title><?php echo $news['title']; ?></title>
+        <meta name="description" content="这是一个用企业微信模版" />
+        <meta name="keywords" content="" />
+        <link href="__PUBLIC__/styles/default/css/base.css" type="text/css" rel="stylesheet" />
+        <link href="__PUBLIC__/styles/default/css/qtyg.css?v=22" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="__PUBLIC__/styles/default/js/jquery-1.8.0.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="__PUBLIC__/styles/default/js/scroll.js" charset="utf-8"></script>
+        <script type="text/javascript">
+          $(function(){
+            setTimeout(function () { 
+					$("div.list_lh").myScroll({
+					  speed:60, 
+					  rowHeight:25 
+					});
+			}, 10000);
+			
+			$("#show_tit").fadeToggle("fast",function(){
+				alert("<?php if($is_help){echo '您已经帮他增加过分享币.';}else{echo '恭喜您为'.$fx_user['name'].'增加20分享币';}?>");
+			 });
+            
+          });
+          </script>
+
+        <script type="text/javascript">
+        $(function(){
+            countDown($("#dtime").text(),"#colockbox1");
+			$('#name').focus(function(){
+ 				$('.show').empty();
+			});
+			$('#tel').focus(function(){
+ 				$('.show').empty();
+			});
+          });
+          function countDown(time,id){
+            var day_elem = $(id).find('.day');
+            var hour_elem = $(id).find('.hour');
+            var minute_elem = $(id).find('.minute');
+            var second_elem = $(id).find('.second');
+            var end_time = new Date(time).getTime(),//月份是实际月份-1
+            sys_second = (end_time-new Date().getTime())/1000;
+            var timer = setInterval(function(){
+              if (sys_second > 1) {
+                sys_second -= 1;
+                var day = Math.floor((sys_second / 3600) / 24);
+                var hour = Math.floor((sys_second / 3600) % 24);
+                var minute = Math.floor((sys_second / 60) % 60);
+                var second = Math.floor(sys_second % 60);
+                day_elem && $(day_elem).text(day);//计算天
+                $(hour_elem).text(hour<10?"0"+hour:hour);//计算小时
+                $(minute_elem).text(minute<10?"0"+minute:minute);//计算分钟
+                $(second_elem).text(second<10?"0"+second:second);//计算秒杀
+              } else { 
+                clearInterval(timer);
+              }
+            }, 1000);
+          }
+		  		
+		function oncheck()
+		{
+			var tel = $('#tel').val();
+			var name = $('#name').val();
+			if(name == "" || tel == "")
+			{
+				$('.show').html("姓名或者手机号码不能为空!");
+				return false;
+			}
+			re= /^(13[0-9]|15[012356789]|18[0236789]|14[57]|17[0-9])[0-9]{8}$/;
+        	if(!re.test(tel))
+			{
+			 	$('.show').html("手机号码格式不正确!");
+				return false;
+			}
+			
+			if(tel.length != 11)
+			{
+				$('.show').html("手机号码必须为11位数字!");
+				return false;
+			}
+			
+			return true;
+		}
+      </script>
+      
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+  wx.config({
+    debug: false,
+    appId: '{$signPackage["appId"]}',
+    timestamp: '{$signPackage["timestamp"]}',
+    nonceStr: '{$signPackage["nonceStr"]}',
+    signature: '{$signPackage["signature"]}',
+    jsApiList: [
+      // 所有要调用的 API 都要加到这个列表中
+      'onMenuShareTimeline','onMenuShareAppMessage'
+    ]
+  });
+  wx.ready(function () {
+    // 在这里调用 API
+
+    wx.onMenuShareTimeline({
+      title: "助力七田阳光，赢万元奖学金，创造最强大脑！", // 分享标题
+      link: "http://www.dscm.com.cn__SELF__&fx_id={$fx_id}" , // 分享链接
+  	  desc: '助力七田阳光全脑教育，赢取万元助学金和练习册，还有众多好礼等你来拿！', // 分享描述
+      imgUrl: "http://www.dscm.com.cn__PUBLIC__/styles/default/images/qtyg_01.jpg", // 分享图标
+      trigger: function () {
+          //alert("点击分享：");
+      },
+      success: function () { 
+          // 用户确认分享后执行的回调函数
+		  
+		  $.get("http://www.dscm.com.cn/xcrm/index.php?s=/Wap/Fenxiang/fenxiangapi/wx_id/{$wx_id}/fx_id/{$fx_id}/hdid/{$hdid}",function(data,status){
+				alert("分享成功.");
+		  });
+      },
+      cancel: function () { 
+          // 用户取消分享后执行的回调函数
+          //alert("用户取消分享");
+      }
+    });
+  
+  	wx.onMenuShareAppMessage({
+      title: "助力七田阳光，赢万元奖学金，创造最强大脑！", // 分享标题
+      link: "http://www.dscm.com.cn__SELF__&fx_id={$fx_id}" , // 分享链接
+  	  desc: '助力七田阳光全脑教育，赢取万元助学金和练习册，还有众多好礼等你来拿！', // 分享描述
+		imgUrl: "http://www.dscm.com.cn__PUBLIC__/styles/default/images/qtyg_01.jpg", // 分享图标
+    	type: 'link', // 分享类型,music、video或link，不填默认为link
+		success: function () { 
+			// 用户确认分享后执行的回调函数
+		},
+		cancel: function () { 
+			// 用户取消分享后执行的回调函数
+		}
+	 });
+  });
+</script>
+       </head>
+    
+    <body>
+	<audio src="__PUBLIC__/styles/default/images/qtyg.mp3" autoplay="autoplay" loop="loop"></audio>
+    <div id="all">
+    	<div id="show_tit" style="display:none;"></div>
+         <div class="header1">
+          	<img src="__PUBLIC__/styles/default/images/qtyg_01.jpg" width="100%" />
+            <img src="__PUBLIC__/styles/default/images/qtyg_02.jpg" width="100%" />
+            <img src="__PUBLIC__/styles/default/images/qtyg_03.jpg" width="100%" />
+         </div>
+
+		<!--<div style="margin-top:10px;background-color:#fff;font-size:20px;height:40px;line-height:40px;text-align:center;font-family:Arial, Helvetica, sans-serif;">活动倒计时，距离结束还有</div>-->
+        <div id="dtime" style="display:none"><?php  echo date("Y/m/d H:i:s", $news['jssj']);?></div>
+        <div class="colockbox" id="colockbox1" style="text-align:center;"><span class="day">00</span> 天 <span class="hour">00</span> 时 <span class="minute">00</span> 分 <span class="second">00</span> 秒 </div>
+       
+      	<img src="__PUBLIC__/styles/default/images/qtyg_05.jpg" width="100%" />
+<style>
+.s_show{width:100%;margin:20px auto;clear:both;float:left;margin-bottom:50px;}
+.s_line{float:left;width:25%;margin-left:6%;color:#000;}
+.s_line img{width:80%;}
+.s_line .s_top{margin-top:20px;color:#090;font-size:16px;font-weight:bold;}
+</style>
+        <div class="help" id="wejoin">
+            		
+            	
+         	<?php if($wx_id == $fx_id){ ?>
+            
+            	<?php if($is_join == 0){ ?>
+            		<h2 style="margin:10px auto;"><span style="color:red;">您还没有参加活动，赶快参加吧.</span></h2>
+				<?php }else{ ?>
+                    <h2 style="margin:10px auto;width:80%"><span style="color:red;">您（<?php echo $fx_user['name'];?>）还没有分享，赶快分享吧，成为分享达人吧.</span></h2>
+                <?php }?>
+				 
+                <div class="s_show">
+                  	<div class="s_line">
+                    	<img src="__PUBLIC__/styles/default/images/pm.png" />
+                        <div class="s_top">第<?php if($is_join == 0){echo 0;}else{echo $position;} ?>名</div>
+                    </div>
+                    
+                    <div class="s_line">
+                    	<img src="__PUBLIC__/styles/default/images/fx.png" />
+                        <div class="s_top"><?php if($is_join == 0){echo 0;}else{echo $fx_coin;} ?>分享币</div>
+                    </div>
+                    
+                    <div class="s_line">
+                    	<img src="__PUBLIC__/styles/default/images/yd.png" />
+                        <div class="s_top"><?php echo $ydcs; ?>次</div>
+                    </div>
+
+                 </div>
+			
+			<?php }else{ ?>
+            
+            	<h2 style="margin:10px auto;width:80%"><span style="color:red;"><?php echo $fx_user['name'];?>邀你帮TA分享，让更多的人成为分享达人吧.</span></h2>
+                
+            	<div class="s_show">
+                  	<div class="s_line">
+                    	<img src="__PUBLIC__/styles/default/images/pm.png" />
+                        <div class="s_top">第<?php echo $position; ?>名</div>
+                    </div>
+                    
+                    <div class="s_line">
+                    	<img src="__PUBLIC__/styles/default/images/fx.png" />
+                        <div class="s_top"><?php echo $fx_coin; ?>分享币</div>
+                    </div>
+                    
+                    <div class="s_line">
+                    	<img src="__PUBLIC__/styles/default/images/yd.png" />
+                        <div class="s_top"><?php echo $ydcs; ?>次</div>
+                    </div>
+                 </div>
+                  
+<!--				<h2 style="font-size:20px;">
+                	<?php echo '<p  style="margin:20px 0;line-height:30px;font-size:26px;color:#F36;">'.$fx_user['name'].'当前有'.$fx_coin.'分享币</p>'.
+						'<p  style="margin:20px 0;line-height:30px;font-size:26px;color:#F36;">'.$fx_user['name'].'当前已分享'.$fx_count.'次</p>'.
+						'<p  style="margin:20px 0;line-height:30px;font-size:26px;color:#F36;">'.$fx_user['name'].'当前排名第'.$position.'名</p>'; 
+					 ?>
+                </h2>-->
+		  	<?php }?>
+          
+
+          <div class="notice2">
+          <form action="index.php?s=/Wap/Fenxiang/weixinadd/" method="post" enctype="multipart/form-data" onsubmit="return oncheck()">      
+          <p style="color:#CF0;font-size:12px;">参加用户一律实名制，领奖凭身份证领取，否则奖品作废.</p>      
+			<p>您的姓名: <input type="text" name="name" value="<?php echo $wx_user['name'];?>" id="name" /></p>
+            <input name="id" type="hidden" value="<?php echo $wx_id;?>" />
+			<input name="hdid" type="hidden" value="<?php echo $hdid;?>" />
+            <p>您的手机: <input type="text" name="tel" value="<?php echo $wx_user['tel'];?>" id="tel" /></p>
+            <input type="submit" value="提交" class="btn1" />
+			<input type="button" value="取消" class="btn1 none" />
+			<div class="show"></div>
+            <!--<a href="javascript:void();" class="none">Close</a>-->
+          </form>
+          </div>
+
+<!--          <div class="notice3">
+            <form action="#" method="get">
+            	<?php if($is_join) {echo '<p>您现在有'.$coin.'助力币</p>'; }else{echo '您还没有参加活动请点击右侧参加活动'; }?>
+            	<a href="javascript:void();" class="none">Close</a>
+          	</form>
+          </div>-->
+
+          <div class="help4">
+          	<?php if($is_join){?>
+				<a href="<?php echo 'http://www.dscm.com.cn/xcrm/index.php?s=/Wap/Fenxiang/index/hdid/'.$hdid; ?>" class="a0">我的分享</a>
+			<?php }else{?> 
+				<a href="javascript:void();" class="a1">我要参加</a>
+			<?php } ?>
+            
+            <a href="javascript:void();" onclick="_system._guide(true)" class="a0">帮TA分享</a>
+<!--            <div class="list">
+               <div id="mess_share">
+                    <div id="share_1">
+                        <button class="button2" onclick="_system._guide(true)"><img src="__PUBLIC__/styles/default/images/icon_msg.png">&nbsp;发送给朋友</button>
+                    </div>
+                
+                    <div id="share_2">
+                        <button class="button2" onclick="_system._guide(true)"><img src="__PUBLIC__/styles/default/images/icon_timeline.png">&nbsp;分享到朋友圈</button>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>-->
+            
+          </div>
+        </div>
+        <script>
+		
+		$(function(){
+		   
+			// 我要参加活动点击事件；
+		   $(".a1").click(function(){
+			  $(".notice2").animate({
+				top:'50px',
+				left:'12px'
+			  });
+			});
+
+			$('.none').click(function(){
+			  $(".notice2").animate({
+				top:'50px',
+				left:'-999px'
+			  });
+			}); 
+       
+	   		// 查看收钱罐点击事件处理；
+            $(".a2").click(function(){
+                  $(".notice3").animate({
+                    top:'50px',
+                    left:'12px'
+                  });
+                });
+
+                $('.none').click(function(){
+                  $(".notice3").animate({
+                    top:'50px',
+                    left:'-999px'
+                  });
+                });  
+
+
+                $(".notice2 input[type='text']").focus(function(){
+                  $(this).val("");
+                })
+            });
+
+        </script>
+        
+<!--		<video src="__PUBLIC__/styles/default/images/phone3.flv" controls="controls" loop="loop" width="100%"></video>-->
+		<img src="__PUBLIC__/styles/default/images/qtyg_09.jpg" width="100%" /> 
+        <img src="__PUBLIC__/styles/default/images/qtyg_10.jpg" width="100%" />
+        <img src="__PUBLIC__/styles/default/images/qtyg_11.jpg" width="100%" />
+        <img src="__PUBLIC__/styles/default/images/qtyg_12.jpg" width="100%" /> 
+        <img src="__PUBLIC__/styles/default/images/qtyg_13.jpg" width="100%" />
+        <img src="__PUBLIC__/styles/default/images/qtyg_14.jpg" width="100%" />  
+		<img src="__PUBLIC__/styles/default/images/qtyg_15.jpg" width="100%" />     
+         
+<!--       <div style="margin:10px auto;float:right;margin-right:10px;line-height:30px;height:30px;font-size:12px;color:#C09;font-weight:bold;">
+        	参加用户一律实名制，领奖凭身份证领取，否则奖品作废. 
+        </div>-->
+        
+        <div class="list">  
+          <h4><span>排行</span><span>姓名</span><span style="width:25%;">手机号</span><span style="width:25%;">分享币</span></h4>
+          <div class="list_lh" style="height:auto;max-height:4000px;">
+          <ul>
+		  <?php
+		  	$i=1;
+		  	foreach($fx_list AS $one){?> 
+           <li><span><?php echo $i;$i++; $wxusz=M('wxuser')->getById($one['uid']); ?></span><span><?php echo utf8Substr($wxusz['name'], 0, 3);?></span><span style="width:25%;"><?php echo hidtel($wxusz['tel']);?></span><span style="width:25%;"><?php echo $one['fxb'];?>分享币</span></li>
+		  <?php }?>
+          </ul>
+        </div>
+
+          
+          <h3 style="height:30px;line-height:30px;color:#12436c;">总分享币：<?php echo $t_fxb; ?>（个），参加人数：<?php echo $t_join; ?>（人）</h3>
+          
+        </div>
+        
+        <img src="__PUBLIC__/styles/default/images/qtyg_17.jpg" width="100%" style="margin-bottom:40px;"/>
+
+        <div id="footer">
+        
+          <a href="#wejoin"><?php if($aa){echo $aa;}else	  if($news['kstime']>time()){
+				  echo '活动尚未开始,敬请期待!';
+				  }else if($news['jssj']<time()){
+					   echo '活动已结束,下期再见!';
+					  }else{
+						      echo '活动进行中,帮友分享吧!';
+						  }
+			  
+			  ?></a>
+        </div>
+
+            <script>
+              $(function(){
+                $('.a3').click(function(){
+                  $('.share-box').slideToggle("slow");
+                });
+
+                $('.hide').click(function(){
+                  $('.share-box').hide();
+                });
+              });
+            </script>
+    </div> 
+    
+<style type="text/css">
+button{width:100%;text-align:center;border-radius:3px;}
+.button2{font-size:16px;padding:8px 0;border:1px solid #adadab;color:#000000;background-color: #e8e8e8;background-image:linear-gradient(to top, #dbdbdb, #f4f4f4);background-image:-webkit-gradient(linear, 0 100%, 0 0, from(#dbdbdb),to(#f4f4f4));box-shadow: 0 1px 1px rgba(0,0,0,0.45), inset 0 1px 1px #efefef; text-shadow: 0.5px 0.5px 1px #ffffff;}
+.button2:active{background-color: #dedede;background-image: linear-gradient(to top, #cacaca, #e0e0e0);background-image:-webkit-gradient(linear, 0 100%, 0 0, from(#cacaca),to(#e0e0e0));}
+#mess_share{margin:15px 0;}
+#share_1{float:left;width:49%;}
+#share_2{float:right;width:49%;}
+#mess_share img{width:22px;height:22px;}
+#cover{display:none;position:absolute;left:0;top:0;z-index:18888;background-color:#000000;opacity:0.7;}
+#guide{display:none;position:absolute;right:18px;top:5px;z-index:19999;}
+#guide img{width:260px;height:180px;}
+</style>
+
+
+
+<script type="text/javascript">
+
+    var _system={
+
+        $:function(id){return document.getElementById(id);},
+
+   _client:function(){
+
+      return {w:document.documentElement.scrollWidth,h:document.documentElement.scrollHeight,bw:document.documentElement.clientWidth,bh:document.documentElement.clientHeight};
+
+   },
+
+   _scroll:function(){
+
+      return {x:document.documentElement.scrollLeft?document.documentElement.scrollLeft:document.body.scrollLeft,y:document.documentElement.scrollTop?document.documentElement.scrollTop:document.body.scrollTop};
+
+   },
+
+   _cover:function(show){
+
+      if(show){
+
+     this.$("cover").style.display="block";
+
+     this.$("cover").style.width=(this._client().bw>this._client().w?this._client().bw:this._client().w)+"px";
+
+     this.$("cover").style.height=(this._client().bh>this._client().h?this._client().bh:this._client().h)+"px";
+
+  }else{
+
+     this.$("cover").style.display="none";
+
+  }
+
+   },
+
+   _guide:function(click){
+
+      this._cover(true);
+
+      this.$("guide").style.display="block";
+
+      this.$("guide").style.top=(_system._scroll().y+5)+"px";
+
+      window.onresize=function(){_system._cover(true);_system.$("guide").style.top=(_system._scroll().y+5)+"px";};
+
+  if(click){_system.$("cover").onclick=function(){
+
+         _system._cover();
+
+         _system.$("guide").style.display="none";
+
+ _system.$("cover").onclick=null;
+
+ window.onresize=null;
+
+  };}
+
+   },
+
+   _zero:function(n){
+
+      return n<0?0:n;
+
+   }
+
+}
+</script>
+<div id="cover" style="display: none; width: 1920px; height: 891px;"></div>
+<div id="guide" style="display: none; top: 5px;"><img src="__PUBLIC__/styles/default/images/guide1.png"></div>
+<script src="__PUBLIC__/styles/default/js/cm.js" type="text/javascript"></script>    
+ 
+</body>
+</html>

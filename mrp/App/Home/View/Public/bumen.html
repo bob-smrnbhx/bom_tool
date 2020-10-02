@@ -1,0 +1,18 @@
+<div class="bjui-pageContent">
+    <table data-toggle="tablefixed" data-width="100%" data-layout-h="0">
+	 <thead>
+            <tr>
+                <th height=30>请选择</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding:5px;">
+				<volist id="v" name="list">
+                  &nbsp;<a href="javascript:;" data-toggle="lookupback" data-args="{ bumen:'{$v.title}'}" class="btn btn-blue" title="{$v.title}" data-icon="check">{$v.title}</a>&nbsp;
+				</volist>	
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

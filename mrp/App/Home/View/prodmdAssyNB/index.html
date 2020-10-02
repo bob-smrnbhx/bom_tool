@@ -1,0 +1,483 @@
+ 
+<!-- <script src="/dev/Public/BJUI/js/jquery-1.7.2.min.js"></script>     -->  
+ 
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch" action="__SELF__" method="get">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">             
+    <input type="hidden" name="pageCurrent" value="{$pageCurrent}">       
+    <input type="hidden" name="orderField" value="{$_REQUEST['orderField']}">         
+    <input type="hidden" name="orderDirection" value="{$_REQUEST['orderDirection']}"> 
+
+
+
+        <div class="bjui-searchBar">
+           <label for='proj'>项目：</label>
+           <select id='proj' name='proj'  data-toggle="selectpicker"onchange='selectProj(this)'>
+           	  <option value='cd539'  <eq name='Think.request.proj' value='cd539'>selected</eq>>cd539</option>
+           </select>
+           <button type='submit' class="btn-default" data-icon="undo">刷新</button>
+            
+            
+ 			
+			<!--  <span style="float:right;margin-right:20px;"><a href="__CONTROLLER__/showDmdsUpload" class="btn btn-blue" data-toggle="dialog" data-id="showuploaddmds" data-title="导入客户需求"  data-icon="arrow-down">导入</a></span>-->
+			<span style="float:right;margin-right:20px;"><button type='button' class="btn-default" data-icon="save" id='saveDmds'   onclick="saveAssyPlanAmount(this)"  >保存</button></span>
+			<span style="float:right;margin-right:20px;"><a href="__CONTROLLER__/exportBalanceExcel/site/1000" class="btn btn-blue" data-toggle="doexport"   data-icon="arrow-up" title="导出平衡表excel文件">平衡表导出</a></span>  
+		
+		</div> 
+</form>
+</div>
+
+
+
+<div class="bjui-pageContent" >
+<form id="plansForm"  action="__CONTROLLER__/updatePlans"     data-toggle="validate" method="post"  >   <!--建议使用validate表单，因为ajaxform表单 实测总是不自动弹出响应对话框 -->
+	<table id="tableditp" style="white-space: nowrap;"   data-toggle="tablefixed"   data-nowrap="true"   class="table table-bordered table-hover table-striped table-top" >
+        <thead>
+            <tr>
+            <th width="10" height="30"></th>
+            <th width="50"></th>
+            <th width="60"></th>
+            <th width="150"></th>
+            <th width="70"></th>
+            <th width="180"></th>
+            <th width="60"></th>
+            <!-- <th width="800" colspan='6' style='text-align: center'   >合计</th> -->
+			<volist id="date" name="dates">
+			<th width='60' title="{$date}   <if condition='$isPeriodDateMap[$date]'>阶段需求<elseif condition='$isDoubleShiftDateMap[$date]' />双班<else />单班</if>"  date="{$date}" <if condition='$isPeriodDateMap[$date]'>class='periodShift'<elseif condition='$isDoubleShiftDateMap[$date]' />class='dblShift'</if>  >{$date|substr=5}</th>
+			</volist>
+			</tr>
+			
+			<tr>
+            	<th ></th>
+        		<th colspan='6' style='text-align: center'>最大产能</th>
+				<volist id="date" name="dates">
+				<th title="{$date}"  date="{$date}" class='total_day_cap_qty'  >{$capacities[$date]}</th>
+				</volist>
+        	</tr>
+            <tr style="display: none;">
+            	<th ></th>
+        		<th colspan='6' style='text-align: center'>剩余产能</th>
+				<volist id="date" name="dates">
+				<th title="{$date}"  date="{$date}" class='left_day_cap_qty'  >{$unusedCapacities[$date]}</th>
+				</volist>
+        	</tr>
+            <tr>
+            	<th  ></th>
+        		<th colspan='6' style='text-align: center'>总生产数</th>
+				<volist id="date" name="dates">
+				<th title="{$date}"  date="{$date}" class='sum_day_plan_qty' style="color: blue;" >{$totalProds[$date]}</th>
+				</volist>
+        	</tr>
+            <tr>
+            	<th  ></th>
+        		<th colspan='4' style='text-align: center'>总需求量</th>
+        		<th>初始总需求量</th>
+        		<th date="{$orgDate}">{$totalDemands[$orgDate]}</th>
+				<volist id="date" name="dates">
+				<th title="{$date}"  date="{$date}" class='total_dmd_qty'  '>{$totalDemands[$date]}</th>
+				</volist>
+        	</tr>
+            <tr>
+            <th ></th>
+ 			<th title="状态"   data-notread="true">状态</th>
+            <th title="计划员"   data-order-field='ptp_buyer' data-notread="true">计划员</th>
+			<th title="物料号"   data-order-field='ptp_part'>零件</th>
+			<th title="计划员"    data-order-field='lnd_line' data-notread="true">产线</th>
+			<th title="信息"   data-order-field='ptp_desc1'>信息</th>
+			<th  >类型</th>
+			<volist id="date" name="dates">
+			<th title="{$date} <if condition='$isPeriodDateMap[$date]'>阶段需求<elseif condition='$isDoubleShiftDateMap[$date]' />双班<else />单班</if>"  date="{$date}" <if condition='$isPeriodDateMap[$date]'>class='periodShift'<elseif condition='$isDoubleShiftDateMap[$date]' />class='dblShift'</if>   >{$date|substr=5}</th>
+			</volist>
+			</tr>
+			
+			
+        </thead>
+        <tbody>
+
+        
+        
+        
+        <foreach item="partInfo" key='part' name="partsInfo">
+            <tr class='dmd' pid='{$part}'>
+	            <td  ></td>
+	            <td rowspan="6">{$partInfo["isMrp"]?"未保存":"已保存"}</td>
+	            <td rowspan="6">{$partInfo.buyer}</td>
+				<td rowspan="6" title="{$part}">{$part}</td>
+				<td rowspan="6">{$partInfo.line}</td>
+				<td >{$partInfo.desc1}</td>
+				<td><strong>需求</strong></td>
+				<volist id="date" name="dates">
+				<td date='{$date}'> <span class='dmd_qty' >{$partInfo['dmds'][$date]}</span>
+				</td>
+					 			
+				</volist>
+
+            </tr>
+            <tr class='plan' pid='{$part}' readonly>
+	            <td ></td>
+				<td >{$partInfo.desc2}</td>
+				<td><strong>计划</strong></td>
+				<volist id="date" name="dates">
+				<td date='{$date}' <if condition="$isWorkdayDateMap[$date]">class="workday"  </if>  ondblclick='dispAssyPlanQtyFields(this)' date='{$date}'  org-qty="{$partInfo['prods'][$date]}"    >
+					<span class='rps_qty'>{$partInfo['prods'][$date]}</span>
+				    <input style='width: 100%;'  type='text' class='rps_qty'   name="rps#{$part}#{$partInfo['line']}#{$partInfo['site']}#{$date}#{$dateTypeMap[$date]}" value="{$partInfo['prods'][$date]}" valuebf="{$partInfo['prods'][$date]}"  onchange="calculateAssyAmount(this)"     />  
+				</td>
+				</volist>
+            </tr>
+            <tr class='istock' pid='{$part}'>
+	            <td   ></td>
+	            <td>初始内库库存：<span class='org_inner_stock_qty'>{$partInfo['innerStocks'][$orgDate]}</span></td>
+				<td><strong>内库</strong></td>
+				<volist id="date" name="dates">
+				<td date='{$date}'> <span class='inner_stock_qty'>{$partInfo['innerStocks'][$date]}</span></td>
+				</volist>
+            </tr>
+            
+            <tr class='ostock' pid='{$part}'>
+	            <td   ></td>
+	            <td>初始外库库存：<span class='org_outer_stock_qty'>{$partInfo['outerStocks'][$orgDate] + $partInfo['dmds'][$orgDate]}</span></td>
+				<td><strong>外库</strong></td>
+				<volist id="date" name="dates">
+				<td date='{$date}'  > <span class='outer_stock_qty'>{$partInfo['outerStocks'][$date]}</span></td>
+				</volist>
+            </tr>
+            
+            <tr class='stock' pid='{$part}'>
+	            <td   ></td>
+	            <td>包装量：<span class="ordMin">{$partInfo["ordMin"]}</span></td>
+				<td>
+					<strong>总结余</strong>
+					<span class='immediateProdStock'>{$partInfo["immediateProdStock"]}</span>
+					<span class='isAnte'>{$partInfo["isAnte"]}</span>
+					<span class='useOuterStockForSafty'>{$partInfo["useOuterStockForSafty"]}</span>
+				</td>
+				<volist id="date" name="dates">
+				<td date='{$date}' dateType='{$dateTypeMap[$date]}'    <if condition="$partInfo['stocks'][$date] lt 0">class='invalidStock'</if>  ><span class='stock_qty'>{$partInfo['stocks'][$date]}</span></td>
+				</volist>
+            </tr>
+            
+ 			
+            <tr class='accuDmd' pid='{$part}'>
+	            <td   ></td>
+	            <td>前日需求量：<span class='org_dmd_qty'>{$partInfo['dmds'][$orgDate]}</span></td>
+	            <if condition="!$partInfo['accuDmdOff']">
+					<td><strong>累计量</strong></td>
+					<volist id="date" name="dates">
+					<td date='{$date}' ><span class='accu_dmd_qty'>{$partInfo['consectAccuDmds'][$date]}</span></td>
+					</volist>
+				<else />
+				<td colspan="{$dates|count}"></td>	
+				</if>
+            </tr>
+            
+ 
+            <tr><td></td></tr>
+        </foreach>
+
+        </tbody>
+    </table>
+
+</form>    	
+
+    <div class="bjui-footBar">
+
+    </div>
+ 
+</div>
+<style>
+#plansForm tr.plan input {
+	display: none;
+}
+#plansForm tr.plan_input input.rps_qty{
+	display: inline-block;
+}
+#plansForm tr.plan_input span.rps_qty{
+	display: none;
+}
+#plansForm .fchanged .rps_qty {
+	color: red;
+}
+#plansForm .invalidStock {
+	background-color: red;
+}
+#plansForm th.periodShift {
+	background-color: green;
+	color: black;
+}
+#plansForm th.dblShift {
+	background-color: blue;
+	color: white;
+}
+#plansForm tr.accuDmd td[date]{
+	background: #ccc;
+}
+#plansForm .workday {
+	background: #FFF68F;
+}
+.immediateProdStock, .isAnte, .useOuterStockForSafty  {
+	display: none;
+}
+{
+ 
+</style>
+<script type='text/javascript'>
+$(document).ready(function() {
+	// ensure all the event handlers would just be bound once due to th B-jui's duplicate html snippet reloading feature.	
+/* 	if ($(document).data("prpLoaded")) {
+		return;
+	}
+	$(document).data("prpLoaded" , true); */
+	
+	$(document).dblclick(function(event) {
+		if ($(event.target).closest("tr.plan").length == 0) {
+			hideAllAssyPlanQtyFields();
+		}
+	});
+	//calculateAccumulativeDayPlans();
+});
+
+function selectProj (obj)
+{
+	$(obj).closest("#pagerForm").submit();
+}
+
+function dispAssyPlanQtyFields (planTd) 
+{
+	var plansForm = $(planTd).closest("#plansForm"); 
+	if (!$(planTd).hasClass('plan_input')) {
+		$("tr.plan", plansForm).removeClass("plan_input");
+		$(planTd).closest("tr").addClass("plan_input");
+		$("input:text", planTd).focus();
+	}
+}
+
+function hideAllAssyPlanQtyFields()
+{
+	$("tr.plan", $.CurrentNavtab).removeClass("plan_input");
+}
+
+function calculateAssyAmount (planField) 
+{
+	var proj = $("select#proj", $.CurrentNavtab).val();
+	var plansForm = $(planField).closest("#plansForm");
+	var saveBtn = plansForm.closest(".bjui-pageContent").siblings(".bjui-pageHeader").find("#savePlan");
+	var pid = $(planField).closest("tr").attr("pid");
+	var curDate = $(planField).closest("td").attr("date");
+	
+	var ordMin = Number($(".stock[pid='" + pid + "'] .ordMin", plansForm).text());
+	if (ordMin == 0) {
+		ordMin = 1;
+	}
+	var immediateProdStock = $(".stock[pid='" + pid + "'] .immediateProdStock", plansForm).text();
+	if (immediateProdStock == '1') {
+		immediateProdStock = true;
+	} else {
+		immediateProdStock = false;
+	}
+ 
+	var isAnte = $(".stock[pid='" + pid + "'] .isAnte", plansForm).text();
+	if (isAnte == '1') {
+		isAnte = true;
+	} else {
+		isAnte = false;
+	}
+	
+	var useOuterStockForSafty = $(".stock[pid='" + pid + "'] .useOuterStockForSafty", plansForm).text();
+	if (useOuterStockForSafty == '1') {
+		useOuterStockForSafty = true;
+	} else {
+		useOuterStockForSafty = false;
+	}
+
+	
+	var orgInnerStockQty = Number($(".istock[pid='" + pid + "'] .org_inner_stock_qty", plansForm).text());
+	var orgOuterStockQty = Number($(".ostock[pid='" + pid + "'] .org_outer_stock_qty", plansForm).text());
+
+	isNaN(orgInnerStockQty) && (orgInnerStockQty = 0);
+	isNaN(orgOuterStockQty) && (orgOuterStockQty = 0);	
+
+
+	// check if order qty is valid.
+	var val = $.trim($(planField).val());
+	var curPlanQty;
+	if (val.charAt(0) == '*') {
+		// if qty value starts with '*', treat following part as quantity multiply
+		var mult = val.slice(1);
+		curPlanQty = Number(mult) * ordMin;
+	} else {
+		curPlanQty = Number(val);
+	}
+	
+	var isInvalid = true;
+	if (isNaN(curPlanQty)) {
+		alert("错误：输入的计划量" + val + "必须为数字");
+	} else if (curPlanQty < 0) {
+		alert("错误：输入的计划量" + val + "不能为负值");
+	} else if (curPlanQty % ordMin != 0) {
+		alert("错误：输入的计划量" + val + "不是包装量：" + ordMin + " 的整数倍"); 
+	} else {
+		isInvalid = false;
+	}
+	if (isInvalid) {
+		// restore the input order qty data before modification if invalid
+		$(planField).val($(planField).parent().children("span.rps_qty").text()); 
+		return false;
+	} else {
+		// modify the related span text as well if valid
+		var delta = curPlanQty - Number($(planField).attr("valuebf"));
+		$(planField).val(curPlanQty);
+		$(planField).attr("valuebf", curPlanQty);
+		$(planField).parent().children("span.rps_qty").text(curPlanQty);
+		
+		// set related changed style if data was really changed
+		if (curPlanQty != $(planField).closest("td").attr('org-qty')) {
+			$(planField).closest("td").addClass("fchanged");
+		} else {
+			$(planField).closest("td").removeClass("fchanged");
+		}
+		
+
+		
+		// recalculate left capability and accu plans amount of the date
+		$(".sum_day_plan_qty[date='" + curDate + "']", plansForm).text(Number($(".sum_day_plan_qty[date='" + curDate + "']", plansForm).text()) + delta);
+		$(".left_day_cap_qty[date='" + curDate + "']", plansForm).text(Number($(".left_day_cap_qty[date='" + curDate + "']", plansForm).text()) - delta);
+	}
+
+	// recalculate expected daily stock amounts of the part
+	var stockContainer = $("tr.stock[pid='" + pid + "']", plansForm);
+	var prevInnerStock = parseInt($(".istock[pid='" + pid +"'] .org_inner_stock_qty", plansForm).text());
+	var prevOuterStock = parseInt($(".ostock[pid='" + pid +"'] .org_outer_stock_qty", plansForm).text());
+	var prevDmdQty = parseInt($(".accuDmd[pid='" + pid +"'] .org_dmd_qty", plansForm).text());
+	isNaN(prevInnerStock) && (prevInnerStock = 0);
+	isNaN(prevOuterStock) && (prevOuterStock = 0);
+	isNaN(prevDmdQty) && (prevDmdQty = 0);
+	prevOuterStock -= prevDmdQty;
+	var prevStock = prevInnerStock + prevOuterStock;
+	var prevPlan = 0;
+	$(".stock_qty", stockContainer).each(function() {
+		if (!$(this).text()) {
+			return;
+		}
+		var date = $(this).closest("td").attr("date");
+		var dateType = $(this).closest("td").attr("dateType");
+		var dmdQty  = parseInt($(".dmd[pid='" + pid +"']  td[date='" + date + "'] .dmd_qty", plansForm).text());
+		var planQty = parseInt($(".plan[pid='" + pid +"'] td[date='" + date + "']  .rps_qty", plansForm).text());
+		var accuDmdQty = parseInt($(".accuDmd[pid='" + pid +"']  td[date='" + date + "'] .accu_dmd_qty", plansForm).text());
+		isNaN(dmdQty) && (dmdQty = 0);
+		isNaN(planQty) && (planQty = 0);
+		isNaN(accuDmdQty) && (accuDmdQty = 0);
+		
+		if (dateType == 'd') {
+			if (immediateProdStock) {
+				var stockQty = prevStock + planQty - dmdQty;
+				if (proj == '315a' || isAnte) {
+					var innerStockQty = stockQty;
+				} else {
+					var innerStockQty = planQty;
+				}
+				
+			} else {
+				var stockQty = prevStock + prevPlan - dmdQty;
+				var innerStockQty = prevPlan;
+			}
+			var outerStockQty = stockQty - innerStockQty;
+		} else {
+			var innerStockQty = '';
+			var outerStockQty = '';
+			var stockQty = prevStock + planQty - dmdQty;
+		}
+
+
+		
+		// modify the inner stock qty of the date
+		$(".istock[pid='" + pid +"'] td[date='" + date + "']  .inner_stock_qty", plansForm).text(innerStockQty);
+		$(".ostock[pid='" + pid +"'] td[date='" + date + "']  .outer_stock_qty", plansForm).text(outerStockQty);
+		$(this).text(stockQty);
+		
+		if (dateType == 'd') {
+			if (!useOuterStockForSafty) {
+				if (stockQty < accuDmdQty) {
+					$(this).closest("td").addClass("invalidStock");
+				} else {
+					$(this).closest("td").removeClass("invalidStock");
+				}
+			} else {
+				if (outerStockQty < accuDmdQty) {
+					$(".ostock[pid='" + pid +"'] td[date='" + date + "']", plansForm).addClass("invalidStock");
+				} else {
+					$(".ostock[pid='" + pid +"'] td[date='" + date + "']", plansForm).removeClass("invalidStock");
+				}
+			}
+		}
+		
+		prevStock = stockQty;
+		prevDmdQty = dmdQty;
+		prevPlan = planQty;
+	});
+
+	
+	// recalculate accumulative daily plans
+	//calculateAccumulativeDayPlans();
+	
+	// enable submit button
+	$("#saveDmds").prop("disabled", false);
+}
+
+function calculateAccumulativeDayPlans()
+{
+	$(".accu_day_qty").each(function() {
+		var accuQty = 0;
+		var date = $(this).attr("date");
+		$(".plan " + "td[date=" + date + '] input').each(function() {
+			var rpsQty = parseInt($(this).val());
+			if (!isNaN(rpsQty)) {
+				accuQty += rpsQty;
+			}
+		});
+		
+		$(this).text(accuQty);
+	});
+}
+
+function beforeSearch(obj) {
+	// can not prevent default....
+
+	//return false;
+}
+	
+
+ 
+	
+function saveAssyPlanAmount(obj) {
+	var plansForm = $(obj).closest(".bjui-pageHeader").siblings(".bjui-pageContent").find("#plansForm");;
+// 	var changedOrd = $(".ord:has(.fchanged)", plansForm);
+// 	if (changedOrd.length == 0) {
+// 		alert("未修改任何数据");
+// 		return false;
+// 	}
+	
+	// fix b-jui odd bug
+	if (!plansForm.data("submitted")) {
+		plansForm.data("submitted", true);
+		// just update the the date-qty fields of changed record
+		$(".ord", plansForm)
+		.filter(function() {
+			if ($(this).find(".fchanged").length != 0) {
+				return false;
+			}
+			return true;
+		})
+		.each(function() {
+				$("input:text", this).prop("disabled", true);
+		});
+		plansForm.submit();
+	}
+}
+
+ 
+ 
+ 
+
+</script>
+</style>

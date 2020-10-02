@@ -1,0 +1,72 @@
+
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch"  action="__SELF__" method="post">
+	
+	<input type="hidden" name="pageSize" value="{$numPerPage}">
+    <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+	 
+        <div class="bjui-searchBar">
+             <button type="button"  class="btn-default" data-icon="arrow-down" style="width:100px;height:30px" onclick = "importRtData(this)">更新</button>
+        </div>
+
+</form>
+    
+</div>
+
+<div class="bjui-pageContent">
+	<form id="rtDataForm"  action="__CONTROLLER__/updateItems/site/{$Think.get.site}" data-toggle="validate" method="post" >
+     <table data-toggle="tablefixed" data-width="50%" data-layout-h="0" data-nowrap="true">
+        <thead>
+            <tr>
+	            <th >ID</th>
+	            <th >项目</th>
+	            <th >选择</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+             <td>1</td>
+             <td>采购件库存</td>
+			 <td><input type="checkbox" id="stock"  name ="data[]" value="stock" ></td>
+         </tr> 
+             <tr>
+             <td>2</td>
+             <td>制造件库存</td>
+			 <td><input type="checkbox" id="stockDetail"  name ="data[]" value="stockDetail" ></td>
+         </tr> 
+         <if condition="$Think.get.site == 1000">
+          <tr>
+             <td>3</td>
+             <td>在途</td>
+			 <td><input type="checkbox" id="tran"  name ="data[]" value="tran" ></td>
+         </tr> 
+         </if>
+       </tbody>
+       
+    </table>
+    </form>
+
+
+</div>
+ <script type="text/javascript">
+ 
+function importRtData(obj)
+{
+	var flag = false;
+	var a = document.getElementsByName('data[]');
+	for(var i = 0 ;i<a.length;i++){
+		if (a[i].checked){
+			flag = true;
+		}	
+	} 
+	if(flag==false){
+		window.alert("没有选择要同步的项目！");
+		return;
+	}
+	
+	var rtDataForm = $(obj).closest(".bjui-pageHeader").siblings(".bjui-pageContent").find("#rtDataForm");
+	rtDataForm.submit();
+}
+</script>

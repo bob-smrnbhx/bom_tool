@@ -1,0 +1,694 @@
+<?php 
+/** 金斯堡ID=22 助力活动 **/
+function hidtel($phone){
+         return  preg_replace('/(1[34578]{1}[0-9])[0-9]{4}([0-9]{4})/i','$1****$2',$phone);
+ } 
+//截取utf8字符串 
+function utf8Substr($str, $from, $len) 
+{  
+return preg_replace('#^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$from.'}'. 
+'((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$len.'}).*#s', 
+'$1',$str); 
+} 
+ 
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title><?php echo $news['title']; ?></title> 
+    <meta name="description" content="微信模板" />
+    <meta name="keywords" content="" /> 
+    <link href="__PUBLIC__/styles/default/css/base.css" type="text/css" rel="stylesheet" />
+    <link href="__PUBLIC__/styles/default/css/jsb.css?v=24" type="text/css" rel="stylesheet" />
+	<link href="__PUBLIC__/styles/default/css/animate.min.css" type="text/css" rel="stylesheet" />
+	<link href="__PUBLIC__/styles/default/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
+	<script src="__PUBLIC__/styles/default/js/jquery.js"></script>
+	<script src="__PUBLIC__/styles/default/js/jquery.datetimepicker.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+    $(function(){
+        countDown($("#dtime").text(),"#colockbox1");
+        $('#name').focus(function(){
+            $('.show').empty();
+        });
+        $('#tel').focus(function(){
+            $('.show').empty();
+        });
+      });
+      function countDown(time,id){
+        var day_elem = $(id).find('.day');
+        var hour_elem = $(id).find('.hour');
+        var minute_elem = $(id).find('.minute');
+        var second_elem = $(id).find('.second');
+        var end_time = new Date(time).getTime(),//月份是实际月份-1
+        sys_second = (end_time-new Date().getTime())/1000;
+        var timer = setInterval(function(){
+          if (sys_second > 1) {
+            sys_second -= 1;
+            var day = Math.floor((sys_second / 3600) / 24);
+            var hour = Math.floor((sys_second / 3600) % 24);
+            var minute = Math.floor((sys_second / 60) % 60);
+            var second = Math.floor(sys_second % 60);
+            day_elem && $(day_elem).text(day);//计算天
+            $(hour_elem).text(hour<10?"0"+hour:hour);//计算小时
+            $(minute_elem).text(minute<10?"0"+minute:minute);//计算分钟
+            $(second_elem).text(second<10?"0"+second:second);//计算秒杀
+          } else { 
+            clearInterval(timer);
+          }
+        }, 1000);
+      }
+            
+    function oncheck()
+    {
+        var tel = $('#tel').val();
+        var name = $('#name').val();
+		var birthday = $('#txtBirthday').val();
+        if(name == "" || tel == "")
+        {
+            $('.show').html("宝贝姓名或者家长手机不能为空!");
+            return false;
+        }
+		if(birthday == "")
+        {
+            $('.show').html("宝贝生日不能为空!");
+            return false;
+        }
+		
+        re= /^(13[0-9]|15[012356789]|18[02356789]|14[57]|17[0-9])[0-9]{8}$/;
+        if(!re.test(tel))
+        {
+            $('.show').html("手机号码格式不正确!");
+            return false;
+        }
+        
+        if(tel.length != 11)
+        {
+            $('.show').html("手机号码必须为11位数字!");
+            return false;
+        }
+
+        return true;
+    }
+  </script>
+      
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+  wx.config({
+    debug: false,
+    appId: '{$signPackage["appId"]}',
+    timestamp: '{$signPackage["timestamp"]}',
+    nonceStr: '{$signPackage["nonceStr"]}',
+    signature: '{$signPackage["signature"]}',
+    jsApiList: [
+      // 所有要调用的 API 都要加到这个列表中
+      'onMenuShareTimeline','onMenuShareAppMessage'
+    ]
+  });
+  wx.ready(function () {
+
+
+    // 在这里调用 API
+ 
+    wx.onMenuShareTimeline({
+      title: '"君瑞城杯"滕州状元宝贝评选大赛万元豪礼等你拿', // 分享标题
+	  link: "http://www.dscm.com.cn__SELF__&fx_id={$fx_id}&shareid={$shareid}", // 分享链接
+      desc: "'君瑞城杯'滕州状元宝贝评选大赛万元豪礼等你拿...", // 分享描述
+      imgUrl: "http://www.dscm.com.cn__PUBLIC__/styles/default/images/xbbj01.png", // 分享图标
+      trigger: function () {
+          //alert("点击分享：");
+      },
+      success: function () { 
+          // 用户确认分享后执行的回调函数
+          //alert("分享成功");
+      },
+      cancel: function () { 
+          // 用户取消分享后执行的回调函数
+          //alert("用户取消分享");
+      }
+    });
+  
+  	wx.onMenuShareAppMessage({
+      title: '"君瑞城杯"滕州状元宝贝评选大赛万元豪礼等你拿', // 分享标题
+	  	link: "http://www.dscm.com.cn__SELF__&fx_id={$fx_id}&shareid={$shareid}", // 分享链接
+      	desc: "'君瑞城杯'滕州状元宝贝评选大赛万元豪礼等你拿..", // 分享描述
+      	imgUrl: "http://www.dscm.com.cn__PUBLIC__/styles/default/images/xbbj01.png", // 分享图标
+    	type: 'link', // 分享类型,music、video或link，不填默认为link
+		success: function () { 
+			// 用户确认分享后执行的回调函数  
+		},
+		cancel: function () { 
+			// 用户取消分享后执行的回调函数
+		}
+	 });
+  });
+</script>
+</head>
+<body> 
+<!--	__SELF__<br/> __PUBLIC__<br/>
+    参加人数：{$cjrs}<br/> 
+    总助力人数：{$zlrs}<br/>
+    阅读次数：{$ydcs}<br/>
+	
+    当前用户是否参加{$is_join}<br/>
+    分享用户是否参加{$is_fx_join}<br/>
+    当前用户币{$coin}<br/>
+    分享币{$fx_coin}<br/>
+    wx——id{$wx_id}<br/>
+    fx——id{$fx_id}<br/>{$wx_user['name']} 位置:{$position}-->
+<script>
+	$(document).ready(function(){
+	width=String($(window).width()*0.06);
+$(".baotu").attr("style","width:"+String($(window).width())+"px;height:"+String($(window).width()*3.053)+"px;background:url(__PUBLIC__/styles/default/images/xbbj1.jpg?v=1)no-repeat;background-size:100%;"); 
+$(".notice3").attr("style","width:"+String($(window).width()-width*2+2)+"px;height:"+String($(window).width()*1.8)+"px;background:url(__PUBLIC__/styles/default/images/xzq.jpg)no-repeat;background-size:100%;	padding-top:"+String($(window).width()*0.48)+"px;padding-left:"+width+"px;padding-right:"+width+"px;"); 
+$(".notices4").attr("style","width:"+String($(window).width()-width*2+2)+"px;height:"+String($(window).width()*1.8)+"px;padding-top:"+String($(window).width()*0.48)+"px;padding-left:"+width+"px;padding-right:"+width+"px;	"); });
+</script>
+<style>.header{
+	width: 100%;
+	height:669px;
+	overflow: hidden;
+	margin-top: 0px;
+	position:relative;
+}
+.header .left{
+	float: left;
+	width: 39%;
+	margin-top: 0;
+	padding-left: 5px;
+}
+.header .left h2{
+	font-size: 15px;
+}
+.header .left p{
+	font-size: 8px;
+}
+.header .left h3{
+	margin:5px 0 0 0;
+	text-align: center;
+}
+.header .right{
+	float: left;
+	width: 56%;
+	margin-top: 70px;
+	border-left:1px dotted #000;
+	padding:0 5px;
+	
+}
+.baotu{
+
+
+	 
+	}
+	.notices5 img{
+		width:10%;
+		height:auto;
+		margin-top:50px;
+		margin-left:30px;
+		
+		}
+		.notices5 a{
+			float:right;
+			margin-right:20px;
+		}
+
+</style>
+    <div id="all">
+     <script>
+	$(document).ready(function(){
+		
+	    width=String($(window).width()*0.4)
+		width1=String($(window).width()*10)
+		width2=String($(window).width()*0.2)
+		width3=String($(window).width()*0.1)
+		width4=String($(window).width()*0.0495)
+		width5=String($(window).width()*1.03)	
+		width6=String($(window).width()*0.97)
+		width7=String($(window).width()*0.028)	
+		width8=String($(window).width()*0.26)	
+		width9=String($(window).width()*1.1)
+$(".none").attr('style',"float:right; margin-top:-"+width+"px; background-color:#000; "); 
+$(".xunzhang1").attr('style',"float:left; width:"+width2+"px; height:"+width2+"px; margin-left:0px; margin-bottom:"+width3+"px; position:relative "); 
+
+$(".xunzhang2").attr('style',"float:left; width:"+width2+"px; height:"+width2+"px; margin-left:"+width4+"px; margin-bottom:"+width3+"px; position:relative "); 
+
+$(".xzqbj").attr('style',"margin-left:-"+width7+"px; margin-top:-"+width2+"px; width:"+width6+"px; height:"+width5+"px; "); 
+$(".anniu").attr('style',"width:"+String($(window).width())+"px;background:url(__PUBLIC__/styles/default/images/xbbj02.jpg)no-repeat;background-size:100%;  height:"+width8+"px; text-align:center;"); 
+$(".biaoti").attr('style',"width:"+String($(window).width())+"px;background:url(__PUBLIC__/styles/default/images/xbbj031.jpg)no-repeat;background-size:100%;  height:"+width9+"px; text-align:center;"); 
+ 
+}); 
+</script>
+ <div class="notice3" > <a href="javascript:void();" class="none" style="  "><h1>&nbsp;X&nbsp;关&nbsp;闭&nbsp;</h1></a>
+     <div class="xzqbj" >
+ <?php
+ $i=0;
+  foreach($hdjs AS $vo){
+  $j=$i%4;
+  $i++; ?>
+ <div class="xunzhang<?php if($j==0){ echo 1;}else {echo 2;} ?>" >
+ <?php if($vo){ ?>
+ <img src="__PUBLIC__/styles/default/images/xz/<?php echo $i; ?>.png" width="100%"/>
+ <?php   if($vo==3){?>
+ <div style=" position:absolute; top:50px; left:10px; width:50px; height:50px; z-index:9999"> 
+ 	<img src="__PUBLIC__/styles/default/images/xz/yl.png" width="100%"/>
+ </div>
+ 
+ <?php  } ?>
+ 
+ <?php }?>
+ </div>
+<?php  } ?>
+  </div>	<!--<?php if($is_fx_join){ ?>
+          			<span style="color:red;"><?php echo $fx_user['name'];?></span> 当前有<span class="zlb"><?php echo $fx_coin;?></span>助力币;<br/> 排名：第<?php echo $position;?>名（相同助力币不计）
+                <?php }else{?>
+                	当前用户还没有参加活动哦，赶紧来参加吧.
+                <?php } ?>
+                <br/>-->
+               <div class="ewm"  style="float:right; ">
+           
+		  </div>
+          </div>  
+          
+          
+            <div class="notices4" > 
+ <img src="__PUBLIC__/styles/default/images/xz/<?php echo $fx_user['grade']+1;?>.png"  />
+    </div>
+    <div class="notices5" ><a href="javascript:void();" class="none2" style="  "><h1>&nbsp;X&nbsp;关&nbsp;闭&nbsp;</h1></a>
+     <div style="height:50px;"></div>
+    </div>
+          </div>
+		  <div class="notice2">
+           
+                     
+			<?php 
+			if($is_join) 
+			{echo '<p><a style="color:#fff;" href="http://www.dscm.com.cn/xcrm/index.php?s=/Wap/Xunbao/index/id/'.$wx_id.'/fx_id/'.$wx_id.'/shareid/'.$shareid.'">您已参加活动<br/>点击进入你的活动页</a></p><a href="javascript:void();" class="none1">Close</a>'; }
+            else{
+				'<p><a style="color:#fff;" href="http://www.dscm.com.cn/xcrm/index.php?s=/Wap/Xunbao/index/id/'.$wx_id.'">活动已结束，您不可以报名了!</a></p><a href="javascript:void();" class="none1">Close</a>';
+			?> 
+			<!--<form action="/xcrm/index.php?s=/Wap/Xunbao/weixinadd" method="post" onsubmit="return oncheck()">  
+			<p>宝贝姓名:           
+			<input type="text" name="name" id="name" placeholder="您家宝贝的名字" /></p> 
+            <input name="id" type="hidden" value="<?php echo $wx_id;?>" />
+			<input name="shareid" type="hidden" value="<?php echo $shareid;?>" />
+            <p>家长手机: <input type="number" name="tel" id="tel" placeholder="您的手机号"/></p>
+			<p>宝贝生日: <input type="number" name="record" id="txtBirthday" placeholder="例如年月日：20151101"/></p>
+            <input type="submit" value="提交" class="btn1" />
+			<input type="button" value="取消" class="btn1 none1" />
+			<div class="show">以上三项请真实填写，这是您领奖的唯一依据!</div>
+          	</form>-->
+			<?php }?> 
+          </div>
+		  
+		  <div class="notice1">
+            <p  style="margin:30px 0;line-height:30px;font-size:20px;padding:0 10px;color:#F36;" >
+				<a href="http://www.dscm.com.cn/weixinpay/demo/js_api_call.php" id="focus" style="color:#F00;font-weight:bold;">立即去支付，享受更大礼包哦!</a>
+			</p>
+          </div>
+		<!-- 奖品展示 -->
+		<div class="notice6"><a href="javascript:void();" class="none3" style="font-size:2em;"><h1>&nbsp;X&nbsp;关&nbsp;闭&nbsp;</h1></a>
+		 	<img src="__PUBLIC__/styles/default/images/prize/swjp_01.jpg" width="100%" />
+			<img src="__PUBLIC__/styles/default/images/prize/swjp_02.jpg" width="100%" />
+			<img src="__PUBLIC__/styles/default/images/prize/swjp_03.jpg" width="100%" />
+		</div>
+
+          	  <div class="biaoti" ></div>
+		  <div class="anniu" style="">
+          
+         	<?php if($is_fx_join){ ?><span class="help1">  
+		 		<?php if($is_self){ ?>
+          			<img src="__PUBLIC__/styles/default/images/an/1.png" width="150"  />
+                <?php }else{?>
+                	<img src="__PUBLIC__/styles/default/images/an/2.png" width="150"  />
+               	<?php } ?> </span>
+			<?php }else{?>
+       				<a href="javascript:void();" class="a1">
+       					<img src="__PUBLIC__/styles/default/images/an/1.png" width="150"   />
+          			</a>
+			 <?php } ?>	
+		  		<?php if($is_self){ ?>
+            		<a href="javascript:void();" class="a2"><img src="__PUBLIC__/styles/default/images/an/4.png"  width="150" /></a>  
+				<?php }else{?>
+                	<a href="javascript:void();" class="a1"><img src="__PUBLIC__/styles/default/images/an/1.png" width="150"  /></a>
+             	<?php } ?>    
+			 	<a href="#role" class=""><img src="__PUBLIC__/styles/default/images/an/5.png"  width="150"  /></a>      
+			 	<a href="#prize" class=""><img src="__PUBLIC__/styles/default/images/an/7.png"  width="150"  /></a>
+          </div>
+          <script>
+	$(document).ready(function(){
+		
+	width=String($(window).width()*0.86)
+		width1=String($(window).width())
+		width2=String($(window).width()*0.07)
+		width3=String($(window).width()*0.22)
+		width4=String($(window).width()*0.06)
+		width5=String($(window).width()*0.08)
+		width6=String($(window).width()*0.01)
+		width7=String($(window).width()*0.103)
+width8=String($(window).width()*0.027)	
+width9=String($(window).width()*0.05)
+$(".touxiang4").attr('style',"float:right; margin-left:"+width3+"px;margin-right:"+0+"px;width:"+width4+"px; height:"+width4+"px; background-color:#F00;"); 
+$(".touxiang2").attr('style',"float:left; margin-left:"+width3+"px;width:"+width4+"px; height:"+width4+"px; background-color:#F00;px; margin-right:"+width5+"px;"); 
+$(".touxiang3").attr('style',"float:right; margin-left:"+width3+"px;width:"+width4+"px; height:"+width4+"px; background-color:#F00; "); 
+$(".touxiang1").attr('style',"float:left; width:"+width4+"px; height:"+width4+"px; background-color:#F00;"); 
+
+$(".sjbj1").attr('style'," float:left;width:100%; height:"+width7+"px; margin-bottom:"+width6+"px; margin-top:"+width6+"px;margin-left:-10px;"); 
+$(".sjbj2").attr('style'," float:right;width:100%; height:"+width7+"px; margin-bottom:"+width6+"px; margin-top:"+width6+"px;margin-right:-10px;"); 
+$(".sjbj11").attr('style'," float:left;width:100%; height:"+width7+"px; margin-bottom:"+width8+"px; margin-top:"+width9+"px;margin-left:-10px;"); 
+$(".sjbj111").attr('style'," float:left;width:100%; height:"+width7+"px; margin-bottom:"+width8+"px; margin-top:-10px;margin-left:-10px;"); 
+$(".sjbj12").attr('style'," float:right;width:100%; height:"+width7+"px; margin-bottom:"+width8+"px; margin-top:"+width9+"px;;margin-right:-10px; "); 
+$(".sjbj121").attr('style'," float:right;width:100%; height:"+width7+"px; margin-bottom:"+width8+"px; margin-right:-10px; "); 
+$(".sjbj12 img,.sjbj121 img,.sjbj2 img").attr('style',"width:"+String(Number(width7)*1.4128)+"px; height:"+width7+"px;"); 
+$(".txbj").attr('style',"float:left; margin-left:"+width2+"px;width:"+width+"px; height:auto; padding-top:"+String($(window).width()*0.25)+"px;"); 
+$(".baozang").attr('style',"margin-left:"+String($(window).width()*0.46)+"px;padding-top:"+String($(window).width()*0.16)+"px;font-size:1.3em;");
+ 
+window.setInterval('$(".tx:last").fadeOut(200);$(".tx:last").fadeToggle(200);',400); 
+window.setInterval('$(".anniu img:last").fadeTo(1000,0.5);$(".anniu img:last").fadeTo(200,1);',1200);
+ window.setInterval('$(".anniu img:first").fadeTo(1000,0.5);$(".anniu img:first").fadeTo(200,1);',1200); 
+ window.setInterval('$(".anniu img:eq(2)").fadeTo(500,0.5);$(".anniu img:eq(2)").fadeTo(200,1);',1200); 
+  window.setInterval('$(".anniu img:eq(1)").fadeTo(500,0.5);$(".anniu img:eq(1)").fadeTo(200,1);',1200); 
+});
+</script>
+       <div class="baotu">
+		   <div class="baozang">
+			 <a href="javascript:void();" class="a3 animated infinite fadeInUp">查看奖品
+			<!-- <img src="__PUBLIC__/styles/default/images/checkp.png" /> -->
+			 </a>
+		   </div> 
+       <div class="txbj"> 
+       <?php  
+       $i=0;
+       $k=0;
+         foreach($coin AS $v){ 
+         $j=$i%6;
+         ?>
+          <?php  if($j==2){
+          $k++;?><div class="sjbj1"><input name="" type="hidden" value="<?php echo $k;?>" /><img class="sj" style="float:right; " src="__PUBLIC__/styles/default/images/sjlg/<?php echo $k; ?>.png" height="100%"></div>
+          
+          <?php }?>
+            <?php  if($j==5){
+            $k++;
+            ?><div class="sjbj2"><input name="" type="hidden" value="<?php echo $k;?>" /><img  class="sj" src="__PUBLIC__/styles/default/images/sjlg/<?php echo $k; ?>.png" ></div>
+          
+          <?php }?>
+          
+   <div class="touxiang<?php if($j==1||$j==0){echo 2;}else if($j==2){echo 4;} else if($j==4||$j==3){echo 3;}else if($j==5){echo 1;}?> tx"><img src="<?php  echo $v['pic'];?>"  width="100%"/></div> 
+  
+   
+   
+   <?php $i++;}
+   $k++;
+   $l=$k;
+   if($k<=12){
+    for(;$k<=12;$k++){
+   ?>
+    <?php if(($k%2)==1){
+         ?><div class="sjbj11<?php if($l==$k){ echo '1'; } ?>"><input name="" type="hidden" value="<?php echo $k;?>" /><img   class="sj" style="float:right; " src="__PUBLIC__/styles/default/images/sjlg/<?php echo $k; ?>.png" height="100%"></div>
+          
+          <?php }?>
+            <?php  if(($k%2)==0){
+        
+            ?><div class="sjbj12<?php if($l==$k){ echo '1'; } ?>"><input name="" type="hidden" value="<?php echo $k;?>" /><img   class="sj" src="__PUBLIC__/styles/default/images/sjlg/<?php echo $k; ?>.png" ></div>
+          
+          <?php }?>
+   <?php
+   
+   }
+   
+   }
+   
+   
+   ?>
+       </div>
+              
+    	</div>
+<style>
+.shangjia{width:100%;margin:0;clear:both;margin-bottom:10px;}
+.shangjia img{float:left;padding:0;margin:0;}
+</style>	
+		<div class="shangjia" style="width:100%;">
+			<a href=""><img src="__PUBLIC__/styles/default/images/shangjia_40.jpg" width="35%"/></a>
+			<img src="__PUBLIC__/styles/default/images/shangjia_412.jpg" width="30%"/>
+			<img src="__PUBLIC__/styles/default/images/shangjia_42.jpg" width="35%"/>
+			
+			<img src="__PUBLIC__/styles/default/images/shangjia_43.jpg" width="35%"/>
+			<img src="__PUBLIC__/styles/default/images/shangjia_441.jpg" width="30%"/>
+			<img src="__PUBLIC__/styles/default/images/shangjia_45.jpg" width="35%"/>
+			
+			<img src="__PUBLIC__/styles/default/images/shangjia_461.jpg" width="35%"/>
+			<img src="__PUBLIC__/styles/default/images/shangjia_471.jpg" width="30%"/>
+			<img src="__PUBLIC__/styles/default/images/shangjia_48.jpg" width="35%"/>
+			
+			<img src="__PUBLIC__/styles/default/images/shangjia_49.jpg" width="35%"/>
+			<img src="__PUBLIC__/styles/default/images/shangjia_501.jpg" width="30%"/>
+			<img src="__PUBLIC__/styles/default/images/shangjia_511.jpg" width="35%"/>
+
+			<img src="__PUBLIC__/styles/default/images/beijing_053.jpg" width="100%"/>
+		</div>
+        <div style="clear:both;margin-top:10px;background-color:#fff;font-size:20px;height:40px;line-height:40px;text-align:center;font-family:Arial, Helvetica, sans-serif;">活动倒计时，距离结束还有</div> 
+        <div id="dtime" style="display:none"><?php  echo date("Y/m/d H:i:s", $news['jssj']);?></div>
+        <div class="colockbox" id="colockbox1" style="text-align:center;margin-bottom:0px;"><span class="day">00</span> 天 <span class="hour">00</span> 时 <span class="minute">00</span> 分 <span class="second">00</span> 秒 </div>
+
+        <div class="help" id="wejoin">
+ 			 
+            
+        	<?php if($fx_id == $wx_id){ ?>
+            
+          		<?php if($is_join) {
+				echo 	
+					'<p  style="margin:20px 0;line-height:30px;font-size:20px;padding:0 10px;color:#F36;">
+						您已经闯到第'.$wx_user['grade'].'关了，继续努力吧！
+					</p>'; 
+					if($wx_user['pay'] == 0) 
+					{
+						echo '<p  style="margin:30px 0;line-height:30px;font-size:20px;padding:0 10px;color:#F36;" name="pay">
+							<a href="http://www.dscm.com.cn/weixinpay/demo/js_api_call.php" style="color:#F00;font-weight:bold;">立即去支付，享受更大礼包哦！</a>
+						</p>'; 
+					}	
+				
+				}else{
+					echo '<p  style="margin:20px 0;line-height:30px;font-size:20px;padding:0 10px;color:#F36;">您还没有参加寻宝游戏哦，宝藏等你去发现.</p>';} 
+				?>
+                        
+		  	<?php }else{ ?>
+            	<?php if($is_fx_join){ ?>
+          			<h2 style="margin:20px 0;line-height:30px;font-size:20px;color:#F36;">
+						"<?php echo $fxweixin['name'];?>"已经拥有<?php $zljl1=explode(',',$fx_zl['cgzl']);
+$cgzls=count($zljl1)-1;
+echo $cgzls.'状元币,可兑换'.((floor ($cgzls/3)>12)?12:floor ($cgzls/3)).'枚勋章';?>，<br/>赶紧来帮TA抢宝吧！
+					</h2>
+                <?php }?>
+		  	<?php }?>
+            
+                      
+          <div class="fx_notice">
+            <p>
+            	<?php if($is_fx_join){ ?>
+          			<span style="color:red;"><?php echo $fx_user['name'];?></span> 当前有<span class="zlb"><?php $zljl1=explode(',',$fx_zl['cgzl']);
+$cgzls=count($zljl1)-1;
+echo $cgzls.'状元币,可兑换'.((floor ($cgzls/3)>12)?12:floor ($cgzls/3)).'枚勋章';?></span>;<br/> 排名：第<?php echo $position;?>名（相同不计）
+                <?php }else{?>
+                	当前用户还没有参加活动哦，赶紧来参加吧.
+                <?php } ?>
+            </p>
+          </div>
+
+          <div class="helpdiv"></div>
+        
+          
+        </div>
+        <script>
+			  $.get("/xcrm/ewm/index.php?c=http://www.dscm.com.cn/xcrm/index.php?s=/wap/yanzheng/index/fx_id/"+{$wx_id},function(data,status){
+				
+				$(".ewm").html(data); 
+			
+			  });	
+		
+		
+		$(function(){
+        	$(".help1").click(function(){
+          /*$('.show1').fadeOut(2000,function(){
+				  $('.show2').fadeToggle(2000);
+				  
+				  
+			  });*/
+			  $(".notices4").show()
+			      $(".notices4").animate({
+                    top:$(window).width()*0.13+'px',
+                    left:'0px'
+                  });
+				  	 window.setInterval('$(".notices4 img").attr("style" ,"-moz-transform:scaleX(-1);-webkit-transform:scaleX(-1);    -o-transform:scaleX(-1);    transform:scaleX(-1);filter:FlipH;")',700); 
+					 setTimeout(function(){window.setInterval('$(".notices4 img").attr("style" ,"-moz-transform:scaleX(1);-webkit-transform:scaleX(1);    -o-transform:scaleX(1);    transform:scaleX(1);filter:FlipV;")',700);}, 450);
+			 setTimeout(function(){ $('.notices4').fadeOut(100,function(){
+			
+				$.get("http://www.dscm.com.cn/xcrm/index.php?s=/Wap/xunbao/zhuliapi/wxid/{$wx_id}/uid/{$openid}/wx1/{$fx_id}",function(data,status){
+					if(data.split(",")[1]==0)
+					{	
+						alert("您只有先支付，才可以继续探索宝藏哦.");
+						$('.notice1').slideToggle('fast',function(){
+							$('#focus').focus();	
+						});
+						
+					}
+					else if(data.split(",")[1]==1)
+					{
+						alert("你的朋友遇到了困难请通知TA，赶紧支付好寻找更多大奖哦.");
+					}
+					else
+					{
+						alert(data.split(",")[0]);    
+					}
+				});
+				
+			  });}, 3000);
+			 
+			  
+/*	$.get("http://www.dscm.com.cn/xcrm/index.php?s=/Wap/xunbao/zhuliapi/wxid/{$wx_id}/uid/{$openid}/wx1/{$fx_id}",function(data,status){
+				alert(data.split(",")[0]);    });	*/
+				/*$(".notice1 p").text(data.split(",")[0]); 
+				$(".zlb").text(String(data.split(",")[1])); 
+				$(".notice1").fadeToggle(1000).fadeOut(2000,function(){
+				   $('.fx_notice').fadeToggle(2000);
+				});*/
+			
+ 				
+          	});
+		   
+			// 我要参加活动点击事件；	
+			 $(".sj").click(function(){
+				var a=$(this).siblings("input").val()
+				$(".notices5").attr("style","background:url(__PUBLIC__/styles/default/images/sj/"+a+".jpg)no-repeat;background-size:100%; height:"+String($(window).width()*1.712)+"px;width:"+String($(window).width())+"px;"); 
+
+				var ai=''
+				var a1=a*3-3
+				var a2=a*3-2
+				var a3=a*3-1
+				if($(".tx:eq("+a1+")").html()){
+					 ai+=$(".tx:eq("+a1+")").html()
+					}
+					if($(".tx:eq("+a2+")").html()){
+					ai+=$(".tx:eq("+a2+")").html()
+					}
+						if($(".tx:eq("+a3+")").html()){
+					 ai+=$(".tx:eq("+a3+")").html()
+					}
+					
+				 $(".notices5 div").html(ai) 
+			  $(".notices5").animate({
+				top:$(window).width()*1.1+$(window).width()*a*0.23+'px',
+				left:'0px'
+			  });
+			});
+		   $(".a1").click(function(){
+			  $(".notice2").animate({
+				top:$(window).width()*1.1+'px',
+				left:'12px'
+			  });
+			});
+
+			$('.none1').click(function(){
+			  $(".notice2").animate({
+				top:'50px',
+				left:'-999px'
+			  });
+			}); 
+       
+	   		// 查看收钱罐点击事件处理；
+            $(".a2").click(function(){
+                  $(".notice3").animate({
+                    top:'0px',
+                    left:'0px'
+                  });
+				  
+			 window.setInterval('$(".xzqbj div img:first").attr("style" ,"-moz-transform:scaleX(-1);-webkit-transform:scaleX(-1);    -o-transform:scaleX(-1);    transform:scaleX(-1);filter:FlipH;")',600); 
+		window.setInterval('$(".xzqbj div img:first").attr("style" ,"-moz-transform:scaleX(1);-webkit-transform:scaleX(1);    -o-transform:scaleX(1);    transform:scaleX(1);filter:FlipV;")',700);
+                });
+
+                $('.none').click(function(){
+                  $(".notice3").animate({
+                    top:'0px',
+                    left:'-999px'
+                  });
+                });  
+ 	 			$('.none2').click(function(){
+                  $(".notices5").animate({
+                    top:'0px',
+                    left:'-999px'
+                  });
+                });  
+
+                $(".notice2 input[type='text']").focus(function(){
+                  $(this).val("");
+                })
+				
+				 $(".a3").click(function(){ 
+				 	$(".none3").focus();
+                  $(".notice6").animate({
+                    top:'0px',
+                    left:'0px'
+                 	});
+				 });				
+				 $('.none3').click(function(){
+                  $(".notice6").animate({
+                    top:'0px',
+                    left:'-999px'
+                  });
+                }); 
+            });
+        </script>
+       
+
+<!--		<div class="phb">
+        	<p><span>总助力次数：<?php echo $zlrs; ?>(次)</span></p>
+        </div>-->
+
+        <a name="role"><img src="__PUBLIC__/styles/default/images/xbbj306.jpg" width="100%" /></a>
+		<a name="prize"><img src="__PUBLIC__/styles/default/images/xbbj207.jpg" width="100%"/></a>
+		
+		<div class="list">  
+          <h4><span>排行</span><span>姓名</span><span style="width:25%;">手机号</span><span style="width:25%;">状元币</span></h4>
+          <div class="list_lh" style="height:auto;max-height:20000px;">
+          <ul><?php
+		  	$i=1;
+		  	foreach($zhulitop AS $one){?> 
+           <li><span><?php echo $i;$i++; ?></span><span><?php echo utf8Substr($one['name'], 0, 3);?></span><span style="width:25%;"><?php echo hidtel($one['tel']);?></span><span style="width:25%;">已拥有<?php $zljl1=explode(',',$one['cgzl']);
+$cgzls=count($zljl1)-1;
+echo $cgzls;?>个</span></li>
+		  <?php }?>
+          </ul>
+        </div>
+		
+        <h3 style="margin-bottom:0px;height:30px;line-height:30px;color:#fff;">已参加人数：{$cjrs}（人），阅读次数：{$ydcs}（次）</h3>
+		<h3 style="height:20px;line-height:20px;color:#fff;margin-bottom:45px;">杰百纳网络工作室</h3>  
+        <!-- rgba(153,0,255,.5) -->
+        <div id="footer" style="background:rgba(255,0,102,0.7);color:#CCC;">
+          <a href="#wejoin"><marquee><?php if($aa){echo $aa;}else	  if($news['kssj']>time()){
+				  echo '活动尚未开始,敬请期待!';
+				  }else if($news['jssj']<time()){
+					   echo '活动已结束,下期再见!';
+					  }else{
+						      echo '您想培养宝贝的团队合作、人际交往能力吗？
+您想快速提升宝贝的专注力、自信心吗？
+您想更好地展示宝贝的风采吗？您想赢得众多实物礼品和888元的现金大奖吗？赶紧来参加吧，"君瑞城杯"滕州状元宝贝给孩子一个更好的展示舞台!';
+						  }
+			  
+			  ?> </marquee>
+			</a>
+        </div>
+    </div> 
+	
+<script type="text/javascript">
+/*$('#txtBirthday').datetimepicker({
+	lang:'ch',
+	timepicker:false,
+	format:"Y-m-d",
+	formatDate:'Y/m/d',
+	 yearStart:2003,     //设置最小年份
+	  yearEnd:2015        //设置最大年份
+});*/
+</script>	
+</body>
+</html>

@@ -1,0 +1,77 @@
+<div class="bjui-pageHeader">
+<form id="pagerForm" data-toggle="ajaxsearch" action="__SELF__" method="get">
+	
+	<input type="hidden" name="pageSize" value="{$numPerPage}">
+    <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+	 
+        <div class="bjui-searchBar">
+           <label for='f'>筛选：</label>
+           <select id='f' name='f'  data-toggle="selectpicker">
+           	   <option value='par_promo' <eq name='Think.request.f' value='par_promo'>selected</eq>>父级项目</option>
+               <option value='ps_par' <eq name='Think.request.f' value='ps_par'>selected</eq>>父级代码</option>
+               <option value='par_desc1' <eq name='Think.request.f' value='par_desc1'>selected</eq>>父级描述</option>
+               <option value='ps_comp' <eq name='Think.request.f' value='ps_comp'>selected</eq>>子级代码</option>
+               <option value='comp_desc1' <eq name='Think.request.f' value='comp_desc1'>selected</eq>>子级描述</option>
+               <option value='ps_site'  <eq name='Think.request.f' value='ps_site'>selected</eq>>地点</option>
+               <!--<option value='comp_site' <eq name='Think.request.f' value='comp_site'>selected</eq>>地点</option>
+               <option value='comp_line' <eq name='Think.request.f' value='comp_line'>selected</eq>>产线</option>
+               <option value='comp_desc1' <eq name='Think.request.f' value='comp_desc1'>selected</eq>>描述1</option>  -->
+           </select>
+            <input type="text" value="{$_REQUEST['v']}" id="v" name="v" class="form-control" size="15" title="输入筛选条件" />
+             <button type="submit"  class="btn-default" data-icon="search">查询</button>
+              <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">清空查询</a>
+              
+              <span style="float:right;margin-right:20px;"><a href="__CONTROLLER__/outxls" class="btn btn-blue" data-toggle="doexport" data-confirm-msg="确定要导出吗？" data-icon="arrow-up">导出</a></span>
+              <span style="float:right;margin-right:20px;margin-top: 5px;">当前BOM数据同步自QAD时间：<strong>{$syncDateTime}</strong></span>
+		</div> 
+</form>
+    
+</div>
+<div class="bjui-pageContent">
+     <table data-toggle="tablefixed" data-width="100%" data-layout-h="0" data-nowrap="true">
+        <thead>
+            <tr>
+            <!-- <th data-order-direction='desc' data-order-field='id'>ID</th> -->
+            <th data-order-direction='desc' data-order-field='par_site'>地点</th>
+            <th data-order-direction='desc' data-order-field='par_promo'>父级项目</th>            
+            <th data-order-direction='desc' data-order-field='ps_par'>父级代码</th>
+            <th data-order-direction='desc' data-order-field='par_desc1'>父级描述</th>
+            <th data-order-direction='desc' data-order-field='par_desc2'>父级型号</th>
+            <th data-order-direction='desc' data-order-field='ps_comp'>子级代码</th>
+            <th data-order-direction='desc' data-order-field='comp_desc1'>子级描述</th>
+            <th data-order-direction='desc' data-order-field='comp_desc2'>子级型号</th>
+            <th data-order-direction='desc' data-order-field='ps_qty_per'>用量</th>
+            <th data-order-direction='desc' data-order-field='ps_op'>工序</th>
+            <th data-order-direction='desc' data-order-field='ps_start'>生效日期</th>
+            <th data-order-direction='desc' data-order-field='ps_end'>失效日期</th>
+            </tr>
+        </thead>
+        <tbody>
+  <volist id="v" name="list">
+          <tr>
+			<!-- <td>{$v.id}</td> -->
+			<td>{$v.ps_site}</td>
+			<td>{$v.par_promo}</td>			
+			<td>{$v.ps_par}</td>
+			<td>{$v.par_desc1}</td>
+			<td>{$v.par_desc2}</td>
+            <td>{$v.ps_comp}</td>
+            <td>{$v.comp_desc1}</td>
+            <td>{$v.comp_desc2}</td>
+			<td>{$v.ps_qty_per|floatval}</td>
+            <td>{$v.ps_op|intval}</td>
+            <td><if condition="$v.ps_start eq '0000-00-00'"><else />{$v.ps_start}</if></td>
+            <td><if condition="$v.ps_end eq '0000-00-00'"><else />{$v.ps_end}</if></td>
+		   	</td>
+         </tr> 
+          </volist>
+        </tbody>
+    </table>
+    <div class="bjui-footBar">
+        <div class="pages">
+            <span>共 {$totalCount} 条  每页 {$numPerPage} 条</span>
+        </div>
+	    <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="{$numPerPage}" data-page-current="{$currentPage}">
+        </div>
+    </div>
+</div>

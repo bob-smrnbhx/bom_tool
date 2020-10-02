@@ -1,0 +1,3433 @@
+dn: CN=Mi\,Yanli,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Mi
+title: Quality Controlling supervisor
+description:: 57Gz6Imz5Li9
+givenName: Yanli
+displayName: Mi, Yanli (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ylmi
+userPrincipalName: ylmi@jv.motherson.com
+mail: yanli.mi@smr-nbhx.com
+
+dn: CN=Han\,ShuangJian,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Han
+title: Manufacturing Engineer
+description:: 6Z+p5Y+M5YmR
+givenName: ShuangJian
+displayName: Han,ShuangJian (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: sjhan
+userPrincipalName: sjhan@jv.motherson.com
+mail: Shuangjian.Han@smr-nbhx.com
+
+dn: CN=Chen Houwang[Jimmy],OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chen
+description:: 6ZmI5ZCO5pyb
+givenName: Houwang
+displayName: Chen Houwang [Jimmy] (SMR NBHX)
+sAMAccountName: hwchen
+userPrincipalName: hwchen@jv.motherson.com
+mail: houwang.chen@smr-nbhx.com
+
+dn: CN=Manufacturing Dept\, User,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Manufacturing Dept
+description: U_
+givenName: User
+displayName: Manufacturing Dept, User (SMR NBHX)
+department: Maunufacturing Dept
+company: Ningbo Visiocorp Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: udman
+userPrincipalName: udman@jv.motherson.com
+mail: User.ManufacturingDept@smr-nbhx.com
+
+dn: CN=Exmerge,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: S_Exmerge Migrations-User
+givenName: Exmerge
+displayName: Exmerge (SMR)
+sAMAccountName: exmerge
+userPrincipalName: exmerge@jv.motherson.com
+
+dn: CN=AdminMind,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: S_Mind Administration Account for VCNBHX
+displayName: AdminMind
+sAMAccountName: AdminMind
+userPrincipalName: AdminMind@jv.motherson.com
+
+dn: CN=Ge\,Junchao,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Ge
+givenName: Junchao
+displayName:: R2UsSnVuY2hhb++8iFNNUiBOQkhY77yJ
+sAMAccountName: jcge
+userPrincipalName: jcge@jv.motherson.com
+mail: junchao.ge@smr-nbhx.com
+
+dn: CN=Chen\,Changyu,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: changyu
+title: Quality Engineer
+description:: 6ZmI5piM546J
+givenName: chen
+displayName: Chen, Changyu (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: cychen
+userPrincipalName: cychen@jv.motherson.com
+mail: changyu.chen@smr-nbhx.com
+
+dn: CN=zheng\,wenhao,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: zheng
+title: Plan Supervisor
+description:: 6YOR5paH5rWp
+givenName: wenhao
+displayName: Zheng, Wenhao (SMR NBHX)
+department: Logistic Dept.
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: whzheng
+userPrincipalName: whzheng@jv.motherson.com
+mail: wenhao.zheng@smr-nbhx.com
+
+dn: CN=Shi\,Weiwei,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Shi
+description:: 5pa95Y2r5Y2r
+givenName: Weiwei
+displayName: Shi, Weiwei [Anna] (SMR NBHX)
+sAMAccountName: wwShi
+userPrincipalName: wwShi@jv.motherson.com
+mail: Weiwei.Shi@smr-nbhx.com
+
+dn: CN=Yang\,Ruxia,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: yang
+title: engineering clerk
+description:: 5p2o5aaC6Zye
+givenName: ruxia
+displayName: Yang,Ruxia (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: rxyang
+userPrincipalName: rxyang@jv.motherson.com
+mail: ruxia.yang@smr-nbhx.com
+
+dn: CN=Liu\,Zhenxi,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhenxi
+title: Product Engineer
+description:: 5YiY5oyv5pumQ2hpbmE=
+givenName: Liu
+displayName: Liu, Zhenxi [Cody] (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: zxliu
+userPrincipalName: zxliu@jv.motherson.com
+mail: zhenxi.liu@smr-nbhx.com
+
+dn: CN=Zheng\,Mengyao,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zheng
+description:: 6YOR5qKm55G2
+givenName: Mengyao
+displayName: Zheng,Mengyao (SMR NBHX)
+sAMAccountName: myzheng
+userPrincipalName: myzheng@jv.motherson.com
+mail: Mengyao.Zheng@smr-nbhx.com
+
+dn: CN=Injection Moulding,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Injection Moulding
+description:: 5rOo5aGR5Yqe5YWs5a6k
+givenName: User
+displayName: Injection, Moulding (SMR)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: injm
+userPrincipalName: injm@jv.motherson.com
+mail: injm@smr-nbhx.com
+
+dn: CN=PaintShop,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: PaintShop
+description: U_Paint Shop User
+givenName: User
+displayName: PaintShop (SMR NBHX)
+department: Manufactory Department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: pais
+userPrincipalName: pais@jv.motherson.com
+
+dn: CN=Qiang\,Kefeng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: qiang
+description:: 5by65YWL5bOw
+givenName: kefeng
+displayName: Qiang,Kefeng (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: kfqiang
+userPrincipalName: kfqiang@jv.motherson.com
+mail: kefeng.qiang@smr-nbhx.com
+
+dn: CN=Wang\,Yonggang1,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wang
+description:: 546L5rC45YiaMQ==
+givenName: Yonggang
+displayName: WangYonggang
+sAMAccountName: ygwang1
+userPrincipalName: ygwang1@jv.motherson.com
+
+dn: CN=Changchun User,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: User
+description:: 6ZW/5pil55So5oi3
+givenName: Changchun
+displayName: Changchun User
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: udcc
+userPrincipalName: udcc@jv.motherson.com
+
+dn: CN=Li\,Ye,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Li
+description:: 5p2O54Oo
+givenName: Ye
+displayName: Li, Ye (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: liye
+userPrincipalName: liye@jv.motherson.com
+mail: Ye.li@smr-nbhx.com
+
+dn: CN=Zhang\,Pengwen,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: pengwen
+title: Purchase Specailist
+description:: 5byg6bmP5paH77yI6LSo6YeP77yJ
+givenName: zhang
+displayName: Zhang,Pengwen (SMR NBHX)
+department: Purchasing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: pwzhang
+userPrincipalName: pwzhang@jv.motherson.com
+
+dn: CN=Han\,Junjie,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Han
+description:: 6Z+p5L+K5p2wIOi0qOmHjw==
+givenName: Junjie
+displayName: Han,Junjie (SMR NBHX)
+sAMAccountName: jjhan
+userPrincipalName: jjhan@jv.motherson.com
+
+dn: CN=Liu\,Xin,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Liu
+description:: 6YeH6LStIOWImOmRqw==
+givenName: Xin
+displayName: Liu,Xin (SMR NBHX)
+sAMAccountName: xliu
+userPrincipalName: xliu@jv.motherson.com
+
+dn: CN=Jiang\,mingliang,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Jiang
+description:: 6JKL5piO5Lqu77yIT0Hov5jmnIk25Liq5rWB56iL5pyq6LWw5a6M77yJ
+givenName: mingliang
+displayName: Jiang,mingliang (SMR NBHX)
+sAMAccountName: mljiang
+userPrincipalName: mljiang@jv.motherson.com
+
+dn: CN=Wang\,Jiaojiao,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: jiaojiao
+title: Import and export trade commissioner
+description:: 546L5aej5aej
+givenName: wang
+displayName: Wang, Jiaojiao (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jjwang
+userPrincipalName: jjwang@jv.motherson.com
+
+dn: CN=Hu\,Chaozhong,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: hu
+description:: 6IOh5pyd5Lit
+givenName: chaozhong
+displayName: Hu,Chaozhong (SMR NBHX)
+sAMAccountName: czhu
+userPrincipalName: czhu@jv.motherson.com
+
+dn: CN=Liu\,lu,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Liu
+description:: 5YiY55KQ77yI54mp5rWB77yJ
+givenName: Lu
+displayName:: TGl1LGx1IO+8iFNNUiBOQkhYKQ==
+sAMAccountName: lliu
+userPrincipalName: lliu@jv.motherson.com
+
+dn: CN=Yuan\,Shilei,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yuan
+description:: 6KKB5LuV6Zu3IOS4iua1t+W3peeoiw==
+givenName: Shilei
+displayName: Yuan,Shilei (SMR NBHX)
+sAMAccountName: slyuan
+userPrincipalName: slyuan@jv.motherson.com
+
+dn: CN=Zhou\,Chao,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: chao
+description:: 5ZGo6LaF
+givenName: zhou
+displayName: Zhou, Chao (SMR NBHX)
+department: Quality
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: czhou
+userPrincipalName: czhou@jv.motherson.com
+
+dn: CN=Zhang\,Hu,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+title: Project Manager
+description:: 5byg6JmO
+givenName: Hu
+displayName: Zhang, Hu (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hzhang
+userPrincipalName: hzhang@jv.motherson.com
+
+dn: CN=Bai\,wujian,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Bai
+description:: 55m95q2m5bu6
+givenName: wujian
+displayName: Bai,wujian (SMR NBHX)
+sAMAccountName: wjbai
+userPrincipalName: wjbai@jv.motherson.com
+
+dn: CN=feng\,yuting,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: feng
+description:: 5Yav5a6H5bu3IF80MjY=
+givenName: yuting
+displayName: feng,yuting  (SMR NBHX)
+sAMAccountName: ytfeng
+userPrincipalName: ytfeng@jv.motherson.com
+
+dn: CN=Fang\,Ye,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: ye
+title: logistics Speciallist
+description:: 5pa55Lia77yI54mp5rWB57uE77yJXzUzMQ==
+givenName: fang
+displayName: Fang,Ye (SMR NBHX)
+department: logistics Dept
+company: Samvardhana Motherson Reflector
+sAMAccountName: yfang
+userPrincipalName: yfang@jv.motherson.com
+
+dn: CN=Zhang\,Yuanfu,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: zhang
+title: Quality Engineer
+description:: 5byg6L+c56aP
+givenName: yuanfu
+displayName: Zhang, Yuanfu (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: yfzhang
+userPrincipalName: yfzhang@jv.motherson.com
+
+dn: CN=Wang\,Ruofei,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: wang
+title: Sales Engineer
+description:: 546L6Iul6I+y
+givenName: ruofei
+displayName: Wang, Ruofei (SMR NBHX)
+department: Sales Dept.
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: rfwang
+userPrincipalName: rfwang@jv.motherson.com
+
+dn: CN=wei\,yuanan,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wei
+title: Business Development & Sales Director
+description:: 6Z+m5YWD5bK4XzgzMQ==
+givenName: Yuanan
+displayName: Wei, Yuanan [Wayne] (SMR NBHX)
+department: Sales Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ynwei
+userPrincipalName: ynwei@jv.motherson.com
+mail: yuanan.wei@smr-nbhx.com
+
+dn: CN=Hu\,Dongdong,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: dongdong
+title: SQE
+description:: 6IOh5Yas5Yas
+givenName: hu
+displayName: Hu,Dongdong (SMR NBHX)
+department: Purchasing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ddhu
+userPrincipalName: ddhu@jv.motherson.com
+
+dn: CN=Liu\,Jianfeng,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: jianfeng
+title: Facility Manager
+description:: 5YiY5YmR6ZSL
+givenName: liu
+displayName: Liu,Jianfeng (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jfliu
+userPrincipalName: jfliu@jv.motherson.com
+
+dn: CN=Zhang\,Meimei,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: zhang
+title: HR Specialist
+description:: 5byg5qKF5qKFXzUzMQ==
+givenName: meimei
+displayName: Zhang, Meimei (SMR NBHX)
+department: HR Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: mmzhang
+userPrincipalName: mmzhang@jv.motherson.com
+
+dn: CN=Xu\,Minmin,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: xu
+title: Logistics reserve cadres
+description:: 5b6Q5pWP5pWP
+givenName: minmin
+displayName: Xu, Minmin (SMR NBHX)
+department: Logistics Dept
+company: Samvardhana Motherson Reflector
+sAMAccountName: mmxu
+userPrincipalName: mmxu@jv.motherson.com
+
+dn: CN=Xu\,Hongfei,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: xu
+description:: 5b6Q5a6P6aOe
+givenName: hongfei
+displayName: Xu, Hongfei (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hfxu
+userPrincipalName: hfxu@jv.motherson.com
+mail: hongfei.xu@smr-nbhx.com
+
+dn: CN=He\,Yi,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: He
+title: Project Coordinator
+description:: 5L2V5q+FRW5naW5lZXIgRGVwdCw=
+givenName: Yi
+displayName: He,Yi (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: yhe
+userPrincipalName: yhe@jv.motherson.com
+
+dn: CN=qi\,menggeng,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: qi
+description:: 5oia5qKm5bqa
+givenName: menggeng
+displayName:: UWksbWVuZ2dlbmfvvIhTTVIgTkJIWO+8iQ==
+sAMAccountName: mgqi
+userPrincipalName: mgqi@jv.motherson.com
+
+dn: CN=Zheng\,Bangyi,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: bngyi
+description:: 6YOR5biu5LmJXzUzMQ==
+givenName: zheng
+displayName: Zheng,Bangyi (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: byzheng
+userPrincipalName: byzheng@jv.motherson.com
+
+dn: CN=Zhou\,Qin,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Qin
+title: Project Manager
+description:: 5ZGo6IqpXzYuMzA=
+givenName: Zhou
+displayName: Zhou,Qin (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: qzhou
+userPrincipalName: qzhou@jv.motherson.com
+
+dn: CN=Cheng\,Liangyu,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Cheng
+description:: 56iL6Imv54WcIOS4iua1tw==
+givenName: Liangyu
+displayName: Cheng,Liangyu
+sAMAccountName: lycheng
+userPrincipalName: lycheng@jv.motherson.com
+
+dn: CN=Chen\,Hui,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chen
+title: Product Engineer
+description:: 6ZmI6L6JXzUzMQ==
+givenName: Hui
+displayName: Chen, Hui (SMR NBHX)
+department: Engineering Department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: huichen
+userPrincipalName: huichen@jv.motherson.com
+
+dn: CN=Chen\,Lie,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: chen
+title: Project Engineer
+description:: 6ZmI54OI
+givenName: lie
+displayName: Chen,Lie (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: lchen
+userPrincipalName: lchen@jv.motherson.com
+
+dn: CN=Chen\,Rongfeng,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: rongfeng
+title: Purchase Specailist
+description:: 6ZmI6I2j5bOw
+givenName: chen
+displayName: Chen,Rongfeng (SMR NBHX)
+department: Purchasing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: rfchen
+userPrincipalName: rfchen@jv.motherson.com
+
+dn: CN=Tang\,Huiping,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: tang
+description:: 5ZSQ5oOg5bmz
+givenName: huiping
+displayName: Tang, Huiping (SMR NBHX)
+sAMAccountName: hptang
+userPrincipalName: hptang@jv.motherson.com
+
+dn: CN=Yang\,Hangcai,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: hangcai
+title: Administrative Commissioner
+description:: 5p2o5p2t5omNXzUzMQ==
+givenName: yang
+displayName: Yang,Hangcai (SMR NBHX)
+department: HR Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hcyang
+userPrincipalName: hcyang@jv.motherson.com
+
+dn: CN=Wang\,Pengkai,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wang
+description:: 546L6bmP5YevICDotKjph48=
+givenName: Pengkai
+displayName: Wang,Pengkai (SMR NBHX)
+sAMAccountName: pkwang
+userPrincipalName: pkwang@jv.motherson.com
+
+dn: CN=Ling\,Jiqiao,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Ling
+description:: 5YeM57un5LmUXzUzMQ==
+givenName: Jiqiao
+displayName: Ling, Jiqiao (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jqling
+userPrincipalName: jqling@jv.motherson.com
+
+dn: CN=Ye\,Wen,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: ye
+title: Product Engineer
+description:: 5Y+25paH
+givenName: wen
+displayName: Ye, Wen (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wye
+userPrincipalName: wye@jv.motherson.com
+
+dn: CN=Yi\,Kai,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: kai
+title: Manufacturing Engineer
+description:: 5piT5Yev
+givenName: yi
+displayName: Yi,Kai (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: kyi
+userPrincipalName: kyi@jv.motherson.com
+mail: kai.yi@smr-nbhx.com
+
+dn: CN=Zhang\,Wenjing,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: zhang
+title: Accountant
+description:: 56ug5paH6Z2Z
+givenName: wenjing
+displayName: Zhang,Wenjing (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wjzhang
+userPrincipalName: wjzhang@jv.motherson.com
+
+dn: CN=Chai\,Yonggang,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yonggang
+title: Scheduler
+description:: 5p+05YuH5Yia
+givenName: Cai
+displayName: Chai, Yonggang (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ygchai
+userPrincipalName: ygchai@jv.motherson.com
+
+dn: CN=Yuan\,Cunbo,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Cunbo
+description:: 6KKB5a2Y5rOi
+givenName: Yuan
+displayName: Yuan,Cunbo (SMR NBHX)
+sAMAccountName: cbyuan
+userPrincipalName: cbyuan@jv.motherson.com
+
+dn: CN=Zheng\,Beipei,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zheng
+title: Statistician
+description:: 6YOR5YCN5L2pXzYuMzA=
+givenName: Beipei
+displayName: Zheng, Beipei (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: bpzheng
+userPrincipalName: bpzheng@jv.motherson.com
+mail: beipei.zheng@smr-nbhx.com
+
+dn: CN=Zhu\,Yingying,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: yingying
+description:: 5pyx55uI55uI
+givenName: zhu
+displayName: Zhu,Yingying (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: yyzhu
+userPrincipalName: yyzhu@jv.motherson.com
+
+dn: CN=Hu\,Jin,OU=Ningbo-DisabledUsers,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Hu
+title: Project Engineer
+description:: 6IOh6YeRXzkwNA==
+givenName: Jin
+displayName: Hu,Jin (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jhu
+userPrincipalName: jhu@jv.motherson.com
+mail: Jin.Hu@smr-nbhx.com
+
+dn: CN=Qian\,Yiwen,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Qian
+title: Molding Engineer
+description:: 6ZKx55uK5paH
+givenName: Yiwen
+displayName: Qian, Yiwen (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ywqian
+userPrincipalName: ywqian@jv.motherson.com
+mail: Yiwen.Qian@smr-nbhx.com
+
+dn: CN=Zhao\,Min,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: zhao
+title: Product Engineer
+description:: 6LW15pWP
+givenName: min
+displayName: Zhao, Min (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: mzhao
+userPrincipalName: mzhao@jv.motherson.com
+mail: min.zhao@smr-nbhx.com
+
+dn: CN=Xu\,Pujun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xu
+title: Purchase
+description:: 5b6Q6JKy5L+K
+givenName: Puijun
+displayName: Xu, Pujun [Jason] (SMR NBHX)
+department: Purchasing Department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: pjxu
+userPrincipalName: pjxu@jv.motherson.com
+mail: pujun.xu@smr-nbhx.com
+
+dn: CN=Xu\,Hailong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: hailong
+description:: 5b6Q5rW36b6Z
+givenName: xu
+displayName: Xu,Hailong (SMR NBHX)
+sAMAccountName: hlxu
+userPrincipalName: hlxu@jv.motherson.com
+mail: hailong.xu@smr-nbhx.com
+
+dn: CN=Zhao\,Qing,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: qing
+description:: 6LW16Z2S
+givenName: zhao
+displayName: Zhao, Qing (SMR NBHX)
+sAMAccountName: qzhao
+userPrincipalName: qzhao@jv.motherson.com
+mail: qing.zhao@smr-nbhx.com
+
+dn: CN=Cao\,Zhibin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: cao
+description:: 5pu55b+X5paM
+givenName: zhibin
+displayName: Cao, Zhibin (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: zbcao
+userPrincipalName: zbcao@jv.motherson.com
+mail: zhibin.cao@smr-nbhx.com
+
+dn: CN=le\,liudan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Le
+title: Clerk
+description:: 5LmQ5p+z5Li5
+givenName: Liudan
+displayName: Le, Liudan (SMR NBHX)
+department: Purchase Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ldle
+userPrincipalName: ldle@jv.motherson.com
+mail: liudan.le@smr-nbhx.com
+
+dn: CN=Ding\,Zaoyang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: ding
+title: Quality Engineer
+description:: 5LiB5pep6Ziz
+givenName: zaoyang
+displayName: Ding, Zaoyang (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: zyding
+userPrincipalName: zyding@jv.motherson.com
+mail: zaoyang.ding@smr-nbhx.com
+
+dn: CN=Zhou\,Lusha,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhou
+description:: 5ZGo55KQ6I6O
+givenName: Lusha
+displayName:: WmhvdSxMdXNoYSDvvIhTTVIgTkJIWO+8iQ==
+sAMAccountName: lszhou
+userPrincipalName: lszhou@jv.motherson.com
+mail: lusha.zhou@smr-nbhx.com
+
+dn: CN=Han\,Yuxia,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Han
+description:: 6Z+p546J6ZyeVV9TaGVkdWxlcg==
+givenName: Yuxia
+displayName: Han, Yuxia (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: yxhan
+userPrincipalName: yxhan@jv.motherson.com
+mail: Yuxia.han@smr-nbhx.com
+
+dn: CN=yu\,wenjun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: yu
+description:: 5L+e5paH5Yab
+givenName: wenjun
+displayName: Yu,wenjun (SMR NBHX)
+sAMAccountName: wjyu
+userPrincipalName: wjyu@jv.motherson.com
+mail: wenjun.yu@smr-nbhx.com
+
+dn: CN=sun\,danya,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Sun
+title: HR Specialist
+description:: 5a2Z5Li55Lqa
+givenName: Danya
+displayName: Sun, Danya (SMR NBHX)
+department: HR Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: dsun
+userPrincipalName: dsun@jv.motherson.com
+mail: danya.sun@smr-nbhx.com
+
+dn: CN=Yang\,Xiaokang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yang
+description:: 5p2o5bCP5bq3IOmUgOWUrg==
+givenName: Xiaokang
+displayName: Yang, Xiaokang (SMR NBHX)
+sAMAccountName: xkyang
+userPrincipalName: xkyang@jv.motherson.com
+mail: Xiaokang.Yang@smr-nbhx.com
+
+dn: CN=Lin\,Ronglong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lin
+title: Product Engineer
+description:: 5p6X6I2j6b6Z
+givenName: Ronglong
+displayName: Lin, Ronglong (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: rllin
+userPrincipalName: rllin@jv.motherson.com
+mail: Ronglong.Lin@smr-nbhx.com
+
+dn: CN=Financial Dept User,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Financial Dept
+description: U_Financial Dept Tax Computer/Only
+givenName: User
+displayName: User Financial Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: udfin
+userPrincipalName: udfin@jv.motherson.com
+
+dn: CN=Wang\,Yunyun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: yunyun
+title: Quality Engineer
+description:: 546L6JW06JW0
+givenName: wang
+displayName: Wang, Yunyun (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: yywang
+userPrincipalName: yywang@jv.motherson.com
+mail: yunyun.wang@smr-nbhx.com
+
+dn: CN=Ding\,Fan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: fan
+title: Product Engineer
+description:: 5LiB5Yeh
+givenName: ding
+displayName: Ding,Fan (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: fding
+userPrincipalName: fding@jv.motherson.com
+mail: Fan.ding@smr-nbhx.com
+
+dn:: Q049Qm9hcmRyb29tICjkuIDmpbwpLE9VPU5pbmdiby1Vc2VycyBhbmQgR3JvdXBzLE9VPU5pbmdibyxPVT1DaGluYSxPVT1BUEFDLERDPWp2LERDPW1vdGhlcnNvbixEQz1jb20=
+changetype: add
+sn: the ground floor
+description:: 5LiA5qW85Lya6K6u5a6k
+givenName: Meeting Room
+displayName: Ningbo Meeting Room [the ground floor] (SMR NBHX)
+sAMAccountName: boardroom04
+userPrincipalName: boardroom04@jv.motherson.com
+mail: boardroom04@smr-nbhx.com
+
+dn: CN=Boardroom (NPI),OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: NPI
+description:: TlBJ5Lya6K6u5a6k
+givenName: MeetingRoom
+displayName: Ningbo Meeting Room [NPI] (SMR NBHX)
+sAMAccountName: boardroom03
+userPrincipalName: boardroom03@jv.motherson.com
+mail: boardroom03@smr-nbhx.com
+
+dn: CN=Huang\,Haiyang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Huang
+description:: 6buE5rW35rSLIOS4iua1t+mUgOWUrg==
+givenName: Haiyang
+displayName: Huang,Haiyang (SMR NBHX)
+sAMAccountName: hyhuang
+userPrincipalName: hyhuang@jv.motherson.com
+mail: haiyang.huang@smr-nbhx.com
+
+dn: CN=Zhu\,Keyun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhu
+description:: 5pyx56eR6L+QIOi0qOmHjw==
+givenName: Keyun
+displayName:: Wmh1LEtleXVuIO+8iFNNUiBOQkhYKQ==
+sAMAccountName: kyzhu
+userPrincipalName: kyzhu@jv.motherson.com
+mail: Keyun.Zhu@smr-nbhx.com
+
+dn: CN=Xiao\,Chunye,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xiao
+title: Key Account Manager
+description:: 6IKW5pil54Oo
+givenName: Chunye
+displayName: Xiao, Chunye (SMR NBHX)
+department: Sales Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: cyxiao
+userPrincipalName: cyxiao@jv.motherson.com
+mail: chunye.xiao@smr-nbhx.com
+
+dn: CN=Han\,Sunbing,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Han
+description:: 6Z+p5a2Z5YawIOmUgOWUrg==
+givenName: Sunbing
+displayName: Han,Sunbing (SMR NBHX)
+sAMAccountName: sbhan
+userPrincipalName: sbhan@jv.motherson.com
+mail: Sunbing.han@smr-nbhx.com
+
+dn: CN=Wu\,Wenlin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: wu
+description:: 5ZC05paH5p6X
+givenName: wenlin
+displayName: Wu,Wenlin (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wlwu
+userPrincipalName: wlwu@jv.motherson.com
+mail: wenlin.wu@smr-nbhx.com
+
+dn: CN=Engineer Dept,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Engineer Dept
+description: U_Engineer Shared User
+givenName: User
+displayName: User Engineer Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: udeng
+userPrincipalName: udeng@jv.motherson.com
+
+dn: CN=Logistics Dept User,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Dept User
+description: U_Warehouse User for Chongqing
+givenName: Logistics
+displayName: Logistics Dept User
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: us002
+userPrincipalName: us002@jv.motherson.com
+
+dn: CN=Xu\,Pengfei,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: pengfei
+title: Associate Trainee
+description:: 5b6Q6bmP6aOe
+givenName: xu
+displayName: Xu,Pengfei (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: pfxu
+userPrincipalName: pfxu@jv.motherson.com
+mail: pengfei.xu@smr-nbhx.com
+
+dn: CN=Min\,Xiaoming,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Min
+description:: 6Ze15bCP5piOICDkuIrmtbc=
+givenName: Xiaoming
+displayName: Min,Xiaoming (SMR NBHX)
+sAMAccountName: xmmin
+userPrincipalName: xmmin@jv.motherson.com
+mail: Xiaoming.Min@smr-nbhx.com
+
+dn: CN=Hu\,Zhongping,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Hu
+description:: 6IOh5Lit5bmzIOW3peeoiw==
+givenName: Zhongping
+displayName: Hu,Zhongping (SMR NBHX)
+sAMAccountName: zphu
+userPrincipalName: zphu@jv.motherson.com
+mail: Zhongping.Hu@smr-nbhx.com
+
+dn: CN=Inspector User Two,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: User Two
+title: Inspector
+description: U_
+givenName: Inspector
+displayName: Inspector User Two
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: intw
+userPrincipalName: intw@jv.motherson.com
+
+dn: CN=Dai\,Haoliang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Dai
+description:: 5oi05rWp6Imv
+givenName: Haoliang
+displayName: Dai,Haoliang (SMR NBHX)
+sAMAccountName: hldai
+userPrincipalName: hldai@jv.motherson.com
+mail: Haoliang.dai@smr-nbhx.com
+
+dn: CN=Paintshop Line,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Line
+description: U_Paint Line
+givenName: Paintshop
+displayName: Paintshop Line
+sAMAccountName: pail
+userPrincipalName: pail@jv.motherson.com
+
+dn: CN=Hu\,Jingjing,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Hu
+description:: 6IOh5pm25pm2
+givenName: Jingjing
+displayName: Hu,Jingjing (SMR NBHX)
+sAMAccountName: jjhu
+userPrincipalName: jjhu@jv.motherson.com
+mail: Jingjing.hu@smr-nbhx.com
+
+dn: CN=Wu\,Yangquan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wu
+description:: 5ZC05p2o5p2D77yI5pys6YOo6LSi5Yqh77yJ
+givenName: Yangquan
+displayName: Wu,Yangquan (SMR NBHX)
+sAMAccountName: yqwu
+userPrincipalName: yqwu@jv.motherson.com
+mail: Yangquan.Wu@smr-nbhx.com
+
+dn: CN=Zhang\,Weigang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+title: Key Account Manager
+description:: 5byg5Lyf5YiaVV9TYWxlcyBDdXN0b21lciBNYW5hZ2Vy
+givenName: Weigang
+displayName: Zhang,Weigang (SMR NBHX)
+department: Sales Dept.
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wgzhang
+userPrincipalName: wgzhang@jv.motherson.com
+mail: Weigang.zhang@smr-nbhx.com
+
+dn: CN=qad,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+givenName: qad
+displayName: qad
+sAMAccountName: qad
+userPrincipalName: qad@jv.motherson.com
+
+dn: CN=Zhang\,Yanghe,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: yanghe
+title: Quality Engineer
+description:: 56ug6Ziz6LS6
+givenName: zhang
+displayName: Zhang, Yanghe (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: yhzhang
+userPrincipalName: yhzhang@jv.motherson.com
+mail: yanghe.zhang@smr-nbhx.com
+
+dn: CN=Shi\,Yang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Shi
+description:: 55+zIOadqA==
+givenName: Yang
+displayName: Shi,Yang (SMR NBHX)
+sAMAccountName: yshi
+userPrincipalName: yshi@jv.motherson.com
+mail: Yang.Shi@smr-nbhx.com
+
+dn: CN=Su\,Haoling,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Su
+description:: 6IuP5rWp546y
+givenName: Haoling
+displayName: Su, Haoling (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hlsu
+userPrincipalName: hlsu@jv.motherson.com
+mail: Haoling.Su@smr-nbhx.com
+
+dn: CN=Zheng\,Shuo,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: shuo
+title: Purchase Specailist
+description:: 6YOR56GV
+givenName: zheng
+displayName: Zheng,Shuo (SMR NBHX)
+department: Purchasing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: szheng
+userPrincipalName: szheng@jv.motherson.com
+mail: shuo.zheng@smr-nbhx.com
+
+dn: CN=You\,Qiong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: qiong
+title: Quality Engineer
+description:: 5ri455C8
+givenName: you
+displayName: You,Qiong (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: qyou
+userPrincipalName: qyou@jv.motherson.com
+mail: qiong.you@smr-nbhx.com
+
+dn: CN=Gu\,junquan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Gu
+description:: 5Y+k5Yab5p2D
+givenName: junquan
+displayName: Gu,junquan  (SMR NBHX)
+sAMAccountName: jqgu
+userPrincipalName: jqgu@jv.motherson.com
+mail: junquan.gu@smr-nbhx.com
+
+dn: CN=Chen\,Guangkai,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: guangkai
+title: Molding Engineer
+description:: 6ZmI5YWJ5Yev
+givenName: chen
+displayName: Chen,Guangkai (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: gkchen
+userPrincipalName: gkchen@jv.motherson.com
+mail: guangkai.chen@smr-nbhx.com
+
+dn: CN=Li\,Chuan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: chuan
+title: Purchasing
+description:: 5p2O5bed
+givenName: li
+displayName: Li,Chuan (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: cli
+userPrincipalName: cli@jv.motherson.com
+mail: chuan.li@smr-nbhx.com
+
+dn: CN=Helpdesk\, VCVCNBHX,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Helpdesk
+description: S_Helpdesk User for VCNBHX
+givenName: VCVCNBHX
+displayName: Helpdesk, VCVCNBHX
+sAMAccountName: VCVCNBHXHelpdesk
+userPrincipalName: VCVCNBHXHelpdesk@jv.motherson.com
+
+dn: CN=Li\,Ruilian,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: ruilian
+title: Accounting Clerk
+description:: 5p2O55Ge6I6y77yI6KOF6YWN77yJ
+givenName: li
+displayName: Li,Ruilian (SMR NBHX)
+department: Manufacturing department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: rlli
+userPrincipalName: rlli@jv.motherson.com
+mail: ruilian.li@smr-nbhx.com
+
+dn: CN=support_vcnbhx,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: S_Administrator for helpdesk
+displayName: support_vcnbhx
+sAMAccountName: support_vcnbhx
+userPrincipalName: support_vcnbhx@jv.motherson.com
+
+dn: CN=Zhang\,Wenqiang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: wenqiang
+title: Product Engineer
+description:: 56ug5paH5by6
+givenName: zhang
+displayName: Zhang,Wenqiang (SMR NBHX)
+department: Engineering Department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wqzhang
+userPrincipalName: wqzhang@jv.motherson.com
+mail: wenqiang.zhang@smr-nbhx.com
+
+dn: CN=VCNBHXRAS_ProtoIT,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: E_ Account for Proto-IT for Remote assistance in case of  Sinfor
+displayName: VCNBHXRAS_ProtoIT
+company: Proto-IT
+sAMAccountName: VCNBHXRAS_ProtoIT
+userPrincipalName: VCNBHXRAS_ProtoIT@jv.motherson.com
+
+dn: CN=peng\,zhanglong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Peng
+title: Quality Engineer
+description:: 5b2t56ug6b6Z
+givenName: Zhanglong
+displayName: Peng, Zhanglong (SMR NBHX)
+department: Engineering Department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: zpeng
+userPrincipalName: zpeng@jv.motherson.com
+mail: zhanglong.peng@smr-nbhx.com
+
+dn: CN=Wang\,Hongjun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wang
+title: Product engineer
+description:: 546L5rSq5Yab
+givenName: Hongjun
+displayName: Wang,Hongjun (SMR NBHX)
+department: Engineering Dept.
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hjwang
+userPrincipalName: hjwang@jv.motherson.com
+mail: Hongjun.Wang@smr-nbhx.com
+
+dn: CN=ProtoIT,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: E_ DomainAdmin for Proto-IT
+displayName: ProtoIT
+company: Proto-IT
+sAMAccountName: ProtoIT
+userPrincipalName: ProtoIT@jv.motherson.com
+
+dn: CN=Wang\,Lu,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: lu
+description:: 546L6Zyy
+givenName: wang
+displayName: Wang,Lu (SMR NBHX)
+sAMAccountName: luwang
+userPrincipalName: luwang@jv.motherson.com
+mail: lu.wang@smr-nbhx.com
+
+dn: CN=Yang\,Yang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yang
+description:: 5p2o5rSL
+givenName: Yang
+displayName: Yang,Yang (SMR NBHX)
+sAMAccountName: yyang
+userPrincipalName: yyang@jv.motherson.com
+mail: Yang.yang@smr-nbhx.com
+
+dn: CN=Paintshop Coating,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Coating
+description: U_Paintshop Coating Line User
+givenName: Paintshop
+displayName: Paintshop Coating
+department: Manufactory Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: paic
+userPrincipalName: paic@jv.motherson.com
+
+dn: CN=Zhou\,Jiang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: jiang
+title: Purchasing
+description:: 5ZGo57qq5piC77yI5Ye66L+Q6K6h5YiS5ZGY77yJ
+givenName: zhou
+displayName: Zhou,Jiang (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jazhou
+userPrincipalName: jazhou@jv.motherson.com
+mail: jiang.zhou@smr-nbhx.com
+
+dn: CN=Jiang\,Weiwei,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Jiang
+title: Accountant
+description:: 6JKL6JaH6JaH
+givenName: Weiwei
+displayName: Jiang, Weiwei (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wwjiang
+userPrincipalName: wwjiang@jv.motherson.com
+mail: Jiang.Weiwei@smr-nbhx.com
+
+dn: CN=Ge\,Danyan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: ge
+description:: 6JGb5Li554eV
+givenName: danyan
+displayName: Ge,Danyan (SMR NBHX)
+sAMAccountName: dyge
+userPrincipalName: dyge@jv.motherson.com
+mail: danyan.ge@smr-nbhx.com
+
+dn: CN=Zhang\,Chun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+description:: 5byg5pil
+givenName: Chun
+displayName: Zhang,Chun (SMR NBHX)
+sAMAccountName: czhang
+userPrincipalName: czhang@jv.motherson.com
+mail: Chun.Zhang@smr-nbhx.com
+
+dn: CN=testusermsx\,,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: testusermsx
+description: T_
+displayName: Testusermsx (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: testusermsx
+userPrincipalName: testusermsx@jv.motherson.com
+mail: testusermsx@mind-infotech.com
+
+dn: CN=Chen\,Ying,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Ying
+title: Purchasing Officer
+description:: 6ZmI6I65
+givenName: chen
+displayName: Chen, Ying (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ychen
+userPrincipalName: ychen@jv.motherson.com
+mail: ying.chen@smr-nbhx.com
+
+dn: CN=Dai\,Pengyu,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Dai
+title: Project Engineer
+description:: 5oi06bmP5a6H
+givenName: Pengyu
+displayName: Dai, Pengyu (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: pydai
+userPrincipalName: pydai@jv.motherson.com
+mail: pengyu.dai@smr-nbhx.com
+
+dn: CN=Zscj,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description:: 5rOo5aGR6L2m6Ze05YWs55So
+givenName: zscj
+displayName: Zscj (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: zscj
+userPrincipalName: zscj@jv.motherson.com
+mail: zscj@smr-nbhx.com
+
+dn: CN=Bao\,Linfeng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: bao
+description:: 6bKN5p6X5bOw
+givenName: linfeng
+displayName: Bao, Linfeng (SMR NBHX)
+sAMAccountName: lfbao
+userPrincipalName: lfbao@jv.motherson.com
+mail: linfeng.bao@smr-nbhx.com
+
+dn: CN=ni\,zhuanglai,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Ni
+title: Manufacturing Engineer
+description:: 5YCq5aOu5p2l
+givenName: Zhuanglai
+displayName: Ni, Zhuanglai (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: zlni
+userPrincipalName: zlni@jv.motherson.com
+mail: zhuanglai.ni@smr-nbhx.com
+
+dn: CN=AdminMSX-VCNBHX,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: S_Administrator for MSX in Ningbo
+displayName: Adminmsx-Vcnbhx (SMR)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: AdminMSX-VCNBHX
+userPrincipalName: AdminMSX-VCNBHX@jv.motherson.com
+
+dn: CN=Lv\,Peng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lv
+title:: RW5naW5lZXIg
+description:: 5ZCV5pyL
+givenName: Peng
+displayName: Lv, Peng (SMR NBHX)
+department: Qualilty
+company: SMR
+sAMAccountName: plv
+userPrincipalName: plv@jv.motherson.com
+mail: Peng.Lv@smr-nbhx.com
+
+dn: CN=Lai\,Lingfeng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lai
+title: Manufacturing Engineer
+description:: 6LWW54G16ZSL
+givenName: Lingfeng
+displayName: Lai, Lingfeng (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: lflai
+userPrincipalName: lflai@jv.motherson.com
+mail: Lingfeng.Lai@smr-nbhx.com
+
+dn: CN=sun\,lisha,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Sun
+title: Clerk
+description:: 5a2Z5Li96I6O
+givenName: Lisha
+displayName: Sun, Lisha (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: lssun
+userPrincipalName: lssun@jv.motherson.com
+mail: lisha.sun@smr-nbhx.com
+
+dn: CN=audit,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: audit
+description:: 5Y+N6Iie5byK55qE5Li+5oql
+displayName: audit (SMR NBHX)
+sAMAccountName: audit
+userPrincipalName: audit@jv.motherson.com
+mail: audit@smr-nbhx.com
+
+dn: CN=Tan\,Shangtuo,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Tan
+title: Project Coordinator
+description:: 6LCt5bCa5ouT
+givenName: Shangtuo
+displayName: Tan,Shangtuo (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: sttan
+userPrincipalName: sttan@jv.motherson.com
+mail: Shangtuo.Tan@smr-nbhx.com
+
+dn: CN=Xu\,Dongye,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xu
+description:: 5b6Q5Yas5pmU
+givenName: Dongye
+displayName: Xu, Dongye (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: dyxu
+userPrincipalName: dyxu@jv.motherson.com
+mail: dongye.xu@smr-nbhx.com
+
+dn: CN=Chen\,Shan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: shan
+title: Scheduler
+description:: 6ZmI54+K
+givenName: chen
+displayName: Chen, Shan (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: schen
+userPrincipalName: schen@jv.motherson.com
+mail: shan.chen@smr-nbhx.com
+
+dn: CN=Xu\,Lan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: lan
+title: Cost Accounting
+description:: 5b6Q5YWw
+givenName: xu
+displayName: Xu,Lan (SMR NBHX)
+department: Financial Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: lxu
+userPrincipalName: lxu@jv.motherson.com
+mail: lan.xu@smr-nbhx.com
+
+dn: CN=yuan\,fangdi,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yuan
+title: Financial Manager
+description:: 6KKB6Iqz5aij
+givenName: Fangdi
+displayName: Yuan,Fangdi (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: fdyuan
+userPrincipalName: fdyuan@jv.motherson.com
+mail: fangdi.yuan@smr-nbhx.com
+
+dn: CN=Xia\,Yu,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xia
+description:: 5aSP6Zuo
+givenName: Yu
+displayName: Xia,Yu (SMR NBHX)
+sAMAccountName: yxia
+userPrincipalName: yxia@jv.motherson.com
+mail: Yu.Xia@smr-nbhx.com
+
+dn:: Q049Qm9hcmRyb29tIEVhc3Qo6JGj5LqLKSxPVT1OaW5nYm8tVXNlcnMgYW5kIEdyb3VwcyxPVT1OaW5nYm8sT1U9Q2hpbmEsT1U9QVBBQyxEQz1qdixEQz1tb3RoZXJzb24sREM9Y29t
+changetype: add
+sn: East
+description:: 6JGj5LqL5Lya6K6u5a6k
+givenName: Boardroom
+displayName: Ningbo Meeting Room [Eastern] (SMR NBHX)
+sAMAccountName: boardroom01
+userPrincipalName: boardroom01@jv.motherson.com
+mail: boardroom01@smr-nbhx.com
+
+dn: CN=Liu\,Min,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Liu
+description:: 5YiY5pWPVV9Nb3VsZCBFbmdpbmVlcg==
+givenName: Min
+displayName: Liu, Min (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: mliu
+userPrincipalName: mliu@jv.motherson.com
+mail: Min.liu@smr-nbhx.com
+
+dn: CN=fan\,min,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Fan
+title: Quality Supervisor
+description:: 6IyD5pWP
+givenName: Min
+displayName: Fan, Min (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: mfan
+userPrincipalName: mfan@jv.motherson.com
+mail: min.fan@smr-nbhx.com
+
+dn: CN=Zhang\,Chence,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: zhang
+title: Quality Engineer
+description:: 5byg6ZmI562W
+givenName: chence
+displayName: Zhang, Chence (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: cczhang
+userPrincipalName: cczhang@jv.motherson.com
+mail: chence.zhang@smr-nbhx.com
+
+dn: CN=Ying\,Wanquan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Ying
+title: Engineer
+description:: 5bqU5LiH5YWo77yI5rKI6Ziz77yJ
+givenName: wanquan
+displayName: Ying, Wanquan (SMR NBHX)
+department: Sales Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wqying
+userPrincipalName: wqying@jv.motherson.com
+mail: wanquan.ying@smr-nbhx.com
+
+dn: CN=Di\,Wanping,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wanping
+description:: 54uE5LiH6JCNKOWNl+S6rOS7k+W6kyk=
+givenName: Di
+displayName: Di, Wanping (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wpdi
+userPrincipalName: wpdi@jv.motherson.com
+
+dn: CN=Zhou\,ZiZhong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhou
+title: Purchasing
+description:: 5ZGo5a2Q5b+g
+givenName: ZiZhong
+displayName: Zhou,ZiZhong (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: zzzhou
+userPrincipalName: zzzhou@jv.motherson.com
+mail: Zizhong.zhou@smr-nbhx.com
+
+dn: CN=Ye\,Linying,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: linying
+title: Accountant
+description:: 5Y+25p6X55Gb
+givenName: ye
+displayName: Ye,Linying (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: lyye
+userPrincipalName: lyye@jv.motherson.com
+mail: linying.ye@smr-nbhx.com
+
+dn: CN=Xie\,Haifeng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xie
+title: Driver
+description:: 6LCi5rW35bOw
+givenName: Haifeng
+displayName: Xie, Haifeng (SMR NBHX)
+department: HR Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hfxie
+userPrincipalName: hfxie@jv.motherson.com
+mail: Haifeng.xie@smr-nbhx.com
+
+dn: CN=li\,chenglin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Li
+title: Tooling Engineer
+description:: 5p2O5oiQ5p6X
+givenName: Chenglin
+displayName: Li, Chenglin (SMR NBHX)
+department: Project Dept.
+company: Ningbo Visiocorp Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: clli
+userPrincipalName: clli@jv.motherson.com
+mail: chenglin.li@smr-nbhx.com
+
+dn: CN=Wu\,Shuanghong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wu
+title: Shipment Scheduler
+description:: 5ZC05Y+M57qi
+givenName: Shuanghong
+displayName: Wu, Shuanghong [Iris] (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: shwu
+userPrincipalName: shwu@jv.motherson.com
+mail: Shuanghong.Wu@smr-nbhx.com
+
+dn: CN=Lu\,Le,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lu
+description:: 6ZmG5LmQ
+givenName: Le
+displayName: Lu,Le (SMR NBHX)
+sAMAccountName: llu
+userPrincipalName: llu@jv.motherson.com
+mail: le.lu@smr-nbhx.com
+
+dn: CN=wang\,zheng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wang
+title: Quality  Director
+description:: 546L5q2j
+givenName: Zheng
+displayName: Wang, Zheng [Andy] (SMR NBHX)
+department: Quality Department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: zwang
+userPrincipalName: zwang@jv.motherson.com
+mail: zheng.wang@smr-nbhx.com
+
+dn: CN=Chen\,Xiaohong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chen
+title: SQE
+description:: 6ZmI5pmT57qi
+givenName: Xiaohong
+displayName: Chen, Xiaohong (SMR NBHX)
+department: Purchasing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: xhchen
+userPrincipalName: xhchen@jv.motherson.com
+mail: Xiaohong.chen@smr-nbhx.com
+
+dn: CN=zheng\,nv,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: hanhu
+description:: 6YOR5aWz
+givenName: chen
+displayName: Chen,Hanhu (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hhchen
+userPrincipalName: hhchen@jv.motherson.com
+mail: hanhu.chen@smr-nbhx.com
+
+dn: CN=zheng\,lili,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zheng
+title: Purchase Manager
+description:: 6YOR6I6J6I6J
+givenName: Lili
+displayName: Zheng,Lili (SMR NBHX)
+department: Purchasing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: lzheng
+userPrincipalName: lzheng@jv.motherson.com
+mail: lili.zheng@smr-nbhx.com
+
+dn: CN=Jin\,Hongbo,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Jin
+title:: TlBJIE1hbmFnZXLvvIhOb3J0aCBSZWdpb24p
+description:: 6YeR57qi5rOi
+givenName: Hongbo
+displayName: Jin, Hongbo (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hbjin
+userPrincipalName: hbjin@jv.motherson.com
+mail: Hongbo.Jin@smr-nbhx.com
+
+dn: CN=kanban,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: kanban
+description:: 5rOo5aGR55S15a2Q55yL5p2/5LiT55So6YKu566x
+displayName: kanban (SMR)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: kanban
+userPrincipalName: kanban@jv.motherson.com
+mail: ban.kan@smr-nbhx.com
+
+dn: CN=Han\,Shuguang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: han
+title: Product Engineer
+description:: 6Z+p572y5YWJ
+givenName: shuguang
+displayName: Han, Shuguang (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: sghan
+userPrincipalName: sghan@jv.motherson.com
+mail: shuguang.han@smr-nbhx.com
+
+dn: CN=Lu\,Huihui,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lu
+description:: 6ZmG5oWn5oWn77yI5LiK5rW377yJ
+givenName: Huihui
+displayName: Lu,Huihui (SMR NBHX)
+sAMAccountName: hhlu
+userPrincipalName: hhlu@jv.motherson.com
+mail: Huihui.lu@smr-nbhx.com
+
+dn: CN=Wang\,Sumi,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: User Fisrt
+description:: 546L57Sg5ZKq
+givenName: Warehouse
+displayName: Wang, Sumi (SMR NBHX)
+department: Logisitcs Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: whon
+userPrincipalName: whon@jv.motherson.com
+mail: warehouse001@smr-nbhx.com
+
+dn: CN=Ye\,Binbin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: binbin
+title: Quality Engineer
+description:: 5Y+25b2s5b2s
+givenName: ye
+displayName: Ye, Binbin [Musk](SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: bbye
+userPrincipalName: bbye@jv.motherson.com
+mail: binbin.ye@smr-nbhx.com
+
+dn: CN=Drivelock_DBA,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: S_ User for administering drivelock database
+displayName: Drivelock_DBA
+sAMAccountName: Drivelock_DBA
+userPrincipalName: Drivelock_DBA@jv.motherson.com
+
+dn: CN=Luo\,Tao,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Luo
+title: Project Coordinator
+description:: 6aqG5rabVV9FbmdpbmVlcg==
+givenName: Tao
+displayName: Luo, Tao (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: tluo
+userPrincipalName: tluo@jv.motherson.com
+mail: tao.luo@smr-nbhx.com
+
+dn: CN=Huang\,Guohong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: guohong
+title: Quality Engineer
+description:: 6buE5Zu957qi
+givenName: huang
+displayName: Huang, Guohong (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ghhuang
+userPrincipalName: ghhuang@jv.motherson.com
+mail: guohong.huang@smr-nbhx.com
+
+dn: CN=chen\,ling,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: chen
+description:: 6ZmI546y
+givenName: ling
+displayName: chen,ling (SMR NBHX)
+sAMAccountName: lingchen
+userPrincipalName: lingchen@jv.motherson.com
+mail: ling.chen@smr-nbhx.com
+
+dn: CN=He\,Yuanyuan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: yuanyuan
+title: Shipment Scheduler
+description:: 5L2V5ZyG5ZyGIOi0puWKoeWRmA==
+givenName: he
+displayName: He,Yuanyuan (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: yyhe
+userPrincipalName: yyhe@jv.motherson.com
+mail: yuanyuan.he@smr-nbhx.com
+
+dn: CN=Weng\,Hualin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Hualin
+description:: 57+B5Y2O5p6X
+givenName: Pais
+displayName: Weng, Hualin (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hlweng
+userPrincipalName: hlweng@jv.motherson.com
+mail: hualin.weng@smr-nbhx.com
+
+dn: CN=VeritasAdminvcnbhx,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: S_ Migrations-User
+displayName: Veritasadminvcnbhx (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: VeritasAdminvcnbhx
+userPrincipalName: VeritasAdminvcnbhx@jv.motherson.com
+mail: VeritasAdminvcnbhx@smr-nbhx.com
+
+dn: CN=Ma\,Xuan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: xuan
+title: logistics Speciallist
+description:: 6ams5peL
+givenName: ma
+displayName: Ma, Xuan (SMR NBHX)
+department: logistics Dept
+company: Samvardhana Motherson Reflector
+sAMAccountName: xma
+userPrincipalName: xma@jv.motherson.com
+mail: xuan.ma@smr-nbhx.com
+
+dn: CN=Liu\,Xianwei,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: xianwei
+title: Paint engineer
+description:: 5YiY54yu5Lyf
+givenName: liu
+displayName: Liu,Xianwei (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: xwliu
+userPrincipalName: xwliu@jv.motherson.com
+
+dn: CN=Fu\,Tingtao,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Fu
+title: Project Coordinator
+description:: 5om25bu26Zm2
+givenName: Tingtao
+displayName: Fu,Tingtao (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ttfu
+userPrincipalName: ttfu@jv.motherson.com
+mail: Tingtao.Fu@smr-nbhx.com
+
+dn: CN=NPI,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+displayName:: TlBJ5Lya6K6u5a6k6YWN5aSH
+sAMAccountName: NPI
+userPrincipalName: NPI@jv.motherson.com
+
+dn: CN=Chen\,Jie[Shelly],OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chen
+title: Finance head SMR NBHX
+description:: 6ZmI5p2w
+givenName: Jie
+displayName: Chen, Jie [Shelly] (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jiechen
+userPrincipalName: jiechen@jv.motherson.com
+mail: jie.chen@smr-nbhx.com
+
+dn: CN=Hu\,Kaidu,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Hu
+description:: 6IOh5Yev5p2c
+givenName: Kaidu
+displayName: Hu,Kaidu  (SMR NBHX)
+sAMAccountName: kdhu
+userPrincipalName: kdhu@jv.motherson.com
+mail: Kaidu.hu@smr-nbhx.com
+
+dn: CN=Xu\,Rui,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: rui
+title: Plant Assistant
+description:: 5b6Q6ZSQ
+givenName: xu
+displayName: Xu,Rui (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: rxu
+userPrincipalName: rxu@jv.motherson.com
+mail: rui.xu@smr-nbhx.com
+
+dn: CN=liu\,Jing,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: jing
+title: Scheduler
+description:: 5YiY6Z2Z
+givenName: liu
+displayName: Liu,Jing (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jliu
+userPrincipalName: jliu@jv.motherson.com
+mail: jing.liu@smr-nbhx.com
+
+dn: CN=Chen\,Futian,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: futian
+description:: 6ZmI56aP55Sw
+givenName: chen
+displayName: Chen,Futian (SMR NBHX)
+sAMAccountName: ftchen
+userPrincipalName: ftchen@jv.motherson.com
+mail: futian.chen@smr-nbhx.com
+
+dn: CN=liu\,yue,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Liu
+title: Sales Account Manager
+description:: 5YiY546l77yI6ZW/5pil77yJ
+givenName: Yue
+displayName: Liu, Yue [Michelle] (SMR NBHX)
+department: Sales Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: yueliu
+userPrincipalName: yueliu@jv.motherson.com
+mail: yue.liu@smr-nbhx.com
+
+dn: CN=sdjj,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+title: Quality Engineer
+description:: 5rK55ryG5a6d5rSB
+givenName: sd
+displayName: sdjj (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: sdjj
+userPrincipalName: sdjj@jv.motherson.com
+mail: sdjj@smr-nbhx.com
+
+dn: CN=Fang\,Jinjie,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Fang
+description:: 5pa55rSl5p2w
+givenName: Jinjie
+displayName: Fang, Jinjie (SMR NBHX)
+sAMAccountName: jfang
+userPrincipalName: jfang@jv.motherson.com
+mail: Jinjie.Fang@smr-nbhx.com
+
+dn: CN=Liu\,Lulu,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: lulu
+title: Quality Engineer
+description:: 5YiY6Lev6Lev
+givenName: liu
+displayName: Liu,Lulu(SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: llliu
+userPrincipalName: llliu@jv.motherson.com
+mail: lulu.liu@smr-nbhx.com
+
+dn: CN=Desktop,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+givenName: Desktop
+displayName: Desktop
+sAMAccountName: Desktop
+userPrincipalName: Desktop@jv.motherson.com
+
+dn: CN=DomainAdmin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: S_Domain Administrator
+displayName: DomainAdmin
+sAMAccountName: DomainAdmin
+userPrincipalName: DomainAdmin@jv.motherson.com
+
+dn: CN=Su\,Yanjie,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Su
+description:: 6IuP54eV5p2w
+givenName: Yanjie
+displayName: Su, Yanjie (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: yjsu
+userPrincipalName: yjsu@jv.motherson.com
+mail: Yanjie.Su@smr-nbhx.com
+
+dn: CN=Lai\,Yanyan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: yanyan
+description:: 6LWW54eV54eV
+givenName: lai
+displayName: Lai,Yanyan (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: yylai
+userPrincipalName: yylai@jv.motherson.com
+
+dn: CN=whth,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: warehouse
+title: Warehouseman
+description:: 5Y2K5oiQ5ZOB5LuT5bqT5YWs55So
+displayName:: d2FyZWhvdXNlMDAzCiAoU01SIE5CSFgp
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: whth
+userPrincipalName: whth@jv.motherson.com
+mail: warehouse003@smr-nbhx.com
+
+dn: CN=Chen\,Zhongtai,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chen
+description:: 6ZmI5Lit5rOw
+givenName: Zhongtai
+displayName: Chen,Zhongtai (SMR NBHX)
+sAMAccountName: ztchen
+userPrincipalName: ztchen@jv.motherson.com
+mail: Zhongtai.Chen@smr-nbhx.com
+
+dn: CN=Lin\,Haitong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: haitong
+title: Quality Engineer
+description:: 5p6X5rW36YCa
+givenName: lin
+displayName: Lin, Haitong (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: htlin
+userPrincipalName: htlin@jv.motherson.com
+mail: haitong.lin@smr-nbhx.com
+
+dn: CN=Rong\,jie,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: jie
+title: Accountant
+description:: 5oiO5rSB
+givenName: rong
+displayName: Rong, jie (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jrong
+userPrincipalName: jrong@jv.motherson.com
+mail: jie.rong@smr-nbhx.com
+
+dn: CN=Liu\,Weiping,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Liu
+title: Cost Supervisor
+description:: 5YiY5Lyf5bmz
+givenName: Weiping
+displayName: Liu,Weiping (SMR NBHX)
+department: NB Finance Branch
+company: SMRNBHX
+sAMAccountName: wpliu
+userPrincipalName: wpliu@jv.motherson.com
+mail: weiping.liu@smr-nbhx.com
+
+dn: CN=recruitment,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: r
+title: HR Manager
+description:: 5Lq65LqL5a+55aSW5oub6IGY5LiT55So
+givenName: ecruitment
+displayName: recruitment (SMR NBHX)
+department: administrative Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: recruitment
+userPrincipalName: recruitment@jv.motherson.com
+mail: recruitment@smr-nbhx.com
+
+dn: CN=Chen\,Huijun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chen
+title: Sales Director
+description:: 6ZmI5oWn5L+K
+givenName: Huijun
+displayName: Chen, Huijun [John] (SMR NBHX)
+department: Sales Dept
+company: Samvardhana Motherson Reflectec
+sAMAccountName: hjchen
+userPrincipalName: hjchen@jv.motherson.com
+mail: Huijun.Chen@smr-nbhx.com
+
+dn:: Q049Qm9hcmRyb29tIFdlc3Qo6KW/5L6nKSxPVT1OaW5nYm8tVXNlcnMgYW5kIEdyb3VwcyxPVT1OaW5nYm8sT1U9Q2hpbmEsT1U9QVBBQyxEQz1qdixEQz1tb3RoZXJzb24sREM9Y29t
+changetype: add
+sn: West
+description:: 6KW/5L6n5Lya6K6u5a6k
+givenName: Boardroom
+displayName: Ningbo Meeting Room  [Western] (SMR NBHX)
+sAMAccountName: boardroom02
+userPrincipalName: boardroom02@jv.motherson.com
+mail: boardroom02@smr-nbhx.com
+
+dn: CN=fang\,guofen,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Fang
+title: Losgistic Manager
+description:: 5pa55Zu96Iqs
+givenName: Guofen
+displayName: Fang, Guofen (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: gffang
+userPrincipalName: gffang@jv.motherson.com
+mail: guofen.fang@smr-nbhx.com
+
+dn: CN=Fang\,Peng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: peng
+title: Purchase Specailist
+description:: 5pa56bmP
+givenName: fang
+displayName: Fang,Peng (SMR NBHX)
+department: Purchasing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: pfang
+userPrincipalName: pfang@jv.motherson.com
+mail: peng.fang@smr-nbhx.com
+
+dn: CN=Xu\,kaiwei,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: xu
+description:: 5b6Q6ZS05Lyf
+givenName: kaiwei
+displayName: Xu,Kaiwei (SMR NBHX)
+sAMAccountName: kwxu
+userPrincipalName: kwxu@jv.motherson.com
+mail: kaiwei.xu@smr-nbhx.com
+
+dn: CN=Feng\,Xu,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Feng
+title: Purchase Specailist
+description:: 5Yav6Jma
+givenName: Xu
+displayName: Feng, Xu (SMR NBHX)
+department: Purchasing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: xfeng
+userPrincipalName: xfeng@jv.motherson.com
+mail: Xu.Feng@smr-nbhx.com
+
+dn: CN=Zhao\,Xuexia,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: zhao
+description:: 6LW16Zuq6Zye
+givenName: xuexia
+displayName: Zhao, Xuexia (SMR NBHX)
+sAMAccountName: xxzhao
+userPrincipalName: xxzhao@jv.motherson.com
+mail: xuexia.zhao@smr-nbhx.com
+
+dn: CN=Lin\,Qiong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: lin
+title: logistics Speciallist
+description:: 5p6X55C8
+givenName: qiong
+displayName: Lin, Qiong (SMR NBHX)
+department: logistics Dept
+company: Samvardhana Motherson Reflector
+sAMAccountName: qlin
+userPrincipalName: qlin@jv.motherson.com
+mail: qiong.lin@smr-nbhx.com
+
+dn: CN=Wang\,Jiaheng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wang
+title: Purchasing Manager
+description:: 546L5L2z5oGS
+givenName: Jiaheng
+displayName: Wang, Jiaheng (SMR NBHX)
+department: Purchasing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wangjiaheng
+userPrincipalName: wangjiaheng@jv.motherson.com
+mail: Jiaheng.Wang@smr-nbhx.com
+
+dn: CN=meilong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: mei
+description: meilong
+givenName: long
+displayName: mei,long (SMR NBHX)
+sAMAccountName: lmei
+userPrincipalName: lmei@jv.motherson.com
+
+dn: CN=zhou\,laidi,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhou
+title: HR Supervisor
+description:: 5ZGo6I6x5aij
+givenName: Laidi
+displayName: Zhou,Laidi (SMR NBHX)
+department: HR Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ldzhou
+userPrincipalName: ldzhou@jv.motherson.com
+mail: laidi.zhou@smr-nbhx.com
+
+dn: CN=Zheng\,Xiaoxiao,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: xiaoxiao
+title: HR Specialist
+description:: 6YOR5pmT5pmT
+givenName: zheng
+displayName: Zheng,Xiaoxiao (SMR NBHX)
+department: HR Department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: xxzheng
+userPrincipalName: xxzheng@jv.motherson.com
+mail: xiaoxiao.zheng@smr-nbhx.com
+
+dn: CN=DACS_Backup,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: DACS_Backup
+description: BACS_Backup for DACS
+displayName: DACS_Backup (SMR NBHX)
+sAMAccountName: DACSB
+userPrincipalName: DACSB@jv.motherson.com
+
+dn: CN=Gao\,Luyuan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: luyuan
+title: Molding Engineer
+description:: 6auY6Lev6L+c
+givenName: gao
+displayName: Gao,Luyuan (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: lygao
+userPrincipalName: lygao@jv.motherson.com
+mail: luyuan.gao@smr-nbhx.com
+
+dn: CN=yin\,juanjuan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yin
+title: Vice HR  Manager
+description:: 5bC55aif5aif
+givenName: Juanjuan
+displayName: Yin, Juanjuan (SMR NBHX)
+department: HR  Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jjyin
+userPrincipalName: jjyin@jv.motherson.com
+mail: juanjuan.yin@smr-nbhx.com
+
+dn: CN=Lai\,Aifang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: User
+description:: 6LWW54ix6Iqz
+givenName: Warehouse
+displayName: Lai, Aifang (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: mware
+userPrincipalName: mware@jv.motherson.com
+mail: mware@smr-nbhx.com
+
+dn: CN=Song\,Qinghuan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: qinghuan
+title: Quality Engineer
+description:: 5a6L5bqG5qyi
+givenName: song
+displayName: Song,Qinghuan (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: qhsong
+userPrincipalName: qhsong@jv.motherson.com
+mail: qinghuan.song@smr-nbhx.com
+
+dn: CN=Fang\,Qing,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: wing
+title: Product Engineer
+description:: 5pa55riF
+givenName: fang
+displayName: Fang,Qing (SMR NBHX)
+department: Engineering Department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: qfang
+userPrincipalName: qfang@jv.motherson.com
+mail: qing.fang@smr-nbhx.com
+
+dn: CN=Li\,Hui,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Li
+description:: 5p2O6L6J
+givenName: Hui
+displayName: Li,Hui (SMR NBHX)
+sAMAccountName: hli
+userPrincipalName: hli@jv.motherson.com
+mail: hui.li@smr-nbhx.com
+
+dn: CN=He\,Jinli,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: He
+title: HR Speciallist
+description:: 5L2V55G+6I6J
+givenName: Jinli
+displayName: He, Jinli (SMR NBHX)
+department: HR Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jlhe
+userPrincipalName: jlhe@jv.motherson.com
+mail: Jinli.He@smr-nbhx.com
+
+dn: CN=Bao\,Chanchan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: chanchan
+title: HR Specialist
+description:: 6bKN5am15am1
+givenName: bao
+displayName: Bao, Chanchan (SMR NBHX)
+department: HR Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ccbao
+userPrincipalName: ccbao@jv.motherson.com
+mail: chanchan.bao@smr-nbhx.com
+
+dn: CN=Wang\,Yonggang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wang
+title: Project Manager
+description:: 546L5rC45Yia
+givenName: Yonggang
+displayName: Wang, Yonggang (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ygwang
+userPrincipalName: ygwang@jv.motherson.com
+mail: Yonggang.Wang@smr-nbhx.com
+
+dn: CN=Fang\,Jianjun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Fang
+description:: 5pa55bu65Yab
+givenName: Jianjun
+displayName: Fang, Jianjun (SMR NBHX)
+sAMAccountName: jjfang
+userPrincipalName: jjfang@jv.motherson.com
+mail: Jianjun.Fang@smr-nbhx.com
+
+dn: CN=Wang\,Can,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wang
+description:: 546L54G/
+givenName: Can
+displayName: Wang, Can (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: cwang
+userPrincipalName: cwang@jv.motherson.com
+mail: Can.Wang@smr-nbhx.com
+
+dn: CN=Yang Lijun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yang
+description:: 5p2o5p2O5L+KIOmUgOWUrg==
+givenName: Lijun
+displayName: Yang Lijun (SMR NBHX)
+sAMAccountName: ljyang
+userPrincipalName: ljyang@jv.motherson.com
+mail: lijun.yang@smr-nbhx.com
+
+dn: CN=Chen\,Bin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chen
+description:: 6ZmI5paM
+givenName: Bin
+displayName: Chen Bin (SMR NBHX)
+sAMAccountName: bchen
+userPrincipalName: bchen@jv.motherson.com
+
+dn: CN=Zhan\,Qun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhan
+title: Project Manager
+description:: 6Km5576k
+givenName: Qun
+displayName: Zhan,Qun [Chris] (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: qzhan
+userPrincipalName: qzhan@jv.motherson.com
+mail: Qun.Zhan@smr-nbhx.com
+
+dn: CN=adminpnb,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: adminpnb
+description: Smr nbhx Pubic
+displayName: adminpnb
+sAMAccountName: adminpnb
+userPrincipalName: adminpnb@jv.motherson.com
+mail: adminpnb@smr-nbhx.com
+
+dn: CN=Xu\,jingshan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xu
+description:: 6K645Lqs5bGx
+givenName: Jingshan
+displayName: Xu, Jingshan (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jsxu
+userPrincipalName: jsxu@jv.motherson.com
+mail: jingshan.xu@smr-nbhx.com
+
+dn: CN=Cui\,wenhui,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: cui
+description:: 5bSU5paH5Lya
+givenName: wenhui
+displayName: cui,wenhui  (SMR NBHX)
+sAMAccountName: whcui
+userPrincipalName: whcui@jv.motherson.com
+mail: wenhui.cui@smr-nbhx.com
+
+dn: CN=Zhang\,Shijun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+title: Purchasing Specialist
+description:: 5byg5LiW5Yab
+givenName: Shijun
+displayName: Zhang,Shijun [Sage] (SMR NBHX)
+department: Purchase Dept.
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: sjzhang
+userPrincipalName: sjzhang@jv.motherson.com
+mail: Shijun.Zhang@smr-nbhx.com
+
+dn: CN=Xia\,Li,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xia
+title: HR Specialist
+description:: 5aSP6I6J
+givenName: Li
+displayName: Xia,Li (SMR NBHX)
+department: HR Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: lxia
+userPrincipalName: lxia@jv.motherson.com
+mail: Li.Xia@smr-nbhx.com
+
+dn: CN=He\,danping,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: He
+title: Testing
+description:: 5L2V5Li56JCN
+givenName: Danping
+displayName: He, Danping (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: dphe
+userPrincipalName: dphe@jv.motherson.com
+mail: danping.he@smr-nbhx.com
+
+dn: CN=zhao\,guangtian,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhao
+title: CIP Manager
+description:: 6LW15YWJ55Sw
+givenName: Guangtian
+displayName: Zhao, Guangtian (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: gtzhao
+userPrincipalName: gtzhao@jv.motherson.com
+mail: guangtian.zhao@smr-nbhx.com
+
+dn: CN=Testmsx Ningbo,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: T_
+givenName: Testmsx
+displayName: Testmsx Ningbo (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: testmsxnb
+userPrincipalName: testmsxnb@jv.motherson.com
+mail: testmsxnb@smr-nbhx.com
+
+dn: CN=AdminBackupCNB,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: AdminBackup
+description: S_Administrator for Backup in Ningbo
+givenName: Admin
+displayName: AdminBackupCNB (SMR NBHX)
+sAMAccountName: AdminBkpcnb
+userPrincipalName: AdminBkpcnb@jv.motherson.com
+mail: AdminBackup@smr-nbhx.com
+
+dn: CN=pan\,yi,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: pan
+description:: 5r2Y6YC4
+givenName: yi
+displayName: pan,yi (SMR NBHX)
+sAMAccountName: ypan
+userPrincipalName: ypan@jv.motherson.com
+mail: yi.pan@smr-nbhx.com
+
+dn: CN=ding\,haiping,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Ding
+title: Cost Accountant
+description:: 5LiB5rW36JCN
+givenName: Haiping
+displayName: Ding, Haiping (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hpding
+userPrincipalName: hpding@jv.motherson.com
+mail: haiping.ding@smr-nbhx.com
+
+dn: CN=xu\,wenzhong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xu
+title: GM
+description: Executive Vice President - East Asia
+givenName: Wenzhong
+displayName: Xu, Wenzhong (SMR NBHX)
+department: GM Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wzxu
+userPrincipalName: wzxu@jv.motherson.com
+mail: wenzhong.xu@smr-nbhx.com
+
+dn: CN=assemble,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: assemble
+title: class monitor
+description:: 6KOF6YWNKOePree7hOmVv+S4k+eUqCk=
+displayName: assemble (SMR NBHX)
+department: manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: assemble
+userPrincipalName: assemble@jv.motherson.com
+mail: assemble@smr-nbhx.com
+
+dn: CN=Zheng\,Jian,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: jian
+title: Test Engineer
+description:: 6YOR6ZSu
+givenName: zheng
+displayName: Zheng,Jian (SMR NBHX)
+department: quality
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jzheng
+userPrincipalName: jzheng@jv.motherson.com
+mail: jian.zheng@smr-nbhx.com
+
+dn: CN=Jiang\,lifeng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Jiang
+description:: 5aec5Yip5bOw
+givenName: Lifeng
+displayName: Jiang, lifeng (SMR NBHX)
+sAMAccountName: lfjiang
+userPrincipalName: lfjiang@jv.motherson.com
+mail: Lifeng.Jiang@smr-nbhx.com
+
+dn: CN=Zhang\,Jiawei,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: zhang
+description:: 5byg5a625Lyf
+givenName: jiawei
+displayName: Zhang,Jiawei (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jwzhang
+userPrincipalName: jwzhang@jv.motherson.com
+mail: jiawei.zhang@smr-nbhx.com
+
+dn: CN=FullADmin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: S_FullADmin
+displayName: Fulladmin (SMR)
+sAMAccountName: FullADmin
+userPrincipalName: FullADmin@jv.motherson.com
+
+dn: CN=Zhang\,Xinhui,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+title: Planner
+description:: 5byg5qyj5oWn
+givenName: Xinhui
+displayName: Zhang, Xinhui (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: xhzhang
+userPrincipalName: xhzhang@jv.motherson.com
+mail: xinhui.Zhang@smr-nbhx.com
+
+dn: CN=Xu\,Jian,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Jian
+title: Plant Manager
+description:: 5b6Q5YGlVV9QbGFudCBNYW5hZ2Vy
+givenName: Xu
+displayName: Xu, Jian (SMR NBHX)
+department: Plant Management
+company: Ningbo SMR Huaxiang Automotive Mirrors Limited
+sAMAccountName: jxu
+userPrincipalName: jxu@jv.motherson.com
+mail: jian.xu@smr-nbhx.com
+
+dn: CN=Zheng\,Hainv,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zheng
+description:: 6YOR5rW35aWz
+givenName: Hainv
+displayName: Zheng,Hainv (SMR NBHX)
+sAMAccountName: hvzheng
+userPrincipalName: hvzheng@jv.motherson.com
+mail: Hainv.zheng@smr-nbhx.com
+
+dn: CN=Pan\,Ting,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Pan
+description:: 5r2Y5am3
+givenName: Ting
+displayName: Pan,Ting (SMR NBHX)
+sAMAccountName: tpan
+userPrincipalName: tpan@jv.motherson.com
+mail: ting.pan@smr-nbhx.com
+
+dn: CN=Zhang\,Huwei,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+title: Director
+description:: 5byg6JmO5aiB
+givenName: Huwei
+displayName: Zhang, Huwei [Hartley] (SMR NBHX)
+department: Human Resource and Administration
+company: Ningbo SMR Huaxiang Automotive Mirrors Limited
+sAMAccountName: hwzhang
+userPrincipalName: hwzhang@jv.motherson.com
+mail: Huwei.zhang@smr-nbhx.com
+
+dn: CN=zhou\,jianyao,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhou
+title: Indirect Material Buyer
+description:: 5ZGo5bu66ICA
+givenName: Jianyao
+displayName: Zhou,Jianyao (SMR NBHX)
+department: Purchasing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jzhou
+userPrincipalName: jzhou@jv.motherson.com
+mail: jianyao.zhou@smr-nbhx.com
+
+dn: CN=Shu\,Baoyuan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Shu
+description:: 6IiS5a6d5rqQVV9RdWFsaXR5
+givenName: Baoyuan
+displayName: Shu, Baoyuan (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: byshu
+userPrincipalName: byshu@jv.motherson.com
+mail: Baoyuan.Shu@smr-nbhx.com
+
+dn: CN=Xiang\,Anping,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xiang
+title: Plant Assistant
+description:: 6aG55a6J5bmz
+givenName: Anping
+displayName: Xiang,Anping (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: axiang
+userPrincipalName: axiang@jv.motherson.com
+mail: Anping.Xiang@smr-nbhx.com
+
+dn: CN=Yan\, xiaolong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yan
+title: IT
+description: Network supervisor
+givenName: Xiaolong
+displayName: Yan, Xiaolong [Dragon] (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: xyan
+userPrincipalName: xyan@jv.motherson.com
+mail: xiaolong.Yan@smr-nbhx.com
+
+dn: CN=Yuan\,Jidong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yuan
+title: Manufacturing Engineer
+description:: 6KKB5ZCJ5Lic
+givenName: Jidong
+displayName: Yuan,Jidong (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jdyuan
+userPrincipalName: jdyuan@jv.motherson.com
+mail: Jidong.Yuan@smr-nbhx.com
+
+dn: CN=Chen\,Shuqi,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Shuqi
+title: Process Supervisor
+description:: 6ZmI6IiS56W6
+givenName: Chen
+displayName: Chen, Shuqi (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: sqchen
+userPrincipalName: sqchen@jv.motherson.com
+mail: Chen.Shuqi@smr-nbhx.com
+
+dn: CN=Zhang\,Min,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+description:: 5byg5pWP
+givenName: Min
+displayName: Zhang,Min (SMR NBHX)
+sAMAccountName: minzhang
+userPrincipalName: minzhang@jv.motherson.com
+mail: min.zhang@smr-nbhx.com
+
+dn: CN=zhu\,pengcheng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: zhu
+title: Cost Accounting
+description:: 5pyx6bmP56iL
+givenName: pengcheng
+displayName: Zhu, Pengcheng (SMR NBHX)
+department: Financial Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: pczhu
+userPrincipalName: pczhu@jv.motherson.com
+mail: pengcheng.zhu@smr-nbhx.com
+
+dn: CN=Li\,Changping,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Li
+description:: 5p2O6ZW/5bmz
+givenName: Changping
+displayName: Li, Changping (SMR NBHX)
+sAMAccountName: cpli
+userPrincipalName: cpli@jv.motherson.com
+mail: Changping.Li@smr-nbhx.com
+
+dn: CN=assembly,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+title: Cost Accountant
+description:: 6KOF6YWNKOaWh+WRmOaJk+WNleS4k+eUqCk=
+givenName: assembly
+displayName: assembly  (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: assembly
+userPrincipalName: assembly@jv.motherson.com
+mail: assembly@smr-nbhx.com
+
+dn: CN=dai\,chundan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: dai
+description:: 5oi05pil5Li5
+givenName: chundan
+displayName: dai,chundan  (SMR NBHX)
+sAMAccountName: cddai
+userPrincipalName: cddai@jv.motherson.com
+mail: chundan.dai@smr-nbhx.com
+
+dn: CN=Chen\,Weilin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Chen
+title: Repair
+description:: 6ZmI5Lyf5p6X
+givenName: Weilin
+displayName: Chen, Weilin (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wlchen
+userPrincipalName: wlchen@jv.motherson.com
+mail: weilin.chen@smr-nbhx.com
+
+dn: CN=Xue\,Pengcheng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xue
+title: Customer Quality Manager
+description:: 6Jab6bmP56iL
+givenName: Pengcheng
+displayName: Xue, Pengcheng (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: pcxue
+userPrincipalName: pcxue@jv.motherson.com
+mail: Pengcheng.Xue@smr-nbhx.com
+
+dn: CN=Wu\,Wencheng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wu
+title: Product Engineer
+description:: 5ZC05paH5oiQ
+givenName: Wencheng
+displayName: Wu, Wencheng (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wcwu
+userPrincipalName: wcwu@jv.motherson.com
+mail: wencheng.wu@smr-nbhx.com
+
+dn: CN=Hu\,Jianbo,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Hu
+title: Vice Molding Manager
+description:: 6IOh5Z2a5rOi
+givenName: Jianbo
+displayName: Hu, Jianbo (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jbhu
+userPrincipalName: jbhu@jv.motherson.com
+mail: Jianbo.Hu@smr-nbhx.com
+
+dn: CN=Xia\,Qianqian,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xia
+description:: 5aSP5YCp5YCp
+givenName: Qianqian
+displayName: Xia,Qianqian (SMR NBHX)
+department: Logistic Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jiazhou
+userPrincipalName: jiazhou@jv.motherson.com
+mail: jia.Zhou@smr-nbhx.com
+
+dn: CN=Li\,Kaiwei,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: li
+description:: 5p2O5Yev5Lyf
+givenName: kaiwei
+displayName: Li, Kaiwei (SMR NBHX)
+sAMAccountName: kwli
+userPrincipalName: kwli@jv.motherson.com
+mail: kaiwei.li@smr-nbhx.com
+
+dn: CN=Chen\,Min,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: min
+title: Accountant
+description:: 6ZmI5pWP
+givenName: chen
+displayName: Chen,Min (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: mchen
+userPrincipalName: mchen@jv.motherson.com
+mail: min.chen@smr-nbhx.com
+
+dn: CN=testonly,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+givenName: testonly
+displayName: testonly
+sAMAccountName: testonly
+userPrincipalName: testonly@jv.motherson.com
+
+dn: CN=Wu\,Qianhuan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: User Fourth
+description:: 5LyN5Lm+5qyi
+givenName: Warehouse
+displayName: Wu, Qianhuan (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: whfo
+userPrincipalName: whfo@jv.motherson.com
+mail: warehouse004@smr-nbhx.com
+
+dn: CN=Qi\,Lin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Qi
+description:: 5oia5p6X
+givenName: Lin
+displayName: Qi,Lin (SMR NBHX)
+sAMAccountName: lqi
+userPrincipalName: lqi@jv.motherson.com
+mail: Lin.Qi@smr-nbhx.com
+
+dn: CN=Zhou\,Tingting,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhou
+description:: 5ZGo5am35am3
+givenName: Tingting
+displayName: Zhou,Tingting (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ttzhou
+userPrincipalName: ttzhou@jv.motherson.com
+mail: Tingting.Zhou@smr-nbhx.com
+
+dn: CN=Gao\,Yanjun,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Gao
+description:: 6auY5b2m5Yab
+givenName: Yanjun
+displayName: Gao,Yanjun (SMR NBHX)
+sAMAccountName: yjgao
+userPrincipalName: yjgao@jv.motherson.com
+mail: yanjun.gao@smr-nbhx.com
+
+dn: CN=Lu\,Qiang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lu
+description:: 5Y2i5by6
+givenName: Qiang
+displayName: Lu,Qiang (SMR TJHX)
+sAMAccountName: qlu
+userPrincipalName: qlu@jv.motherson.com
+mail: qiang.lu@smr-nbhx.com
+
+dn: CN=Luo\,Ning,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Luo
+description:: 6aqG5a6B
+givenName: Ning
+displayName: Luo,Ning (SMR NBHX)
+sAMAccountName: nluo
+userPrincipalName: nluo@jv.motherson.com
+mail: ning.luo@smr-nbhx.com
+
+dn: CN=yuan\,gaofeng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: yuan
+title: Painting Manger
+description:: 6KKB6auY5bOw
+givenName: gaofeng
+displayName: Yuan, Gaofeng (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: gfyuan
+userPrincipalName: gfyuan@jv.motherson.com
+mail: gaofeng.yuan@smr-nbhx.com
+
+dn: CN=Xu\,Guanghui,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Xu
+title: Equipment Engineer
+description:: 5b6Q5YWJ6L6JVV9FcXVpcG1lbnQgRW5naW5lZXI=
+givenName: Guanghui
+displayName: Xu, Guanghui (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ghxu
+userPrincipalName: ghxu@jv.motherson.com
+mail: Guanghui.Xu@smr-nbhx.com
+
+dn: CN=Zheng\,Jinjin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zheng
+title: Project Engineer
+description:: 6YOR5rSl5rSl77yI57O757uf5a6J6KOF77yJ
+givenName: Jinjin
+displayName: Zheng,Jinjin (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: jjzheng
+userPrincipalName: jjzheng@jv.motherson.com
+mail: Jinjin.Zheng@smr-nbhx.com
+
+dn: CN=Luo\,Haiming,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Luo
+description:: 6aqG5rW35piO
+givenName: Haiming
+displayName: Luo,Haiming (SMR NBHX)
+sAMAccountName: hmluo
+userPrincipalName: hmluo@jv.motherson.com
+mail: Haiming.Luo@smr-nbhx.com
+
+dn: CN=PDM_CH,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: pdmch
+description: U_PDM Aotumatic Remind User
+displayName: PDM_CH (SMR NBHX)
+sAMAccountName: pdmch
+userPrincipalName: pdmch@jv.motherson.com
+mail: pdmch@smr-nbhx.com
+
+dn: CN=wu\,xiaoya,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wu
+title: Material Controller
+description:: 5LyN5bCP6ZuF
+givenName: Xiaoya
+displayName: Wu, Xiaoya (SMR NBHX)
+department: Logistice Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: xywu
+userPrincipalName: xywu@jv.motherson.com
+mail: xiaoya.wu@smr-nbhx.com
+
+dn: CN=Men\,Guangzhong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Men
+description:: 5bel56iL6YOoIOmXqOW5v+S8lw==
+givenName: Guangzhong
+displayName: Men,Guangzhong (SMR NBHX)
+sAMAccountName: gzmen
+userPrincipalName: gzmen@jv.motherson.com
+mail: Guangzhong.Men@smr-nbhx.com
+
+dn: CN=Lu\,Weiping,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lu
+description:: 6ZmG5Lyf5bmz
+givenName: Weiping
+displayName: Lu,Weiping (SMR NBHX)
+sAMAccountName: wplu
+userPrincipalName: wplu@jv.motherson.com
+mail: Weiping.Lu@smr-nbhx.com
+
+dn: CN=Han\,Chao,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: han
+title: Purchase
+description:: 6Z+p6LaF
+givenName: chan
+displayName: Han,Chao(SMR NBHX)
+department: Purchasing Department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: chan
+userPrincipalName: chan@jv.motherson.com
+mail: chao.han@smr-nbhx.com
+
+dn: CN=Yu\,Hua,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yu
+description:: 5L2Z5Y2O
+givenName: Hua
+displayName: Yu,Hua (SMR NBHX)
+sAMAccountName: hyu
+userPrincipalName: hyu@jv.motherson.com
+mail: hua.yu@smr-nbhx.com
+
+dn: CN=AdminMind_EPS,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: S_Mind Administration Account for VCNBHX for Forefront Issues
+displayName: AdminMind_EPS
+sAMAccountName: AdminMind_EPS
+userPrincipalName: AdminMind_EPS@jv.motherson.com
+
+dn: CN=Zhang\,Hengzhi,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+description:: 5byg5oGS5b+XICjlpKnmtKXvvIk=
+givenName: Hengzhi
+displayName: Zhang,Hengzhi (SMR TJHX)
+sAMAccountName: hzzhang
+userPrincipalName: hzzhang@jv.motherson.com
+mail: hengzhi.zhang@smr-nbhx.com
+
+dn: CN=Zhang\,Caiyu,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhang
+title: Shipment Planner
+description:: 5byg5b2p546J
+givenName: Caiyu
+displayName: Zhang,Caiyu (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: cyzhang
+userPrincipalName: cyzhang@jv.motherson.com
+mail: caiyu.zhang@smr-nbhx.com
+
+dn: CN=zhou\,rongyan,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zhou
+title: Purchasing
+description:: 5ZGo5a656Imz
+givenName: Rongyan
+displayName: Zhou,Rongyan (SMR NBHX)
+department: Logistics Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: ryzhou
+userPrincipalName: ryzhou@jv.motherson.com
+mail: rongyan.zhou@smr-nbhx.com
+
+dn: CN=Lai\,Binwu,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lai
+description:: 6LWW5paM5q2m
+givenName: Binwu
+displayName: Lai, Binwu (SMR NBHX)
+sAMAccountName: bwlai
+userPrincipalName: bwlai@jv.motherson.com
+mail: binwu.lai@smr-nbhx.com
+
+dn: CN=Ma\,Hui,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Ma
+description:: 6ams5oWnIOi0qOmHjw==
+givenName: Hui
+displayName: Ma,Hui (SMR NBHX)
+sAMAccountName: huima
+userPrincipalName: huima@jv.motherson.com
+mail: Hui.Ma@smr-nbhx.com
+
+dn: CN=He\,Qiang,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: He
+title: Testing
+description:: 5L2V5by6
+givenName: Qiang
+displayName: He, Qiang (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: qhe
+userPrincipalName: qhe@jv.motherson.com
+mail: qiang.he@smr-nbhx.com
+
+dn: CN=Zheng\,Zhouyi,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Zheng
+title: Cashier
+description:: 6YOR5Y2T5YCa
+givenName: Zhuoyi
+displayName: Zheng, Zhuoyi (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: zyzheng
+userPrincipalName: zyzheng@jv.motherson.com
+mail: Zhuoyi.Zheng@smr-nbhx.com
+
+dn: CN=Ma\,Chunlei,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: xingqiao
+description:: 6LW15YW05qGl77yI6L+b5paZ5pS26LSn77yJ
+givenName: zhao
+displayName: Zhao,Xingqiao (SMR NBHX)
+sAMAccountName: fli
+userPrincipalName: fli@jv.motherson.com
+mail: fen.Li@smr-nbhx.com
+
+dn: CN=chen\,xian,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: chen
+description:: 6ZmI6LSk
+givenName: xian
+displayName: chen,xian  (SMR NBHX)
+sAMAccountName: xianchen
+userPrincipalName: xianchen@jv.motherson.com
+mail: xian.chen@smr-nbhx.com
+
+dn: CN=vcnbhx-test,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+description: T_
+displayName: Vcnbhx-Test (SMR NBHX)
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: vcnbhx-test
+userPrincipalName: vcnbhx-test@jv.motherson.com
+mail: vcnbhx-test@mind-infotech.com
+
+dn: CN=Yan\,Ping,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Yan
+title: Project Engineer
+description:: 5Lil6JCN
+givenName: Ping
+displayName: Yan, Ping (SMR NBHX)
+department: Engineering Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: pyan
+userPrincipalName: pyan@jv.motherson.com
+mail: ping.yan@smr-nbhx.com
+
+dn: CN=Lai\,Wangwei,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Lai
+title: project manager
+description:: 6LWW546L5Lyf
+givenName: Wangwei
+displayName: Lai, Wangwei (SMR NBHX)
+department: project Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: wwlai
+userPrincipalName: wwlai@jv.motherson.com
+mail: Wangwei.lai@smr-nbhx.com
+
+dn: CN=Wang\,Hui,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wang
+title: Quality Engineer
+description:: 546L5Y2J
+givenName: Hui
+displayName: Wang, Hui (SMR NBHX)
+department: Quality department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: huiwang
+userPrincipalName: huiwang@jv.motherson.com
+mail: hui.wang@smr-nbhx.com
+
+dn: CN=Manufacturing Clerk User,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Manufacturing
+description: U_Manufacturing Clerk User
+givenName: Clerk User
+displayName: Clerk Manufacturing
+sAMAccountName: ucman01
+userPrincipalName: ucman01@jv.motherson.com
+
+dn: CN=prod,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: prod
+title: Product Line User
+description:: 6KOF6YWN57q/55So
+displayName: Prod (SMR NBHX)
+department: Manufactory Department
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: prod
+userPrincipalName: prod@jv.motherson.com
+mail: prod@smr-nbhx.com
+
+dn: CN=Zhang.Taigen,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: taigen
+title: Molding Engineer
+description:: 5byg5aSq6Imu
+givenName: zhang
+displayName: Zhang.Taigen (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: tgzhang
+userPrincipalName: tgzhang@jv.motherson.com
+mail: taigen.zhang@smr-nbhx.com
+
+dn: CN=Wang\,Siyu,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Group
+description:: 546L5pav55GcVV9NYWludGVuYWNlIFNoYXJlZCBVc2Vy
+givenName: Maintenance
+displayName: Wang, Siyu (SMR NBHX)
+sAMAccountName: maint
+userPrincipalName: maint@jv.motherson.com
+mail: maint@smr-nbhx.com
+
+dn: CN=Zhu\,Xudong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: xudong
+title: Clerk
+description:: 5pyx5pet5Lic
+givenName: zhu
+displayName: Zhu, Xudong (SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: xdzhu
+userPrincipalName: xdzhu@jv.motherson.com
+mail: xudong.zhu@smr-nbhx.com
+
+dn: CN=He\,Peng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: he
+description:: 5L2V6bmP
+givenName: peng
+displayName: He,Peng (SMR NBHX)
+sAMAccountName: phe
+userPrincipalName: phe@jv.motherson.com
+mail: peng.he@smr-nbhx.com
+
+dn: CN=shi\,hui,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Shi
+title: Purchasing Specialist
+description:: 55+z5oWn
+givenName: Hui
+displayName: Shi, Hui (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: huishi
+userPrincipalName: huishi@jv.motherson.com
+mail: hui.shi@smr-nbhx.com
+
+dn: CN=Dong\,Jiayong,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Dong
+description:: 6JGj5L2z5YuHKOW3peeoiyk=
+givenName: Jiayong
+displayName: Dong, Jiayong (SMR NBHX)
+sAMAccountName: jydong
+userPrincipalName: jydong@jv.motherson.com
+mail: Jiayong.Dong@smr-nbhx.com
+
+dn: CN=Cao\,Yanjie,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Cao
+description:: 5pu554eV5p2w
+givenName: Yanjie
+displayName: Cao,Yanjie (SMR NBHX)
+department: Sales Dept.
+sAMAccountName: yjcao
+userPrincipalName: yjcao@jv.motherson.com
+mail: Yanjie.Cao@smr-nbhx.com
+
+dn: CN=Gu\,Shaohua,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: gu
+title: Key Account Manager
+description:: 6aG+5bCR5Y2O
+givenName: shaohua
+displayName: Gu, Shaohua (SMR NBHX)
+department: Sales Dept.
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: shgu
+userPrincipalName: shgu@jv.motherson.com
+mail: shaohua.gu@smr-nbhx.com
+
+dn: CN=Ma\,He,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Ma
+description:: 6ams6LS6
+givenName: He
+displayName: Ma, He (SMR NBHX)
+department: Manufacturing Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: hma
+userPrincipalName: hma@jv.motherson.com
+mail: He.Ma@smr-nbhx.com
+
+dn: CN=linbo,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: lin
+description:: 5p6X5rOi
+givenName: bo
+displayName: lin,bo (SMR NBHX)
+sAMAccountName: blin
+userPrincipalName: blin@jv.motherson.com
+mail: bo.lin@smr-nbhx.com
+
+dn: CN=Wang\,Zhou,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: zhou
+title: Application System Engineer
+description:: 5rGq5ZGo
+givenName: wang
+displayName: Wang,Zhou (SMR NBHX)
+department: Finance Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: zhouwang
+userPrincipalName: zhouwang@jv.motherson.com
+mail: zhou.wang@smr-nbhx.com
+
+dn: CN=Wei\,Yunjing,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wei
+description:: 6a2P5LqR6Z2Z
+givenName: Yunjing
+displayName: Wei,Yunjing (SMR NBHX)
+sAMAccountName: yunjingwei
+userPrincipalName: yunjingwei@jv.motherson.com
+mail: yunjing.wei@smr-nbhx.com
+
+dn: CN=Wang\,Fei,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Wang
+title: Quality Engineer
+description:: 546L6aOe
+givenName: Fei
+displayName: Wang,Fei(SMR NBHX)
+department: Quality Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: feiwang
+userPrincipalName: feiwang@jv.motherson.com
+mail: Fei.Wang@smr-nbhx.com
+
+dn: CN=tempadmin,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+givenName: tempadmin
+displayName: tempadmin
+sAMAccountName: tempadmin
+userPrincipalName: tempadmin@jv.motherson.com
+
+dn: CN=Ou\,Shifeng,OU=Ningbo-Users and Groups,OU=Ningbo,OU=China,OU=APAC,DC=jv,DC=motherson,DC=com
+changetype: add
+sn: Ou
+title: SQE
+description:: 5qyn5LiW5bOw
+givenName: Shifeng
+displayName: Ou, Shifeng (SMR NBHX)
+department: Purchase Dept
+company: Ningbo SMR Huaxiang Automotive Mirrors Co.,Ltd.
+sAMAccountName: sfou
+userPrincipalName: sfou@jv.motherson.com
+mail: Shifeng.Ou@smr-nbhx.com
+

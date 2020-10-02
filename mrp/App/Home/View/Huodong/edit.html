@@ -1,0 +1,73 @@
+<div class="bjui-pageContent">
+    <form action="__URL__/edit/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+		<input type="hidden" name="id" value="{$id}">
+        <div class="pageFormContent" data-layout-h="0">
+          <table class="table table-condensed table-hover" width="100%">
+           <tbody><tr>
+         <td  colspan=2><label for='title_input' class='control-label x100'>活动名称:</label><input type='text'  name='title' data-rule='required;' size='20'   value='{$Rs.title}'  ></td>   <td  colspan=2><label for='type_input' class='control-label x85'>活动类型:</label>
+                  <select name='hdlx'  data-toggle='selectpicker' >
+                    <option value=''>请选择</option>
+                    <volist name='Think.config.HUODONG_TYPE' id='type'>
+                      <option value='{$key}' <if condition=" $key EQ $Rs['hdlx'] ">selected</if>>
+                        {$type}</option>
+                    </volist>
+                  </select></td>
+           </tr>
+			<tr><td><label for='kssj_input' class='control-label x100'>开始时间:</label><input type='text' data-toggle='datepicker' data-pattern='yyyy-MM-dd HH:mm:ss' id='kssj' name='kssj'  data-rule='required;datetime' size='20'   value='{$Rs.kssj}'  ></td><td colspan=3><label for='jssj_input' class='control-label x85'>结束时间:</label><input type='text' data-toggle='datepicker' data-pattern='yyyy-MM-dd HH:mm:ss' id='jssj' name='jssj'  data-rule='required;datetime' size='20'   value='{$Rs.jssj}'  ></td></tr>
+<tr></tr>
+  <tr>
+  <td ><label for='title_input' class='control-label x100'>一等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value='{$Rs['jxsz']['0']['prize']}'  ></td>
+  <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['0']['sl']}'  ></td>
+  <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['0']['v']}'  ></td
+  ></tr>
+   <tr>
+       <td ><label for='title_input' class='control-label x100'>二等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value='{$Rs['jxsz']['1']['prize']}'  ></td>
+       <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['1']['sl']}'  ></td>
+       <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['1']['v']}'  ></td>
+   </tr>
+      <tr>
+       <td ><label for='title_input' class='control-label x100'>三等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value='{$Rs['jxsz']['2']['prize']}'  ></td>
+       <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['2']['sl']}'  ></td>
+       <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['2']['v']}'  ></td>
+   </tr>
+      <tr>
+       <td ><label for='title_input' class='control-label x100'>四等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value='{$Rs['jxsz']['3']['prize']}'  ></td>
+       <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['3']['sl']}'  ></td>
+       <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['3']['v']}'  ></td>
+   </tr>
+      <tr>
+       <td ><label for='title_input' class='control-label x100'>五等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value='{$Rs['jxsz']['4']['prize']} ' ></td>
+       <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['4']['sl']}'  ></td>
+       <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['4']['v']}'  ></td>
+   </tr>
+      <tr>
+       <td ><label for='title_input' class='control-label x100'>六等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value='六等奖'  ></td>
+       <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['5']['sl']}'  ></td>
+       <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='{$Rs['jxsz']['5']['v']}'  ></td>
+   </tr>
+   <tr>
+           <td  colspan=4><label for='title_input' class='control-label x100'>不中奖数:</label><input type='text'  name='bzgl' data-rule='required;' size='50'   value='{$Rs.bzgl}'  ></td>
+           </tr>   </tr>        <tr><td  colspan=4><label for='title_input' class='control-label x100'>次数:</label><input type='text'  name='cs' data-rule='required;' size='50'   value='{$Rs.cs}'  ></td></tr>
+           <tr>
+           <td  colspan=4><label for='title_input' class='control-label x100'>活动图片:</label><input type='text'  name='img'  size='50'   value=''  ></td>
+           </tr>  <td  colspan=4><label for='title_input' class='control-label x100'>所属微信:</label><select name='weixinid'  data-toggle='selectpicker' >
+                    <option value=''>请选择</option>
+                    <volist name='weixinlist' id='type'>
+                      <option value='{$key}' 
+                        <if condition=" $key EQ $Rs['weixinid'] ">selected</if>>
+                        {$type}</option>
+                    </volist>
+                  </select></td>
+           </tr>
+<tr><td  colspan=3><label for='beizhu_input' class='control-label x85'>详细说明:</label><div style='display: inline-block; vertical-align: middle;'><textarea name='xxsm'   data-toggle='kindeditor' data-minheight='150' data-items='fontname, fontsize, |, forecolor, hilitecolor, bold, italic, underline, removeformat, |, justifyleft, justifycenter, justifyright, insertorderedlist, insertunorderedlist, |, emoticons, image, link'>{$Rs.xxsm}</textarea></div></td></tr>
+           </tbody>
+          </table>
+        </div>
+        <div class="bjui-footBar">
+            <ul>
+                <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+                <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+            </ul>
+        </div>
+    </form>
+</div>

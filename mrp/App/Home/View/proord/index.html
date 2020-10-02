@@ -1,0 +1,363 @@
+ 
+<!--<script src="/xcrm/Public/BJUI/js/jquery-1.7.2.min.js"></script>    -->
+ 
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch" action="__SELF__" method="get">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">             
+    <input type="hidden" name="pageCurrent" value="{$pageCurrent}">       
+    <input type="hidden" name="orderField" value="{$_REQUEST['orderField']}">         
+    <input type="hidden" name="orderDirection" value="{$_REQUEST['orderDirection']}"> 
+	
+
+
+        <div class="bjui-searchBar">
+           <label for='f'>筛选：</label>
+           <select id='f' name='f'  data-toggle="selectpicker">
+               <option value='vd_addr' <eq name='Think.request.f' value='comp_vend'>selected</eq>>供应商</option>
+               <option value='comp_buyer' <eq name='Think.request.f' value='comp_buyer'>selected</eq>>采购员</option>
+               <option value='comp_part'  <eq name='Think.request.f' value='comp_part'>selected</eq>>物料号</option>
+           </select>
+           <input type="text" value="{$_REQUEST['v']}" id="v" name="v" class="form-control" size="15" title="输入筛选条件获取对应的供应商mrp数据" />
+           
+           <button type="submit"  class="btn-default" onclick="beforeSearch(this)"  data-icon="search" >查询</button>
+            <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">清空查询</a> 
+
+			
+
+		</div> 
+</form>
+</div>
+
+
+
+<div class="bjui-pageContent">
+<form id="ordsForm"    data-toggle="validate" method="post"  >   <!--建议使用validate表单，因为ajaxform表单 实测总是不自动弹出响应对话框 -->
+	<input type='hidden' name='vend' value='{$vend}' />
+	<table id="tabledit1" style="white-space: nowrap;"  data-toggle="tablefixed"   data-nowrap="true"   class="table table-bordered table-hover table-striped table-top" >
+        <thead>
+            <tr>
+            <th width="10" height="30"></th>
+            <th title="采购员" width='60'    data-notread="true">采购员</th>
+            <th title="供应商代码" width='70'  data-order-field='vd_addr' data-notread="true">供应商</th>
+			<th title="供应商名称" width='180' >供应商名称</th>
+			<th title="物料号" width='90'  >零件</th>
+			<th title="物料描述" width='180' >描述1</th>
+ 
+ 
+			<th title="{$today}" width='90' date="{$today}" >{$today|substr=5}</th>
+ 
+ 
+            </tr>
+        </thead>
+        <tbody>
+        <volist id="part" name="parts">
+        	
+            <tr>
+            <td width="10" height="30"></td>
+            	<td>{$part.comp_buyer}</td>
+	            <td  >{$part.vd_addr}</td>
+				<td  >{$part.vd_sort}</td>
+				<td  >{$part.comp_part}</td>
+				<td>{$part.comp_desc1}</td>
+				<td date='{$today}'><span class='trans_qty'>
+					{$part['tran_qtys'][$today]}
+				</td>
+ 
+ 
+ 
+ 
+            </tr>
+
+        </volist>
+        </tbody>
+    </table>
+
+</form>    	
+
+    <div class="bjui-footBar">
+        <div class="pages">
+            <span>共 {$totalCount} 个{$asChecker?'待审核':''}供应商  当前页 {$numPerPage} 个零件</span>
+        </div>
+        
+	    <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="1" data-page-current="{$pageCurrent}">
+        </div>
+    </div>
+ 
+</div>
+<style>
+#ordsForm tr.ord input {
+	display: none;
+}
+#ordsForm tr.ord_input input.ord_qty{
+	display: inline-block;
+}
+#ordsForm tr.ord_input span.ord_qty{
+	display: none;
+}
+#ordsForm .is_shop_day{
+	background-color: yellow !important;
+}
+#ordsForm .is_shop_day .ord_qty{
+	background-color: yellow !important;
+}
+#ordsForm .fchanged .ord_qty {
+	color: red;
+}
+#ordsForm .invalidStock {
+	background-color: red;
+}
+#ordsForm .par_ismrp {
+	color: red;
+}
+#ordsForm .isfday {
+	font-weight: bold;
+	background: #66CC33;
+}
+
+</style>
+<script type='text/javascript'>
+$(document).ready(function() {
+	// ensure all the event handlers would just be bound once due to th B-jui's duplicate html snippet reloading feature.	
+	if ($(document).data("mrpLoaded" + {$asChecker|intval})) {
+		return;
+	}
+	$(document).data("mrpLoaded" + {$asChecker|intval}, true);
+
+
+});
+
+
+function toggleOrdQtyFields (ordTd) 
+{
+	if ($(ordTd).attr("ispass") != 2) { 
+		var ordsForm = $(ordTd).closest("#ordsForm"); 
+		$("tr.ord", ordsForm).removeClass("ord_input");
+		$(ordTd).closest("tr").addClass("ord_input");
+		$("input:text", ordTd).focus();
+	}
+}
+
+
+function calculateAmount (ordField) 
+{
+	var ordsForm = $(ordField).closest("#ordsForm");
+	var saveBtn = ordsForm.closest(".bjui-pageContent").siblings(".bjui-pageHeader").find("#saveOrder");
+	var pid = $(ordField).closest("tr").attr("pid");
+	
+	
+	saveBtn.prop("disabled", false);
+	
+	var saftyQty = Number($(".trans[pid=" + pid + "] .rop_qty", ordsForm).text());
+	var ordMultQty = Number($(".ord[pid=" + pid + "] .ord_mult_qty", ordsForm).text());
+	var orgStockQty = Number($(".stock[pid=" + pid + "] .org_stock_qty", ordsForm).text());
+	if (isNaN(saftyQty)) {
+		 saftyQty = 0;
+	};
+	if (isNaN(ordMultQty) || ordMultQty == 0) {
+		// order mult qty defaults to be 1.
+		ordMultQty = 1;
+	};
+	if (isNaN(orgStockQty)) {
+		orgStockQty = 0;
+	};
+	
+	// check if order qty is valid.
+	var val = $.trim($(ordField).val());
+	var curOrderQty;
+	if (val.charAt(0) == '*') {
+		// if qty value starts with '*', treat following part as quantity multiply
+		var mult = val.slice(1);
+		curOrderQty = Number(mult) * ordMultQty;
+	} else {
+		curOrderQty = Number(val);
+	}
+	var isInvalid = true;
+	if (isNaN(curOrderQty)) {
+		alert("错误：输入的采购量" + val + "必须为数字");
+	} else if (curOrderQty < 0) {
+		alert("错误：输入的采购量" + val + "不能为负值");
+	} else if (curOrderQty % ordMultQty != 0) {
+		alert("错误：输入的采购量" + val + "不是收容量：" + ordMultQty + " 的整数倍"); 
+	} else {
+		isInvalid = false;
+	}
+	if (isInvalid) {
+		// restore the order qty data before modification if invalid
+		$(ordField).val($(ordField).parent().children("span.ord_qty").text()); 
+		return false;
+	} else {
+		// modify the related span text as well if valid
+		$(ordField).val(curOrderQty);
+		$(ordField).parent().children("span.ord_qty").text(curOrderQty);
+		
+		// set related changed style if data was really changed
+		if (curOrderQty != $(ordField).closest("td").attr('org-qty')) {
+			$(ordField).closest("td").addClass("fchanged");
+		} else {
+			$(ordField).closest("td").removeClass("fchanged");
+		}
+	}
+
+	// start calculation , validation, modification.
+	var dates = [];
+	$("th[date]", ordsForm).each(function() {
+		dates.push($(this).attr("date"));
+	});
+	var prevDate = 'org_date';
+	var prevStockQty = orgStockQty;
+	var invalidStockStartDate = '';
+	for (var i = 0; i < dates.length; i++) {
+		var date = dates[i];
+		var dmndQty = Number($(".dmnd[pid=" + pid + "] td[date=" + date + "] .dmnd_qty", ordsForm).text());
+		var tranQty = Number($(".trans[pid=" + pid + "] td[date=" + date + "] .trans_qty", ordsForm).text());
+		var orderQty = Number($(".ord[pid=" + pid + "] td[date=" + date + "] input.ord_qty", ordsForm).val());
+		if (isNaN(dmndQty)) {
+			dmndQty = 0;
+		}
+		if (isNaN(tranQty)) {
+			tranQty = 0;
+		}
+		if (isNaN(orderQty)) {
+			orderQty = 0;
+		}
+
+		// calculate and repopulate
+		var stockQty= 0;
+		stockQty = prevStockQty + tranQty + orderQty - dmndQty; 
+		$(".stock[pid=" + pid + "] td[date=" + date + "] .stock_qty", ordsForm).text(stockQty);
+		
+		// find the first invalid stock date
+		if (i > 0) {
+			if (invalidStockStartDate == '' && prevStockQty - dmndQty < saftyQty) {
+				invalidStockStartDate = prevDate;
+				alert("注意：输入的采购量导致该供需关系预计库存量从" + invalidStockStartDate + "起将不满足下一日的生产需要！");
+			}
+		}
+
+
+		prevDate = date;
+		prevStockQty = stockQty;
+	}
+
+	$(".stock[pid=" + pid + "] td[date]", ordsForm).removeClass('invalidStock');
+	
+	if (invalidStockStartDate) {
+		// disable the order qty save button if invalid stock exists
+		saveBtn.prop("disabled", true);
+		
+		if (invalidStockStartDate == 'org_date') {
+			$(".stock[pid=" + pid + "] td[date]", ordsForm)
+			.add($(".stock[pid=" + pid + "] .org_stock_qty", ordsForm).closest("td"))
+			.addClass('invalidStock');
+		} else {
+			for (var i = 0; i < dates.length; i++) {
+				var date = dates[i];
+				// highlight the dates from the first invalid stock date
+				if (invalidStockStartDate && date >= invalidStockStartDate) {
+					$("#ordsForm .stock[pid=" + pid + "] td[date=" + date + "]", $.CurrentNavtab).addClass('invalidStock');
+				}
+			}
+		}
+	} 
+	
+	// if no invalid stock exists in the page(including within another record), then make the save button clickable.
+	if ($("#ordsForm .stock td[date].invalidStock", $.CurrentNavtab).length == 0) {
+		saveBtn.prop("disabled", false);
+	}
+}
+
+function beforeSearch(obj) {
+	// can not prevent default....
+
+	//return false;
+}
+	
+
+function confirmOrderAmount(obj) {
+	var ordsForm = $(obj).closest(".bjui-pageHeader").siblings(".bjui-pageContent").find("#ordsForm");
+	
+	// fix b-jui odd bug
+	if (!ordsForm.data("submitted")) {
+		ordsForm.data("submitted", true);
+		ordsForm.submit();
+	}
+}	
+	
+function saveOrderAmount(obj) {
+	var ordsForm = $(obj).closest(".bjui-pageHeader").siblings(".bjui-pageContent").find("#ordsForm");;
+// 	var changedOrd = $(".ord:has(.fchanged)", ordsForm);
+// 	if (changedOrd.length == 0) {
+// 		alert("未修改任何数据");
+// 		return false;
+// 	}
+	
+	// fix b-jui odd bug
+	if (!ordsForm.data("submitted")) {
+		ordsForm.data("submitted", true);
+		// just update the the date-qty fields of changed record
+		$(".ord", ordsForm)
+		.filter(function() {
+			if ($(this).find(".fchanged").length != 0) {
+				return false;
+			}
+			return true;
+		})
+		.each(function() {
+				$("input:text", this).prop("disabled", true);
+		});
+		ordsForm.submit();
+	}
+}
+
+function resetOrderAmount(obj) {
+	var tmpobj = $("<div></div>");
+	$(tmpobj).navtab({
+		'id':'promrp/index', 
+		'url': $(obj).closest("#pagerForm").attr('action'),
+		'title': 'MRP运算',
+		'fresh': true
+	});
+}
+
+function afterOrdsSaving(json) 
+{
+	var url = $.CurrentNavtab.find("#pagerForm").attr("action");
+	
+	alert(json.message);
+	if (json.statusCode == 200) {
+		var tmpobj = $("<div></div>");
+		$(tmpobj).navtab({
+			'id':'promrp/index', 
+			'url': url,   
+			'fresh': true,
+			'title': 'MRP运算',
+			'onLoad': function () {
+				//alert('done');
+			}
+		});
+	}
+
+}
+
+function afterOrdsConfirming(json)
+{
+	var url = $.CurrentNavtab.find("#pagerForm").attr("action");
+	
+	alert(json.message);
+	if (json.statusCode == 200) {
+		var tmpobj = $("<div></div>");
+		$(tmpobj).navtab({
+			'id':'procmrp/index', 
+			'url': url,   
+			'fresh': true,
+			'title': 'MRP运算',
+			'onLoad': function () {
+				//alert('done');
+			}
+		});
+	}
+}
+
+</script>
+</style>

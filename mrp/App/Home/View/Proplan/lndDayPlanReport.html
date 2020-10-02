@@ -1,0 +1,35 @@
+<div class="bjui-pageHeader">
+
+<form id="pagerForm" data-toggle="ajaxsearch" action="__CONTROLLER__" method="get">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">             
+    <input type="hidden" name="pageCurrent" value="{$pageCurrent}">       
+    <input type="hidden" name="orderField" value="{$_REQUEST['orderField']}">         
+    <input type="hidden" name="orderDirection" value="{$_REQUEST['orderDirection']}"> 
+
+	<div class="bjui-searchBar">
+		<span style="float:left;margin-right:20px;">产线：<input type="text" value="{$line}" id='line' name="line" class="form-control" size="15" /></span>
+		<span style="float:left;margin-right:20px;">生产日期: <input type="text" id="date" name="date" data-toggle="datepicker" value="{$date}"/></span>
+
+ 		<span style="float:right;margin-right:20px;"><a href="__CONTROLLER__/exportLndDayPlanReport/site/1000" class="btn btn-blue" data-toggle="doexport"  data-icon="arrow-up">下载</a></span>
+	</div>
+
+ 
+</form>
+</div>
+
+
+
+<div class="bjui-pageContent">
+ 
+</div>
+<style>
+ 
+</style>
+<script type='text/javascript'>
+ 
+	
+
+	
+ 
+
+</script>

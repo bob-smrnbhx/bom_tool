@@ -1,0 +1,126 @@
+ 
+ <!-- <script src="/xcrm/Public/BJUI/js/jquery-1.7.2.min.js"></script>   -->    
+ 
+<div class="bjui-pageHeader">
+
+<h2 style="text-align: center">注塑日生产计划表</h2>
+<hr />
+
+
+<form id="pagerForm" data-toggle="ajaxsearch" action="__ACTION__" method="get">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">             
+    <input type="hidden" name="pageCurrent" value="{$pageCurrent}">       
+    <input type="hidden" name="orderField" value="{$_REQUEST['orderField']}">         
+    <input type="hidden" name="orderDirection" value="{$_REQUEST['orderDirection']}"> 
+
+<h4 style="margin: 0; padding: 0">生产日期: <input type="text" id="mldDate" data-toggle="datepicker" value="{$date}"/></h4>
+
+
+        <div class="bjui-searchBar">
+
+			
+			<span style="float:right;margin-right:20px;"><button type='button' class="btn-default" data-icon="save" id='savePlan'   onclick="alert('保存成功')"   >保存</button></span>
+			<span style="float:right;margin-right:20px;"><button type='button' class="btn-default" data-icon="arrow-up" id='savePlan'      >导出</button></span>
+
+		
+		</div> 
+</form>
+</div>
+
+
+
+<div class="bjui-pageContent">
+<form id="paintPlansForm"  action="__CONTROLLER__/updatePaintPlans" data-callback='afterPlansSaving'   data-toggle="validate" method="post"  >   <!--建议使用validate表单，因为ajaxform表单 实测总是不自动弹出响应对话框 -->
+	<table id="tabledit1" style="white-space: nowrap;"  data-toggle="tablefixed"   data-nowrap="true"   class="table table-bordered table-hover table-striped table-top" >
+        <thead>
+            <tr>
+ 
+			<th>序号</th>
+			<th>班次</th>
+			<th>物料代码</th>
+			<th>物料名称</th>
+			<th>规格型号</th>
+			<th>工序</th>
+			<th>机型</th>
+			<th>机台号</th>
+			<!--<th>使用材料</th>  -->
+			<th>标准产能</th>
+			<th>原计划生产量</th>
+ 
+            </tr>
+        </thead>
+        <tbody>
+        		<volist id="shift" name="shifts">
+        		<tr><td colspan="11" style="text-align:center">{$shift} </td></tr>
+        			<volist id="part" name="sParts[$shift]">
+        			<tr>
+        				<td>{$part.no}</td>
+        				<td>{$part.shift}</td>
+        				<td>{$part.part}</td>
+        				<td>{$part.desc1}</td>
+        				<td>{$part.desc2}</td>
+        				<td>{$part.seq}</td>
+        				<td>{$part.mtype}</td>
+        				<td>{$part.mno}</td>
+        				<!-- <td>{$part.material}</td> -->
+        				<td>{$part.avail_qty}</td>
+        				<td>{$part.plan_qty}</td>
+        			</tr>
+        			</volist>
+
+					 			
+				</volist>
+        
+        
+
+        </tbody>
+    </table>
+
+</form>    	
+
+
+ 
+</div>
+<style>
+#plansForm tr.plan input {
+	display: none;
+}
+#plansForm tr.plan_input input.drps_qty{
+	display: inline-block;
+}
+#plansForm tr.plan_input span.drps_qty{
+	display: none;
+}
+#plansForm .fchanged .drps_qty {
+	color: red;
+}
+#plansForm .invalidStock {
+	background-color: red;
+}
+ 
+
+</style>
+<script type='text/javascript'>
+$(document).ready(function() {	
+	
+	$.CurrentNavtab.on("afterchange.bjui.datepicker", "#mldDate", function() {
+		var tmpobj = $("<div></div>");
+		$(tmpobj).navtab({
+			'id':'prodmd/mouldingBalanceTable/site/' + '{$Think.request.site}', 
+			'url': $(this).closest("#pagerForm").attr('action') + '/site/' + '{$Think.request.site}' + "/date/" + $("#mldDate").val() ,
+			'title': '注塑平衡表',
+			'fresh': true
+		});
+	});
+	
+
+
+});
+
+
+
+
+ 
+
+</script>
+</style>

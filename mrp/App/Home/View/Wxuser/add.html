@@ -1,0 +1,58 @@
+<div class="bjui-pageContent">
+    <form action="__URL__/add/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+		<input type="hidden" name="id" value="{$id}">
+        <div class="pageFormContent" data-layout-h="0">
+          <table class="table table-condensed table-hover" width="100%">
+           <tbody><tr>
+           <td  colspan=4><label for='title_input' class='control-label x100'>活动名称:</label><input type='text'  name='title' data-rule='required;' size='50'   value='{$Rs.jxsz}'  ></td>
+           </tr>
+			<tr><td><label for='kssj_input' class='control-label x100'>开始时间:</label><input type='text' data-toggle='datepicker' data-pattern='yyyy-MM-dd HH:mm:ss' id='kssj' name='kssj'  data-rule='required;datetime' size='20'   value='{$Rs.kssj}'  ></td><td colspan=3><label for='jssj_input' class='control-label x85'>结束时间:</label><input type='text' data-toggle='datepicker' data-pattern='yyyy-MM-dd HH:mm:ss' id='jssj' name='jssj'  data-rule='required;datetime' size='20'   value='{$Rs.jssj}'  ></td></tr>
+<tr></tr>
+  <tr>
+  <td ><label for='title_input' class='control-label x100'>一等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value='123'  ></td>
+  <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='0'  ></td>
+  <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='0'  ></td
+  ></tr>
+   <tr>
+       <td ><label for='title_input' class='control-label x100'>二等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value='123'  ></td>
+       <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='0'  ></td>
+       <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='0'  ></td>
+   </tr>
+      <tr>
+       <td ><label for='title_input' class='control-label x100'>三等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value='123'  ></td>
+       <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='0'  ></td>
+       <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='0'  ></td>
+   </tr>
+      <tr>
+       <td ><label for='title_input' class='control-label x100'>四等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value='123'  ></td>
+       <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='0'  ></td>
+       <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='0'  ></td>
+   </tr>
+      <tr>
+       <td ><label for='title_input' class='control-label x100'>五等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value=123''  ></td>
+       <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='0'  ></td>
+       <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='0'  ></td>
+   </tr>
+      <tr>
+       <td ><label for='title_input' class='control-label x100'>六等奖奖项设置:</label><input type='text'  name='jpname[]' data-rule='required;' size='20'   value='123'  ></td>
+       <td ><label for='title_input' class='control-label x85'>奖品数量:</label><input type='text'  name='jpsl[]' data-rule='required;' size='10'   value='0'  ></td>
+       <td ><label for='title_input' class='control-label x85'>中奖概率:</label><input type='text'  name='jpgl[]' data-rule='required;' size='10'   value='0'  ></td>
+   </tr>
+   <tr>
+           <td  colspan=4><label for='title_input' class='control-label x100'>不中奖数:</label><input type='text'  name='bzgl' data-rule='required;' size='50'   value='10000'  ></td>
+           </tr>   </tr>        <tr><td  colspan=4><label for='title_input' class='control-label x100'>次数:</label><input type='text'  name='cs' data-rule='required;' size='50'   value='1'  ></td></tr>
+           <tr>
+           <td  colspan=4><label for='title_input' class='control-label x100'>活动图片:</label><input type='text'  name='img'  size='50'   value=''  ></td>
+           </tr>
+<tr><td  colspan=3><label for='beizhu_input' class='control-label x85'>详细说明:</label><div style='display: inline-block; vertical-align: middle;'><textarea name='xxsm'   data-toggle='kindeditor' data-minheight='150' data-items='fontname, fontsize, |, forecolor, hilitecolor, bold, italic, underline, removeformat, |, justifyleft, justifycenter, justifyright, insertorderedlist, insertunorderedlist, |, emoticons, image, link'>{$Rs.beizhu}</textarea></div></td></tr>
+           </tbody>
+          </table>
+        </div>
+        <div class="bjui-footBar">
+            <ul>
+                <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+                <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+            </ul>
+        </div>
+    </form>
+</div>
