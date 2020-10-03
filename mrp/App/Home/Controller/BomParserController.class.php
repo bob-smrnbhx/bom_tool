@@ -108,7 +108,7 @@ class BomParserController extends Controller
         // 获取总列数
         $allColumn = $this->_curSheet->getHighestColumn();
         $limitColumn = ++$allColumn;
-        if ($maxParsedRow) {
+        if ($maxParsedRow) {  
             $allRow = $maxParsedRow;
         } else {
             // 获取总行数
